@@ -1,7 +1,7 @@
 'use client'
 
 import { useChat } from '@/hooks/useChat'
-import { Button, useWebSocket } from '@packages/shared'
+import { Button } from '@packages/shared'
 import dynamic from 'next/dynamic'
 import { useEffect, useState } from 'react'
 import { createPortal } from 'react-dom'
@@ -14,7 +14,6 @@ export const Chat = () => {
 	const [isMounted, setMounted] = useState(false)
 	const [chatRoot, setChatRoot] = useState<HTMLElement | null>(null)
 	const { isChatVisible, animationClass, showChat, hideChat } = useChat()
-	const { messages, sendMessage } = useWebSocket({ isAdmin: false, userName: 'Rai' })
 
 	useEffect(() => {
 		setMounted(true)

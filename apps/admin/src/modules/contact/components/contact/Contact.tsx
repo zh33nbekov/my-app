@@ -42,7 +42,7 @@ export const Contact = () => {
 				console.log(error)
 			}
 		},
-		[editedContact]
+		[editedContact, refetch, handleUpdate]
 	)
 
 	useEffect(() => {

@@ -1,12 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
-
-/**
- * Кастомный хук для работы с localStorage.
- * @param key Ключ в localStorage.
- * @param initialValue Начальное значение (если нет в localStorage).
- */
+import { useCallback, useEffect, useState } from 'react'
 
 export const useLocalStorage = <T>(key: string, initialValue: T) => {
 	// Получаем текущее значение из localStorage или устанавливаем начальное
@@ -20,18 +14,19 @@ export const useLocalStorage = <T>(key: string, initialValue: T) => {
 		}
 	})
 
-	// Функция обновления состояния и localStorage
-	const setValue = (value: T | ((val: T) => T)) => {
-		try {
-			const valueToStore = value instanceof Function ? value(storedValue) : value
-			setStoredValue(valueToStore)
-			window.localStorage.setItem(key, JSON.stringify(valueToStore))
-		} catch (error) {
-			console.error(`Ошибка при сохранении ключа "${key}" в localStorage:`, error)
-		}
-	}
+	const setValue = useCallback(
+		(value: T | ((val: T) => T)) => {
+			try {
+				const valueToStore = value instanceof Function ? value(storedValue) : value
+				setStoredValue(valueToStore)
+				window.localStorage.setItem(key, JSON.stringify(valueToStore))
+			} catch (error) {
+				console.error(`Ошибка при сохранении ключа "${key}" в localStorage:`, error)
+			}
+		},
+		[key, storedValue]
+	)
 
-	// Обработчик синхронизации между вкладками
 	useEffect(() => {
 		const handleStorageChange = (event: StorageEvent) => {
 			if (event.key === key) {

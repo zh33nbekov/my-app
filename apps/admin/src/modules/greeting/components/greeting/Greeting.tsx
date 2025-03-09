@@ -39,6 +39,23 @@ export const Greeting = () => {
 	})
 	const isChanged = greeting ? !isEqual(greeting, editedGreeting) : false
 
+	const buttonsHandleChange = useCallback((name: string, value: string, checked: boolean) => {
+		const buttonField = buttonFieldsMap[name]
+		setEditedGreeting((prev) => ({
+			...prev,
+			buttons: {
+				...prev.buttons,
+				isActive: name === 'isActive' ? checked : prev.buttons.isActive,
+				...(buttonField && {
+					[buttonField.side]: {
+						...prev.buttons[buttonField.side],
+						[buttonField.key]: value,
+					},
+				}),
+			},
+		}))
+	}, [])
+
 	const inputHandleChange = useCallback(
 		(
 			e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
@@ -65,30 +82,16 @@ export const Greeting = () => {
 				[name]: value,
 			}))
 		},
-		[]
+		[buttonsHandleChange]
 	)
 
-	const buttonsHandleChange = useCallback((name: string, value: string, checked: boolean) => {
-		const buttonField = buttonFieldsMap[name]
-		setEditedGreeting((prev) => ({
-			...prev,
-			buttons: {
-				...prev.buttons,
-				isActive: name === 'isActive' ? checked : prev.buttons.isActive,
-				...(buttonField && {
-					[buttonField.side]: {
-						...prev.buttons[buttonField.side],
-						[buttonField.key]: value,
-					},
-				}),
-			},
-		}))
-	}, [])
-
-	const languageHandleChange = useCallback((e: React.ChangeEvent<HTMLSelectElement>) => {
-		const { value } = e.target
-		setSelectedLanguage(value)
-	}, [])
+	const languageHandleChange = useCallback(
+		(e: React.ChangeEvent<HTMLSelectElement>) => {
+			const { value } = e.target
+			setSelectedLanguage(value)
+		},
+		[setSelectedLanguage]
+	)
 
 	const enableEditing = useCallback((field: EditGreetingFields) => {
 		setEdit((prev) => ({ ...prev, [field]: true }))
@@ -143,7 +146,7 @@ export const Greeting = () => {
 				console.log(error)
 			}
 		},
-		[editedGreeting]
+		[editedGreeting, refetch, handleUpdate, selectedLanguage]
 	)
 
 	useEffect(() => {

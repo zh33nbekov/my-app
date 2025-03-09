@@ -31,10 +31,13 @@ export const About = () => {
 		}
 	}
 
-	const languageHandleChange = useCallback((e: React.ChangeEvent<HTMLSelectElement>) => {
-		const { value } = e.target
-		setSelectedLanguage(value)
-	}, [])
+	const languageHandleChange = useCallback(
+		(e: React.ChangeEvent<HTMLSelectElement>) => {
+			const { value } = e.target
+			setSelectedLanguage(value)
+		},
+		[setSelectedLanguage]
+	)
 
 	const enableEditing = useCallback((field: EditAboutFields) => {
 		console.log(field)
@@ -83,7 +86,14 @@ export const About = () => {
 				//
 			}
 		},
-		[editedAbout.image, editedAbout.description]
+		[
+			editedAbout.image,
+			editedAbout.description,
+			editedAbout.id,
+			selectedLanguage,
+			refetch,
+			handleUpdate,
+		]
 	)
 
 	useEffect(() => {

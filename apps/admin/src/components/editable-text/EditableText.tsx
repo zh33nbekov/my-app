@@ -22,41 +22,46 @@ interface IEditableText {
 	) => void
 }
 
-export const EditableText: React.FC<IEditableText> = memo((props) => {
-	const inputHandleChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-		props.onInputChange(e, props.minLength, props.maxLength)
-	}, [])
+export const EditableText: React.FC<IEditableText> = memo(
+	({ onInputChange, minLength, maxLength, ...props }) => {
+		const inputHandleChange = useCallback(
+			(e: React.ChangeEvent<HTMLInputElement>) => {
+				onInputChange(e, minLength, maxLength)
+			},
+			[onInputChange, minLength, maxLength]
+		)
 
-	return (
-		<>
-			{props.isEditing ? (
-				<input
-					type='text'
-					value={props.value}
-					name={props.fieldName}
-					autoFocus={!!props.value}
-					onChange={inputHandleChange}
-					style={{ width: props.inputWidth }}
-					className={styles.editableTextInput}
-					onBlur={props.onDisableEditing(props.fieldName)}
-				/>
-			) : (
-				<h2
-					id={props.fieldName}
-					ref={props.EditableTextRef}
-					className={styles.editableText}
-					onClick={() => {
-						props.onEnableEditing(props.fieldName)
-						if (props.EditableTextRef.current) {
-							props.changeInputWidth(props.EditableTextRef.current.offsetWidth)
-						}
-					}}
-				>
-					{props.value}
-				</h2>
-			)}
-		</>
-	)
-})
+		return (
+			<>
+				{props.isEditing ? (
+					<input
+						type='text'
+						value={props.value}
+						name={props.fieldName}
+						autoFocus={!!props.value}
+						onChange={inputHandleChange}
+						style={{ width: props.inputWidth }}
+						className={styles.editableTextInput}
+						onBlur={props.onDisableEditing(props.fieldName)}
+					/>
+				) : (
+					<h2
+						id={props.fieldName}
+						ref={props.EditableTextRef}
+						className={styles.editableText}
+						onClick={() => {
+							props.onEnableEditing(props.fieldName)
+							if (props.EditableTextRef.current) {
+								props.changeInputWidth(props.EditableTextRef.current.offsetWidth)
+							}
+						}}
+					>
+						{props.value}
+					</h2>
+				)}
+			</>
+		)
+	}
+)
 
 EditableText.displayName = 'EditableText'

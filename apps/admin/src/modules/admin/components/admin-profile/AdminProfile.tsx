@@ -9,7 +9,7 @@ interface IAdminProfile {
 	fullName: string
 }
 
-export const AdminProfile: React.FC<IAdminProfile> = ({ fullName, role, email, id }) => (
+export const AdminProfile: React.FC<IAdminProfile> = ({ fullName }) => (
 	<div className={styles.admin}>
 		<h3 className={styles.admin__name}>{fullName}</h3>
 	</div>

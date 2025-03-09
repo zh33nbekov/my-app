@@ -14,7 +14,6 @@ export const Navigation = () => {
 		nav: false,
 		additionally: false,
 	})
-	const [ulHeight, setUlHeight] = useState<number>(0)
 	const ulRef = useRef<HTMLUListElement>(null)
 	const pathname = usePathname()
 

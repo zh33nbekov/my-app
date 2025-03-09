@@ -1,4 +1,4 @@
-import { Button, LanguageSwitcher } from '@/components'
+import { Button } from '@/components'
 import { ContactImage, IContact } from '../../index'
 import styles from './contact-form.module.scss'
 
