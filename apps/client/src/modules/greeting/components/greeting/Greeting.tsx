@@ -1,6 +1,6 @@
 import { Link } from '@packages/shared'
 import Image from 'next/image'
-import { getGreeting } from '../..'
+import { getGreeting } from '../../index'
 import styles from './greeting.module.scss'
 
 interface IGreeting {
@@ -9,7 +9,7 @@ interface IGreeting {
 
 export const Greeting: React.FC<IGreeting> = async ({ locale }) => {
 	const greeting = await getGreeting(locale)
-	const [first, second] = greeting.subtitle.split(' ')
+	const [first, second] = greeting?.subtitle?.split(' ')
 
 	return (
 		<>
