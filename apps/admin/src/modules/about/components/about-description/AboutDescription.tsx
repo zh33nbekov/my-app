@@ -17,7 +17,7 @@ interface IAboutDescription {
 
 export const AboutDescription: React.FC<IAboutDescription> = memo((props) => {
 	const inputHandleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-		props.onInputChange(e)
+		props.onInputChange(e, 500, 500)
 	}
 
 	return (
