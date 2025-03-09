@@ -1,0 +1,37 @@
+.feedbackForm {
+	display: flex;
+	flex-direction: column;
+	gap: clamp(10px, 7.8px + 0.68vw, 15px);
+	// align-items: center;
+	width: 457px;
+	max-width: 100%;
+	&__inputs {
+		width: 100%;
+	}
+	&__input,
+	&__textarea {
+		width: 100%;
+		padding: clamp(12px, 7.2px + 1.5vw, 23px) clamp(11px, 7px + 1.23vw, 20px);
+	}
+	&__textarea {
+		height: clamp(95px, 61.8px + 10.35vw, 171px);
+		resize: none;
+	}
+	&__submit {
+		padding: clamp(8px, 4.5px + 1.09vw, 16px) clamp(0px, -8.7px + 2.72vw, 20px);
+		width: clamp(120px, 105.6px + 4.5vw, 153px);
+		font-size: 20px;
+		font-weight: 600;
+		line-height: 24px;
+		letter-spacing: 0.38px;
+		margin: 0 auto;
+	}
+	@media (max-width: 615px) {
+		& {
+			width: 100%;
+			&__submit {
+				margin-top: clamp(30px, 19.1px + 3.39vw, 40px);
+			}
+		}
+	}
+}

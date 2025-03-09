@@ -1,0 +1,49 @@
+.aboutMe {
+	padding-bottom: clamp(88px, 47.8px + 12.53vw, 180px);
+	width: 100%;
+	&__info {
+		padding-top: clamp(20px, -27.4px + 6.78vw, 44px);
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		gap: 25px;
+	}
+	&__image {
+		border-radius: 29px;
+		box-shadow:
+			25px 25px 60px 0px rgba(0, 0, 0, 0.25),
+			-25px -25px 60px 0px rgba(255, 255, 255, 0.25);
+		background: linear-gradient(-40.06deg, rgb(47, 51, 57) 14.728%, rgb(21, 24, 28) 95.822%);
+		width: clamp(180px, 92.8px + 27.25vw, 380px);
+		height: clamp(180px, 92.8px + 27.25vw, 380px);
+		min-width: 265px;
+		min-height: 265px;
+		overflow: hidden;
+		img {
+			width: 100%;
+			height: 100%;
+		}
+	}
+	&__description {
+		max-width: 455px;
+		color: #fff;
+		font-size: clamp(16px, 5.2px + 1.5vw, 21px);
+		font-weight: 300;
+		line-height: 28px;
+		letter-spacing: 0.38px;
+		text-align: end;
+	}
+	@media (max-width: 614px) {
+		&__info {
+			flex-direction: column;
+			align-items: center;
+		}
+		&__description {
+			text-align: center;
+		}
+		&__image {
+			min-width: 0;
+			min-height: 0;
+		}
+	}
+}

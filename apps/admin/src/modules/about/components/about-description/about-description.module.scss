@@ -1,0 +1,29 @@
+.aboutDescriptionBox {
+	padding: 10px 0;
+	width: 100%;
+}
+.aboutDescription {
+	color: #fff;
+	font-size: 17px;
+	border-radius: 10px;
+	transition: border 222ms ease-in-out;
+	border: 1px solid transparent;
+	padding: 5px;
+	display: inline-block;
+	text-align: center;
+	&:hover {
+		border-color: #4d6bfe;
+	}
+}
+.aboutDescriptionInput {
+	color: #fff;
+	font-size: 17px;
+	background: none;
+	font-weight: bold;
+	border-radius: 10px;
+	width: 100%;
+	text-align: center;
+	resize: none;
+	border: 1px solid #4d6bfe;
+	padding: 5px;
+}

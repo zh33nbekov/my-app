@@ -1,0 +1,19 @@
+.list {
+	width: 100%;
+	display: flex;
+	gap: clamp(15px, -45.2px + 10.93vw, 70px);
+	&__item {
+		list-style: none;
+		width: 20%;
+		font-size: clamp(16px, 13.3px + 0.82vw, 22px);
+		a {
+			padding: clamp(7px, -5px + 2.18vw, 18px) clamp(0px, -19.7px + 3.58vw, 18px);
+			border-radius: clamp(13px, 0.9px + 2.19vw, 24px);
+		}
+	}
+	@media (max-width: 550px) {
+		&__item {
+			display: none;
+		}
+	}
+}

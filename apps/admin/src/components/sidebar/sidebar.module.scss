@@ -1,0 +1,33 @@
+.sidebar {
+	width: 100%;
+	height: 100svh;
+	position: sticky;
+	top: 0;
+	display: flex;
+	flex-direction: column;
+	padding-bottom: var(--sidebar-b-padding);
+	&__header {
+		border-bottom: 1px solid #888888;
+		padding: 5.5px 20px;
+	}
+	&__title {
+		color: #cc6ce7;
+		font-size: 34px;
+		position: relative;
+		&::before {
+			content: '';
+			position: absolute;
+			bottom: 5px;
+			left: 53px;
+			width: 5.5px;
+			height: 5.5px;
+			border-radius: 50%;
+			background-color: #cc6ce7;
+		}
+	}
+	@media (max-width: 666px) {
+		& {
+			display: none;
+		}
+	}
+}

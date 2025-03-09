@@ -1,0 +1,44 @@
+{
+	"Translations": {
+		"english": "Английский",
+		"russian": "Русский"
+	},
+	"Header": {
+		"Contact": "Связаться",
+		"About": "Обо мне",
+		"Projects": "Проекты",
+		"Skills": "Навыки",
+		"Experience": "Опыт"
+	},
+	"SectionTitles": {
+		"AboutMe": "Обо мне",
+		"Skills": "Навыки",
+		"Projects": "Проекты",
+		"ContactMe": "Связаться",
+		"Experience": "Опыт",
+		"Certifications": "Сертификаты"
+	},
+	"FeedbackForm": {
+		"name": "Имя*",
+		"email": "Электронная почта*",
+		"message": "Сообщение*",
+		"send": "Отправить"
+	},
+	"Skills": {
+		"all": "все",
+		"language": "языки",
+		"tools": "инструменты",
+		"styling": "стилизация"
+	},
+	"Chat": {
+		"heading": "Давайте пообщаемся? - Я в сети",
+		"text": "Здесь пока пусто...",
+		"subtext": "Будьте первым, кто напишет сообщение!",
+		"textAreaPlaceholder": "Введите сообщение...",
+		"inputPlaceholder": "Введите свое имя..."
+	},
+	"Experience": {
+		"Experience": "Опыт",
+		"Education": "Образование"
+	}
+}

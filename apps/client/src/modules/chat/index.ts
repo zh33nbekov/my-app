@@ -1,0 +1,5 @@
+export * from './components/chat-body/ChatBody'
+export * from './components/chat-footer/ChatFooter'
+export * from './components/chat-header/ChatHeader'
+export * from './components/chat-widget/ChatWidget'
+export * from './components/chat/Chat'

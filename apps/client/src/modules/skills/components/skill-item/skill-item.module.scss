@@ -1,0 +1,25 @@
+.skillItem {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	svg {
+		// width: clamp(88px, 60.9px + 8.45vw, 150px);
+		// height: clamp(88px, 60.9px + 8.45vw, 150px);
+		animation: fadeIn 0.25s ease-in-out;
+	}
+	&__name {
+		color: #fff;
+		font-size: 20px;
+		padding-top: 10px;
+		animation: fadeIn 0.25s ease-in-out;
+	}
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}

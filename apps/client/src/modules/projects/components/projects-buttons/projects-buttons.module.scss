@@ -1,0 +1,18 @@
+.projectsButtons {
+	display: flex;
+	gap: clamp(15px, -5px + 6.27vw, 61px);
+	padding-top: clamp(20px, 9.5px + 3.27vw, 44px);
+	button {
+		line-height: normal;
+		font-size: clamp(15px, 12.8px + 0.68vw, 20px);
+		border-radius: clamp(13px, 8.2px + 1.5vw, 24px);
+		padding: clamp(5px, 0.2px + 1.5vw, 16px) clamp(0px, -7.4px + 2.32vw, 17px);
+	}
+	@media (max-width: 480px) {
+		button {
+			&:nth-of-type(2) {
+				text-wrap: wrap;
+			}
+		}
+	}
+}

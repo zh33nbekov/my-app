@@ -1,0 +1,26 @@
+.chatHeader {
+	padding: 10px 11px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background: linear-gradient(120deg, #7733ff, #ff6699);
+	border-radius: 20px 20px 0 0;
+	p {
+		color: #fff;
+	}
+	button {
+		background: none;
+		display: flex;
+		align-items: center;
+		border-radius: 3px;
+		transition: background-color 111ms ease-in-out;
+		&:hover {
+			background-color: #dadadab1;
+		}
+
+		svg {
+			width: 23px;
+			height: 23px;
+		}
+	}
+}

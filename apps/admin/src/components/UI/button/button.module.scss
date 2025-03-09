@@ -1,0 +1,23 @@
+.button {
+	background-color: #0275ff;
+	color: #fff;
+	padding: 10px;
+	border-radius: 10px;
+	width: 100%;
+	transition: background-color 222ms ease-in-out;
+	@media (hover: hover) {
+		&:hover {
+			background-color: #2185ff;
+		}
+	}
+	@media (hover: none) {
+		transition: none;
+		&:active {
+			background-color: red;
+		}
+	}
+	&:disabled {
+		cursor: no-drop;
+		background-color: #3c81d4;
+	}
+}

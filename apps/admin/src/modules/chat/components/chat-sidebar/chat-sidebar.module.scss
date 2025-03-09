@@ -1,0 +1,21 @@
+.chatSidebar {
+	min-width: 200px;
+	background-color: #50505a;
+	border-left: 1px solid #888888;
+	position: sticky;
+	top: 0;
+	height: 100svh;
+	padding-bottom: var(--sidebar-b-padding);
+	&__header {
+		border-bottom: 1px solid #888888;
+		padding: 5.5px 20px;
+	}
+	&__title {
+		font-size: 34px;
+	}
+	@media (max-width: 666px) {
+		& {
+			display: none;
+		}
+	}
+}

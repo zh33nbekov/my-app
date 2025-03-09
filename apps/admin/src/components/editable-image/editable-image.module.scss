@@ -1,0 +1,52 @@
+.image {
+	position: relative;
+	overflow: hidden;
+	border-radius: 50%;
+	background: linear-gradient(-40.06deg, #2f3339 14.776%, #15181c 95.732%);
+	cursor: pointer;
+	// width: clamp(178px, 56.7px + 37.88vw, 400px);
+	// height: clamp(178px, 56.7px + 37.88vw, 400px);
+	&::before {
+		content: url('../../../public/icons/common/img-upload.png');
+		filter: invert(1);
+		transition:
+			opacity 222ms ease-out,
+			transform 222ms ease-in-out;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%) scale(0.4);
+		z-index: 1;
+	}
+	&::after {
+		content: '';
+		width: 100%;
+		height: 100%;
+		// background-color: rgb(137, 137, 140, .7);
+		background-color: rgba(0, 0, 0, 0.7);
+		position: absolute;
+		border-radius: 50%;
+		transition: opacity 222ms ease-out;
+		top: 0;
+		left: 0;
+		z-index: 0;
+	}
+	@media (hover: hover) {
+		&:hover::before {
+			transform: translate(-50%, -50%) scale(1);
+		}
+		&:hover::before,
+		&:hover::after {
+			opacity: 1;
+		}
+	}
+	&::before,
+	&::after {
+		pointer-events: none;
+		position: absolute;
+		opacity: 0;
+	}
+	&__img {
+		width: 100%;
+		height: 100%;
+	}
+}

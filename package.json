@@ -1,0 +1,19 @@
+{
+	"name": "rai-software-engineer",
+	"version": "1.0.0",
+	"private": true,
+	"workspaces": [
+		"apps/*",
+		"packages/*"
+	],
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"lint": "eslint . --fix",
+		"format": "prettier --write \"**/*.{ts,tsx,json,css,scss}\"",
+		"lint:format": "npm run lint && format"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"description": ""
+}

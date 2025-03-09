@@ -1,0 +1,31 @@
+.textareaBox {
+	height: clamp(119.2px, 84.4px + 10.84vw, 198.8px);
+	&__textarea {
+		width: 100%;
+		border-radius: 12px;
+		box-shadow:
+			inset 4px 4px 10px 0px rgba(26, 28, 37, 0.9),
+			inset -4px -4px 8px 0px rgba(44, 50, 64, 0.9),
+			inset 4px -4px 8px 0px rgba(26, 28, 37, 0.2),
+			inset -4px 4px 8px 0px rgba(26, 28, 37, 0.2),
+			-1px -1px 2px 0px rgba(26, 28, 37, 0.5),
+			1px 1px 2px 0px rgba(44, 50, 64, 0.3);
+		background: rgb(35, 39, 50);
+		padding: clamp(0.75rem, 0.45rem + 1.5vw, 1.438rem) clamp(0.688rem, 0.442rem + 1.23vw, 1.25rem);
+		color: rgba(255, 255, 255, 0.5);
+		font-size: clamp(16px, 13.3px + 0.82vw, 22px);
+		font-weight: 500;
+		line-height: 24px;
+		letter-spacing: 0.38px;
+	}
+	&__error {
+		padding-top: clamp(2px, 0.6px + 0.41vw, 5px);
+		font-size: clamp(15px, 14.5px + 0.14vw, 16px);
+		color: red;
+		display: block;
+		font-weight: 500;
+		@media (max-width: 400px) {
+			font-weight: 400;
+		}
+	}
+}

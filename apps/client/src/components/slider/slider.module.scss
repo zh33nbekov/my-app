@@ -1,0 +1,28 @@
+.slider {
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	&__prev,
+	&__next {
+		width: clamp(42.67px, 35.3px + 2.27vw, 59.35px);
+		height: clamp(30.28px, 26px + 1.32vw, 40px);
+		border-radius: 11px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		box-shadow:
+			6px 6px 12px 0px rgba(0, 0, 0, 0.25),
+			-6px -6px 12px 0px rgba(255, 255, 255, 0.25);
+		background: rgb(35, 39, 50);
+		svg {
+			width: clamp(15px, 11.6px + 1.03vw, 22.58px) !important;
+			height: clamp(19px, 14.3px + 1.46vw, 29.68px) !important;
+		}
+	}
+	@media (max-width: 550px) {
+		justify-content: space-around;
+	}
+	@media (max-width: 440px) {
+		justify-content: space-between;
+	}
+}

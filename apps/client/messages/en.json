@@ -1,0 +1,44 @@
+{
+	"Translations": {
+		"english": "English",
+		"russian": "Russian"
+	},
+	"Header": {
+		"Contact": "Contact",
+		"About": "About",
+		"Projects": "Projects",
+		"Skills": "Skills",
+		"Experience": "Experience"
+	},
+	"SectionTitles": {
+		"AboutMe": "About me",
+		"Skills": "Skills",
+		"Projects": "Projects",
+		"ContactMe": "Contact me",
+		"Experience": "Experience",
+		"Certifications": "Certifications"
+	},
+	"FeedbackForm": {
+		"name": "Name*",
+		"email": "Email*",
+		"message": "Message*",
+		"send": "Send"
+	},
+	"Skills": {
+		"all": "all",
+		"language": "language",
+		"tools": "tools",
+		"styling": "styling"
+	},
+	"Chat": {
+		"heading": "Let's talk? - I'm online",
+		"text": "It's empty here...",
+		"subtext": "Be the first to write a message!",
+		"textAreaPlaceholder": "Enter a message...",
+		"inputPlaceholder": "Enter your name..."
+	},
+	"Experience": {
+		"Experience": "Experience",
+		"Education": "Education"
+	}
+}

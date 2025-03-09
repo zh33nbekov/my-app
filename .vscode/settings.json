@@ -1,0 +1,16 @@
+{
+	"prettier.semi": false,
+	"editor.formatOnSave": true,
+	"editor.formatOnPaste": true,
+	"editor.tabSize": 3,
+	"prettier.tabWidth": 3,
+	"eslint.run": "onSave",
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": "always"
+	},
+	"editor.insertSpaces": false,
+	"eslint.enable": true,
+	"prettier.useTabs": true,
+	"prettier.printWidth": 100,
+	"prettier.jsxSingleQuote": true
+}

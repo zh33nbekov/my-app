@@ -1,0 +1,129 @@
+.chatBody {
+	display: flex;
+	flex-direction: column;
+	padding: 20px;
+	min-height: 300px;
+	background-color: #fff;
+	height: 100%;
+	width: 100%;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	overscroll-behavior: none;
+	@media (max-width: 400px) {
+		& {
+			width: 100%;
+		}
+	}
+	&__time {
+		width: 44%;
+		margin: 0 auto;
+		padding: 5px 3px;
+		border-radius: 20px;
+		border: 1px solid #757575;
+		text-transform: uppercase;
+		display: block;
+		color: grey;
+		text-align: center;
+		font-size: 14px;
+	}
+	&__client {
+		font-size: 15px;
+		border-radius: 0 10px 10px 10px;
+		background: linear-gradient(120deg, #7733ff, #ff6699);
+		color: #fff;
+	}
+	&__admin {
+		border-radius: 10px 10px 0 10px;
+		font-size: 15px;
+		text-align: end;
+		background-color: #f8f9fc;
+		color: #a7a9af;
+		border: 1px solid #dee0e6;
+	}
+	&__client,
+	&__admin {
+		margin: 15px 0;
+		font-weight: 500;
+		padding: 8px 11px;
+		text-wrap: wrap;
+	}
+}
+
+.chatEmpty {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	color: gray;
+	text-align: center;
+	margin-top: 50px;
+	animation: fadeIn 1s ease-in-out;
+	&__icon {
+		font-size: 40px;
+		animation: bounce 1.5s infinite ease-in-out;
+	}
+	&__text {
+		font-size: 16px;
+		font-weight: bold;
+		margin-top: 10px;
+	}
+	&__subtext {
+		font-size: 14px;
+		color: #666;
+		margin-top: 5px;
+	}
+	&__dots {
+		display: flex;
+		gap: 6px;
+		margin-top: 10px;
+		span {
+			width: 8px;
+			height: 8px;
+			background-color: #aaa;
+			border-radius: 50%;
+			animation: dotsAnimation 1.5s infinite ease-in-out;
+			:nth-child(1) {
+				animation-delay: 0s;
+			}
+			:nth-child(2) {
+				animation-delay: 0.2s;
+			}
+			:nth-child(3) {
+				animation-delay: 0.4s;
+			}
+		}
+	}
+}
+
+@keyframes bounce {
+	0%,
+	100% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(-5px);
+	}
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(10px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes dotsAnimation {
+	0%,
+	100% {
+		transform: scale(1);
+		opacity: 0.3;
+	}
+	50% {
+		transform: scale(1.4);
+		opacity: 1;
+	}
+}

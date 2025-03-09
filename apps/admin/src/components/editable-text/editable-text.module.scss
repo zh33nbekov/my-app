@@ -1,0 +1,23 @@
+.editableText {
+	color: #fff;
+	border-radius: 10px;
+	padding: 5px;
+	transition: border 222ms ease-in-out;
+	border: 1px solid transparent;
+	display: inline-block;
+	font-size: 20px;
+	@media (hover: hover) {
+		&:hover {
+			border-color: #4d6bfe;
+		}
+	}
+}
+.editableTextInput {
+	color: #fff;
+	font-size: 20px;
+	background: none;
+	font-weight: bold;
+	padding: 5px;
+	border-radius: 10px;
+	border: 1px solid #4d6bfe;
+}

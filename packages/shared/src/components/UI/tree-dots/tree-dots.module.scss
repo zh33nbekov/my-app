@@ -1,0 +1,45 @@
+.dots {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 6px;
+	background: linear-gradient(120deg, #7733ff, #ff6699);
+	width: 70px;
+	min-height: 36px;
+	padding-top: 7px;
+	&.admin {
+		margin-left: auto;
+		border-radius: 10px 0 10px 10px;
+	}
+	&.client {
+		border-radius: 0 10px 10px 10px;
+	}
+
+	& div {
+		width: 7px;
+		height: 7px;
+		background-color: #fff;
+		border-radius: 50%;
+		animation: jump 1s infinite ease-in-out;
+	}
+
+	& div:nth-child(1) {
+		animation-delay: 0s;
+	}
+	& div:nth-child(2) {
+		animation-delay: 0.2s;
+	}
+	& div:nth-child(3) {
+		animation-delay: 0.4s;
+	}
+}
+
+@keyframes jump {
+	0%,
+	100% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(-8px);
+	}
+}

@@ -1,0 +1,29 @@
+.sectionTitle {
+	display: flex;
+	flex-direction: column;
+	.title {
+		color: rgb(255, 255, 255);
+		font-size: clamp(25px, 21px + 1.23vw, 34px);
+		font-size: clamp(21px, 15.3px + 1.77vw, 34px);
+		text-transform: capitalize;
+		font-weight: 500;
+		line-height: 24px;
+		letter-spacing: 0.38px;
+		padding-bottom: clamp(15px, 8.9px + 1.91vw, 29px);
+	}
+	.progress {
+		width: 100%;
+		height: 5px;
+		display: flex;
+		border-radius: 33px;
+		overflow: hidden;
+
+		&__right {
+			background-color: rgb(119, 51, 255);
+		}
+		&__left {
+			flex-grow: 1;
+			background-color: rgb(247, 162, 30);
+		}
+	}
+}
