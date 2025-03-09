@@ -1,3 +1,113 @@
+@font-face {
+	font-family: 'TildaSans';
+	src: url('/fonts/TildaSans-Black/TildaSans-Black.eot');
+	src:
+		url('/fonts/TildaSans-Black/TildaSans-Black.eot?#iefix') format('embedded-opentype'),
+		url('/fonts/TildaSans-Black/TildaSans-Black.woff2') format('woff2'),
+		url('/fonts/TildaSans-Black/TildaSans-Black.woff') format('woff');
+	font-weight: 900;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'TildaSans';
+	src: url('/fonts/TildaSans-ExtraBold/TildaSans-ExtraBold.eot');
+	src:
+		url('/fonts/TildaSans-ExtraBold/TildaSans-ExtraBold.eot?#iefix') format('embedded-opentype'),
+		url('/fonts/TildaSans-ExtraBold/TildaSans-ExtraBold.woff2') format('woff2'),
+		url('/fonts/TildaSans-ExtraBold/TildaSans-ExtraBold.woff') format('woff');
+	font-weight: 800;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'TildaSans';
+	src: url('/fonts/TildaSans-Bold/TildaSans-Bold.eot');
+	src:
+		url('/fonts/TildaSans-Bold/TildaSans-Bold.eot?#iefix') format('embedded-opentype'),
+		url('/fonts/TildaSans-Bold/TildaSans-Bold.woff2') format('woff2'),
+		url('/fonts/TildaSans-Bold/TildaSans-Bold.woff') format('woff');
+	font-weight: 700;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'TildaSans';
+	src: url('/fonts/TildaSans-SemiBold/TildaSans-Semibold.eot');
+	src:
+		url('/fonts/TildaSans-SemiBold/TildaSans-Semibold.eot?#iefix') format('embedded-opentype'),
+		url('/fonts/TildaSans-SemiBold/TildaSans-Semibold.woff2') format('woff2'),
+		url('/fonts/TildaSans-SemiBold/TildaSans-Semibold.woff') format('woff');
+	font-weight: 600;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'TildaSans';
+	src: url('/fonts/TildaSans-Medium/TildaSans-Medium.eot');
+	src:
+		url('/fonts/TildaSans-Medium/TildaSans-Medium.eot?#iefix') format('embedded-opentype'),
+		url('/fonts/TildaSans-Medium/TildaSans-Medium.woff2') format('woff2'),
+		url('/fonts/TildaSans-Medium/TildaSans-Medium.woff') format('woff');
+	font-weight: 500;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'TildaSans';
+	src: url('/fonts/TildaSans-Regular/TildaSans-Regular.eot');
+	src:
+		url('/fonts/TildaSans-Regular/TildaSans-Regular.eot?#iefix') format('embedded-opentype'),
+		url('/fonts/TildaSans-Regular/TildaSans-Regular.woff2') format('woff2'),
+		url('/fonts/TildaSans-Regular/TildaSans-Regular.woff') format('woff');
+	font-weight: 400;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'TildaSans';
+	src: url('/fonts/TildaSans-Light/TildaSans-Light.eot');
+	src:
+		url('/fonts/TildaSans-Light/TildaSans-Light.eot?#iefix') format('embedded-opentype'),
+		url('/fonts/TildaSans-Light/TildaSans-Light.woff2') format('woff2'),
+		url('/fonts/TildaSans-Light/TildaSans-Light.woff') format('woff');
+	font-weight: 300;
+	font-style: normal;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'TildaSans', Arial, sans-serif;
+}
+
+input,
+textarea {
+	outline: none;
+	border: none;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+	-webkit-text-fill-color: #000 !important;
+	-webkit-box-shadow: 0 0 0px 1000px white inset !important;
+	transition: background-color 5000s ease-in-out 0s;
+}
+button {
+	border: none;
+	cursor: pointer;
+}
+button,
+a {
+	user-select: none;
+}
+html {
+	scroll-behavior: smooth;
+}
+body {
+	background-color: #232732;
+	box-shadow:
+		inset 10px 10px 20px 0px rgba(0, 0, 0, 0.25),
+		inset -10px -10px 20px 0px rgba(0, 0, 0, 0.25);
+	border-radius: 24px;
+}
+
 .wrapper {
 	max-width: 1054px;
 	margin: 0 auto;

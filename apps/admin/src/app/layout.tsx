@@ -1,6 +1,5 @@
 import ReduxProvider from '@/providers/ReduxProvider'
 import { ToastifyProvider } from '@packages/shared'
-import '@packages/shared/src/styles/globals.css'
 import type { Metadata } from 'next'
 import './page.css'
 
