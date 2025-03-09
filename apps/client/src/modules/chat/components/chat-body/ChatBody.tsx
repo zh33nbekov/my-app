@@ -4,7 +4,7 @@ import styles from './chat-body.module.scss'
 interface IChatBody {
 	text: string
 	subtext: string
-	messages: {
+	messages?: {
 		from: string
 		message: string
 	}[]
