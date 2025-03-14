@@ -1,6 +1,4 @@
-import { memo } from 'react'
-
-export const Webpack = memo(() => (
+export const Webpack = () => (
 	<svg
 		width='100px'
 		height='100px'
@@ -30,5 +28,4 @@ export const Webpack = memo(() => (
 			</g>
 		</g>
 	</svg>
-))
-Webpack.displayName = 'Webpack'
+)

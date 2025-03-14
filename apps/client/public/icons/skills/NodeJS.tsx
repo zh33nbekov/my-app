@@ -1,6 +1,4 @@
-import { memo } from 'react'
-
-export const NodeJS = memo(() => (
+export const NodeJS = () => (
 	<svg
 		width='100px'
 		height='100px'
@@ -18,5 +16,4 @@ export const NodeJS = memo(() => (
 			</g>
 		</g>
 	</svg>
-))
-NodeJS.displayName = 'NodeJS'
+)

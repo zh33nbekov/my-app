@@ -1,6 +1,4 @@
-import { memo } from 'react'
-
-export const Tailwind = memo(() => (
+export const Tailwind = () => (
 	<svg
 		width='100px'
 		height='100px'
@@ -18,5 +16,4 @@ export const Tailwind = memo(() => (
 			></path>
 		</g>
 	</svg>
-))
-Tailwind.displayName = 'Tailwind'
+)

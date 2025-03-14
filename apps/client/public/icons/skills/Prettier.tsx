@@ -1,6 +1,4 @@
-import { memo } from 'react'
-
-export const Prettier = memo(() => (
+export const Prettier = () => (
 	<svg
 		width='100px'
 		height='100px'
@@ -357,5 +355,4 @@ export const Prettier = memo(() => (
 			</g>
 		</g>
 	</svg>
-))
-Prettier.displayName = 'Prettier'
+)

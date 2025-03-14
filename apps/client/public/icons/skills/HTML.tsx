@@ -1,6 +1,4 @@
-import { memo } from 'react'
-
-export const HTML = memo(() => (
+export const HTML = () => (
 	<svg
 		width='100px'
 		height='100px'
@@ -19,5 +17,4 @@ export const HTML = memo(() => (
 			></path>
 		</g>
 	</svg>
-))
-HTML.displayName = 'HTML'
+)

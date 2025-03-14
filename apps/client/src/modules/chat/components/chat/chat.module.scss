@@ -6,7 +6,7 @@
 	left: 0;
 	right: 0;
 	bottom: 0;
-	z-index: 999;
+	z-index: 997;
 	&.disabled {
 		width: 0;
 		height: 0;
@@ -15,15 +15,19 @@
 		font-size: 16px;
 		border-radius: 10px;
 		padding: 7px 0;
-		width: 63px;
+		width: 48px;
+		height: 48px;
 		position: fixed;
 		bottom: 20px;
 		right: 20px;
 		opacity: 1;
 		animation: fadeIn 0.21s ease-in-out forwards;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 		svg {
-			width: 34px;
-			height: 34px;
+			width: 88%;
+			height: 88%;
 		}
 	}
 }

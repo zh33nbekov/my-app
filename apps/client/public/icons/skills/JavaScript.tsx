@@ -1,6 +1,4 @@
-import { memo } from 'react'
-
-export const JavaScript = memo(() => (
+export const JavaScript = () => (
 	<svg
 		width='100px'
 		height='100px'
@@ -18,5 +16,4 @@ export const JavaScript = memo(() => (
 			></path>
 		</g>
 	</svg>
-))
-JavaScript.displayName = 'JavaScript'
+)

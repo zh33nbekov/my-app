@@ -1,6 +1,4 @@
-import { memo } from 'react'
-
-export const TypeScript = memo(() => (
+export const TypeScript = () => (
 	<svg
 		width='100px'
 		height='100px'
@@ -18,5 +16,4 @@ export const TypeScript = memo(() => (
 			></path>
 		</g>
 	</svg>
-))
-TypeScript.displayName = 'TypeScript'
+)

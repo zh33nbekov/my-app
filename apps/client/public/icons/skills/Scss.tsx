@@ -1,6 +1,4 @@
-import { memo } from 'react'
-
-export const Scss = memo(() => (
+export const Scss = () => (
 	<svg
 		width='100px'
 		height='100px'
@@ -17,5 +15,4 @@ export const Scss = memo(() => (
 			></path>
 		</g>
 	</svg>
-))
-Scss.displayName = 'Scss'
+)

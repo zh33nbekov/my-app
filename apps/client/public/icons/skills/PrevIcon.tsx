@@ -1,6 +1,4 @@
-import { memo } from 'react'
-
-export const PrevIcon = memo(() => (
+export const PrevIcon = () => (
 	<svg
 		width='22.580078'
 		height='29.677246'
@@ -18,5 +16,4 @@ export const PrevIcon = memo(() => (
 			fillRule='nonzero'
 		/>
 	</svg>
-))
-PrevIcon.displayName = 'PrevIcon'
+)

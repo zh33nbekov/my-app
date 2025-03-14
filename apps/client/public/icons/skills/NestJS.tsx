@@ -1,6 +1,4 @@
-import { memo } from 'react'
-
-export const NestJS = memo(() => (
+export const NestJS = () => (
 	<svg
 		width='100px'
 		height='100px'
@@ -19,5 +17,4 @@ export const NestJS = memo(() => (
 			></path>
 		</g>
 	</svg>
-))
-NestJS.displayName = 'NestJS'
+)

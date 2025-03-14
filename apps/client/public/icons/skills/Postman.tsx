@@ -1,6 +1,4 @@
-import { memo } from 'react'
-
-export const Postman = memo(() => (
+export const Postman = () => (
 	<svg
 		width='100px'
 		height='100px'
@@ -104,5 +102,4 @@ export const Postman = memo(() => (
 			</g>
 		</g>
 	</svg>
-))
-Postman.displayName = 'Postman'
+)

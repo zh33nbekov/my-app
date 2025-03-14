@@ -6,18 +6,16 @@ import styles from './chat-footer.module.scss'
 
 interface IChatFooter {
 	message: string
-	name: string
+	username: string
 	inputPlaceholder: string
-	onSendMessage: () => void
 	textAreaPlaceholder: string
-	onSendName: (name: string) => void
 	onSubmit: (e: React.FormEvent<HTMLFormElement>) => void
 	onChangeMessage: (e: React.ChangeEvent<HTMLTextAreaElement>) => void
 }
 
 export const ChatFooter: React.FC<IChatFooter> = memo((props) => (
 	<form name='sendMessage' className={styles.chatFooter} onSubmit={props.onSubmit}>
-		{props.name ? (
+		{props.username ? (
 			<textarea
 				name='message'
 				value={props.message}

@@ -1,6 +1,4 @@
-import { memo } from 'react'
-
-export const ESLint = memo(() => (
+export const ESLint = () => (
 	<svg
 		width='100px'
 		height='100px'
@@ -26,5 +24,4 @@ export const ESLint = memo(() => (
 			</g>
 		</g>
 	</svg>
-))
-ESLint.displayName = 'ESLint'
+)

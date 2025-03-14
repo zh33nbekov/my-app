@@ -1,6 +1,4 @@
-import { memo } from 'react'
-
-export const VSCode = memo(() => (
+export const VSCode = () => (
 	<svg
 		width='100px'
 		height='100px'
@@ -26,5 +24,4 @@ export const VSCode = memo(() => (
 			></path>
 		</g>
 	</svg>
-))
-VSCode.displayName = 'VSCode'
+)

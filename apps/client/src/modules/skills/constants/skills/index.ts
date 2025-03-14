@@ -5,6 +5,7 @@ import {
 	Figma,
 	Git,
 	GitHub,
+	GithubActions,
 	GraphQL,
 	HTML,
 	Insomnia,
@@ -65,4 +66,5 @@ export const SKILLS: Skill[] = [
 	{ icon: Figma, category: 'tools', name: 'Figma' },
 	{ icon: Styled, category: 'styling', name: 'Styled components' },
 	{ icon: Socket, category: 'tools', name: 'Socket.io' },
+	{ icon: GithubActions, category: 'tools', name: 'GitHub Actions' },
 ]

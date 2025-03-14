@@ -1,6 +1,4 @@
-import { memo } from 'react'
-
-export const Redux = memo(() => (
+export const Redux = () => (
 	<svg
 		width='100px'
 		height='100px'
@@ -17,5 +15,4 @@ export const Redux = memo(() => (
 			></path>
 		</g>
 	</svg>
-))
-Redux.displayName = 'Redux'
+)

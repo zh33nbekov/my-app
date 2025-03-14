@@ -1,6 +1,4 @@
-import { memo } from 'react'
-
-export const Figma = memo(() => (
+export const Figma = () => (
 	<svg
 		width='100px'
 		height='100px'
@@ -43,6 +41,4 @@ export const Figma = memo(() => (
 			></path>
 		</g>
 	</svg>
-))
-
-Figma.displayName = 'Figma'
+)

@@ -1,0 +1,32 @@
+.headerDrawer {
+	position: fixed;
+	z-index: 997;
+	width: 100%;
+	top: 0;
+	padding-top: clamp(63px, 42px + 6.54vw, 111px);
+	padding-top: 111px;
+	background-color: #fff;
+	&.opened {
+		animation: slideIn 0.22s ease-in-out;
+	}
+	&.closed {
+		animation: slideOut 0.22s ease-in-out forwards;
+	}
+}
+
+@keyframes slideIn {
+	from {
+		transform: translateY(-111px);
+		opacity: 0;
+	}
+	to {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+@keyframes slideOut {
+	to {
+		transform: translateY(-111px);
+		opacity: 0;
+	}
+}

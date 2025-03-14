@@ -1,6 +1,4 @@
-import { memo } from 'react'
-
-export const React = memo(() => (
+export const React = () => (
 	<svg
 		width='100px'
 		height='100px'
@@ -22,5 +20,4 @@ export const React = memo(() => (
 			</g>
 		</g>
 	</svg>
-))
-React.displayName = 'React'
+)

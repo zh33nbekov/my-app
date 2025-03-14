@@ -1,6 +1,4 @@
-import { memo } from 'react'
-
-export const AWS = memo(() => (
+export const AWS = () => (
 	<svg
 		width='100px'
 		height='100px'
@@ -25,5 +23,4 @@ export const AWS = memo(() => (
 			></path>
 		</g>
 	</svg>
-))
-AWS.displayName = 'AWS'
+)

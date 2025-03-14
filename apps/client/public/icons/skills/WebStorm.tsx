@@ -1,6 +1,4 @@
-import { memo } from 'react'
-
-export const WebStorm = memo(() => (
+export const WebStorm = () => (
 	<svg
 		width='100px'
 		height='100px'
@@ -67,5 +65,4 @@ export const WebStorm = memo(() => (
 			</g>
 		</g>
 	</svg>
-))
-WebStorm.displayName = 'WebStorm'
+)

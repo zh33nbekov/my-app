@@ -1,6 +1,4 @@
-import { memo } from 'react'
-
-export const GraphQL = memo(() => (
+export const GraphQL = () => (
 	<svg
 		width='100px'
 		height='100px'
@@ -71,5 +69,4 @@ export const GraphQL = memo(() => (
 			<path d='M16,6.991a2.5,2.5,0,1,1,2.5-2.5,2.493,2.493,0,0,1-2.5,2.5' fill='#e10098'></path>
 		</g>
 	</svg>
-))
-GraphQL.displayName = 'GraphQL'
+)

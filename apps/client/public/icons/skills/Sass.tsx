@@ -1,6 +1,4 @@
-import { memo } from 'react'
-
-export const Sass = memo(() => (
+export const Sass = () => (
 	<svg
 		width='100px'
 		height='100px'
@@ -18,6 +16,4 @@ export const Sass = memo(() => (
 			></path>
 		</g>
 	</svg>
-))
-
-Sass.displayName = 'Sass'
+)

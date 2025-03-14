@@ -1,6 +1,4 @@
-import { memo } from 'react'
-
-export const Git = memo(() => (
+export const Git = () => (
 	<svg
 		width='100px'
 		height='100px'
@@ -21,5 +19,4 @@ export const Git = memo(() => (
 			></path>
 		</g>
 	</svg>
-))
-Git.displayName = 'Git'
+)

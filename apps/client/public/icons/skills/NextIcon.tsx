@@ -1,6 +1,4 @@
-import { memo } from 'react'
-
-export const NextIcon = memo(() => (
+export const NextIcon = () => (
 	<svg
 		width='22.580078'
 		height='29.677246'
@@ -18,5 +16,4 @@ export const NextIcon = memo(() => (
 			fillRule='nonzero'
 		/>
 	</svg>
-))
-NextIcon.displayName = 'NextIcon'
+)

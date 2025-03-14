@@ -1,6 +1,4 @@
-import { memo } from 'react'
-
-export const NextJS = memo(() => (
+export const NextJS = () => (
 	<svg
 		width='100px'
 		height='100px'
@@ -23,5 +21,4 @@ export const NextJS = memo(() => (
 			</g>
 		</g>
 	</svg>
-))
-NextJS.displayName = 'NextJS'
+)

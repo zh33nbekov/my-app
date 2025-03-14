@@ -1,17 +1,11 @@
 .viewport {
 	width: 100%;
 	height: 100%;
-	backdrop-filter: blur(1px);
-	background-color: rgba(0, 0, 0, 0.3);
+	background-color: rgba(0, 0, 0, 0.7);
 	animation: fadeIn 0.3s ease-in-out forwards;
 	&.closed {
 		animation: fadeOut 0.3s ease-in-out forwards;
 	}
-	// @media (max-width: 360px) {
-	// 	& {
-	// 		padding: 0 20px;
-	// 	}
-	// }
 }
 .chat {
 	position: fixed;
@@ -23,6 +17,7 @@
 	flex-direction: column;
 	border-radius: 20px;
 	animation: slideIn 0.3s ease forwards;
+	box-shadow: -3px -5px 15px #e8bbff;
 	&.closed {
 		animation: slideOut 0.3s ease-in-out forwards;
 	}

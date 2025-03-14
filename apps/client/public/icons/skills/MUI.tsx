@@ -1,6 +1,4 @@
-import { memo } from 'react'
-
-export const MUI = memo(() => (
+export const MUI = () => (
 	<svg
 		width='100px'
 		height='100px'
@@ -34,5 +32,4 @@ export const MUI = memo(() => (
 			</g>
 		</g>
 	</svg>
-))
-MUI.displayName = 'MUI'
+)

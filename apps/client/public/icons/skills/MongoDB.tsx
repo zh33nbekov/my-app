@@ -1,6 +1,4 @@
-import { memo } from 'react'
-
-export const MongoDB = memo(() => (
+export const MongoDB = () => (
 	<svg
 		width='100px'
 		height='100px'
@@ -47,5 +45,4 @@ export const MongoDB = memo(() => (
 			</g>
 		</g>
 	</svg>
-))
-MongoDB.displayName = 'MongoDB'
+)
