@@ -23,12 +23,12 @@
 	}
 	@media (max-width: 400px) {
 		& {
-			// height: 50vh;
 			width: 100%;
 			right: 0;
 			left: 0;
 			padding: 0 20px;
 			animation: slideInBottom 0.3s ease forwards;
+			box-shadow: none;
 			&.closed {
 				animation: slideOutBottom 0.3s ease-in-out forwards;
 			}

@@ -6,7 +6,6 @@ import { Experience } from '@/modules/experience'
 import { Greeting } from '@/modules/greeting'
 import { Projects } from '@/modules/projects'
 import { Skills } from '@/modules/skills'
-import { SocketProvider } from '@packages/shared'
 
 const Home = async ({ params }: { params: Promise<{ locale: string }> }) => {
 	const { locale } = await params
@@ -20,9 +19,7 @@ const Home = async ({ params }: { params: Promise<{ locale: string }> }) => {
 			<Certifications />
 			<Experience />
 			<ContactMe />
-			<SocketProvider>
-				<Chat />
-			</SocketProvider>
+			<Chat />
 		</>
 	)
 }

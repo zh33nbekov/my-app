@@ -12,7 +12,7 @@ import { Backdrop } from '../UI'
 import { HeaderDrawer } from '../header-drawer/HeaderDrawer'
 import styles from './header.module.scss'
 
-const sections = HEADER_LINKS.map(({ _, path }) => path)
+const sections = HEADER_LINKS.map(({ path }) => path)
 
 export const Header = () => {
 	const tHeader = useTranslations('Header')
@@ -20,7 +20,7 @@ export const Header = () => {
 	const [isVisible, setIsVisible] = useState(false)
 	const locale = useLocale()
 	const router = useRouter()
-	const [language, setLanguage] = useState('')
+	const [language, setLanguage] = useState(locale)
 	const changeLanguage = (e: React.ChangeEvent<HTMLSelectElement>) => {
 		const { value } = e.target
 		console.log(value)
@@ -110,8 +110,8 @@ export const Header = () => {
 			<div className={styles.header__actions}>
 				<select
 					id='language'
-					value={locale}
 					name='language'
+					value={language}
 					onChange={changeLanguage}
 					className={styles.header__select}
 				>
@@ -158,21 +158,21 @@ export const Header = () => {
 	)
 }
 
-const MyAdress = () => {
-	const [isLoaded, setIsLoaded] = useState(false)
-	const handleLoad = () => setIsLoaded(true)
+// const MyAdress = () => {
+// 	const [isLoaded, setIsLoaded] = useState(false)
+// 	const handleLoad = () => setIsLoaded(true)
 
-	return (
-		<>
-			<iframe
-				src='https://yandex.com/map-widget/v1/?ll=74.638673%2C42.849312&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgozMTQxNTk4NzEzEjzQmtGL0YDQs9GL0LfRgdGC0LDQvSwg0JHQuNGI0LrQtdC6LCDQotC-0qMg0LrTqdGH06nRgdKvLCAxMjQiCg0AR5VCFbJlK0I%2C&z=16.85'
-				width='560'
-				height='200'
-				frameBorder={1}
-				allowFullScreen
-				style={{ display: isLoaded ? 'block' : 'none', position: 'relative', border: 'none' }}
-				onLoad={handleLoad}
-			></iframe>
-		</>
-	)
-}
+// 	return (
+// 		<>
+// 			<iframe
+// 				src='https://yandex.com/map-widget/v1/?ll=74.638673%2C42.849312&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgozMTQxNTk4NzEzEjzQmtGL0YDQs9GL0LfRgdGC0LDQvSwg0JHQuNGI0LrQtdC6LCDQotC-0qMg0LrTqdGH06nRgdKvLCAxMjQiCg0AR5VCFbJlK0I%2C&z=16.85'
+// 				width='560'
+// 				height='200'
+// 				frameBorder={1}
+// 				allowFullScreen
+// 				style={{ display: isLoaded ? 'block' : 'none', position: 'relative', border: 'none' }}
+// 				onLoad={handleLoad}
+// 			></iframe>
+// 		</>
+// 	)
+// }

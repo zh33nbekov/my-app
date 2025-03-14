@@ -17,7 +17,6 @@ export const Chat = () => {
 	const [message, setMessage] = useState('')
 	const [chatRoot, setChatRoot] = useState<HTMLElement | null>(null)
 	const { isChatVisible, animationClass, showChat, hideChat } = useChat()
-	const { messages, users, sendMessage, sendUsername, username } = useSocket()
 
 	useEffect(() => {
 		setMounted(true)
@@ -32,23 +31,23 @@ export const Chat = () => {
 		setMessage(e.target.value)
 	}
 
-	const handleSubmit = useCallback(
-		(e: React.FormEvent<HTMLFormElement>) => {
-			e.preventDefault()
+	// const handleSubmit = useCallback(
+	// 	(e: React.FormEvent<HTMLFormElement>) => {
+	// 		e.preventDefault()
 
-			if (username) {
-				sendMessage(message)
-				return
-			}
+	// 		if (username) {
+	// 			sendMessage(message)
+	// 			return
+	// 		}
 
-			const clientNameInput = e.currentTarget['clientName'] as HTMLInputElement
-			const newClientName = clientNameInput.value
-			if (newClientName.trim().length >= 3 && newClientName.trim().length <= 15) {
-				sendUsername(newClientName)
-			}
-		},
-		[username, sendMessage, sendUsername, message]
-	)
+	// 		const clientNameInput = e.currentTarget['clientName'] as HTMLInputElement
+	// 		const newClientName = clientNameInput.value
+	// 		if (newClientName.trim().length >= 3 && newClientName.trim().length <= 15) {
+	// 			sendUsername(newClientName)
+	// 		}
+	// 	},
+	// 	[username, sendMessage, sendUsername, message]
+	// )
 
 	if (!isMounted) return null
 
@@ -64,13 +63,13 @@ export const Chat = () => {
 
 			{isChatVisible && (
 				<ChatWidget
-					messages={messages}
-					username={username}
-					message={message}
+					messages={[]}
+					username={'Username'}
+					message={'Message'}
 					onCloseChat={hideChat}
-					onSubmit={handleSubmit}
-					onSendMessage={sendMessage}
-					onSendName={sendUsername}
+					onSubmit={() => {}}
+					onSendMessage={() => {}}
+					onSendName={() => {}}
 					onChangeMessage={handleMessageChange}
 					animationClass={animationClass}
 				/>
