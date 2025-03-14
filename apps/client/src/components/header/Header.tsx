@@ -50,16 +50,14 @@ export const Header = () => {
 	const observerRef = useRef<IntersectionObserver | null>(null)
 
 	useEffect(() => {
-		// Если Observer уже создан, отключаем его
 		if (observerRef.current) {
 			observerRef.current.disconnect()
 		}
 
 		const observerOptions = {
-			root: null, // Отслеживаем относительно viewport
-			/* rootMargin: '-20% 0px -50% 0px', Уменьшаем верхний offset */
-			rootMargin: '-20% 0px -50% 0px', // Уменьшаем верхний offset
-			threshold: 0.3, // 30% видимости достаточно
+			root: null,
+			rootMargin: '-20% 0px -50% 0px',
+			threshold: 0.3,
 		}
 
 		const observer = new IntersectionObserver((entries) => {
@@ -86,8 +84,6 @@ export const Header = () => {
 
 		return () => observer.disconnect() // Очистка при размонтировании
 	}, [])
-
-	console.log('Активная секция:', activeSection)
 
 	return (
 		<header className={clsx(styles.header, { [styles.active]: isVisible })}>
