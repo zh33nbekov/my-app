@@ -1,9 +1,9 @@
 'use client'
 
 import { useChat } from '@/hooks/useChat'
-import { Button, useSocket } from '@packages/shared'
+import { Button } from '@packages/shared'
 import dynamic from 'next/dynamic'
-import { useCallback, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { Chat as ChatIcon } from '../../../../../public/icons/common/Chat'
 import styles from './chat.module.scss'
@@ -14,7 +14,7 @@ const ChatWidget = dynamic(() => import('../../index').then((module) => module.C
 
 export const Chat = () => {
 	const [isMounted, setMounted] = useState(false)
-	const [message, setMessage] = useState('')
+	// const [message, setMessage] = useState('')
 	const [chatRoot, setChatRoot] = useState<HTMLElement | null>(null)
 	const { isChatVisible, animationClass, showChat, hideChat } = useChat()
 
@@ -27,8 +27,8 @@ export const Chat = () => {
 		}
 	}, [])
 
-	const handleMessageChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-		setMessage(e.target.value)
+	const handleMessageChange = () => {
+		// setMessage(e.target.value)
 	}
 
 	// const handleSubmit = useCallback(
