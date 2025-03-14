@@ -149,7 +149,7 @@ export const Header = () => {
 									</li>
 								))}
 							</ul>
-							{/* <MyAdress /> */}src/modules/chat/components/chat/Chat.tsx
+							{/* <MyAdress /> */}
 						</nav>
 					</HeaderDrawer>
 				</>
