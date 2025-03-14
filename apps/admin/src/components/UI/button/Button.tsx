@@ -1,3 +1,4 @@
+import { memo } from 'react'
 import { Loader } from '../../index'
 import styles from './button.module.scss'
 
@@ -6,8 +7,10 @@ interface IButton extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 	isDisabled?: boolean
 }
 
-export const Button: React.FC<IButton> = ({ children, isLoading, isDisabled, className }) => (
+export const Button: React.FC<IButton> = memo(({ children, isLoading, isDisabled, className }) => (
 	<button disabled={isDisabled} className={`${styles.button} ${className}`}>
 		{isLoading ? <Loader /> : children}
 	</button>
-)
+))
+
+Button.displayName = 'Button'

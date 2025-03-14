@@ -9,7 +9,6 @@
 	}
 	.group__header {
 		display: flex;
-		// background-color: blueviolet;
 		justify-content: space-between;
 		align-items: center;
 		cursor: pointer;
@@ -59,7 +58,7 @@
 }
 .line {
 	width: 100%;
-	background-color: #888888;
+	background-color: var(--border-color);
 	height: 0.5px;
 }
 

@@ -7,13 +7,15 @@
 		"packages/*"
 	],
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1",
 		"lint": "eslint . --fix",
 		"format": "prettier --write \"**/*.{ts,tsx,json,css,scss}\"",
 		"lint:format": "npm run lint && format"
 	},
 	"keywords": [],
-	"author": "",
+	"author": "Rai",
 	"license": "ISC",
-	"description": ""
+	"description": "",
+	"dependencies": {
+		"clsx": "^2.1.1"
+	}
 }

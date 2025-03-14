@@ -7,7 +7,7 @@
 	flex-direction: column;
 	padding-bottom: var(--sidebar-b-padding);
 	&__header {
-		border-bottom: 1px solid #888888;
+		border-bottom: 1px solid var(--border-color);
 		padding: 5.5px 20px;
 	}
 	&__title {

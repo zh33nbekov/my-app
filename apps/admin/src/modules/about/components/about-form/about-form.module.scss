@@ -7,7 +7,7 @@
 	&__separator {
 		height: 100%;
 		width: 0.5px;
-		background-color: #888888;
+		background-color: var(--border-color);
 		display: inline-block;
 	}
 	&__content {

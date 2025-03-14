@@ -1,7 +1,7 @@
-import { ButtonHTMLAttributes, memo } from 'react'
+import { memo } from 'react'
 import styles from './button.module.scss'
 
-interface IButton extends ButtonHTMLAttributes<HTMLButtonElement> {
+interface IButton extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 	active?: boolean
 }
 
@@ -10,4 +10,5 @@ export const Button: React.FC<IButton> = memo(({ active, children, className, ..
 		{children}
 	</button>
 ))
+
 Button.displayName = 'Button'

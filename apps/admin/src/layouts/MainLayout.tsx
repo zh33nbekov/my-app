@@ -1,6 +1,7 @@
 import { Header } from '@/components'
 import SidebarBridge from '@/components/sidebar/SidebarBridge'
 import { ChatSidebar } from '@/modules/chat'
+import { SocketProvider } from '@packages/shared'
 
 const MAIN_LAYOUT_STYLES = {
 	width: '100%',
@@ -15,15 +16,17 @@ const MAIN_LAYOUT_INNER_STYLES: React.CSSProperties = {
 }
 
 const MainLayout = ({ children }: { children: React.ReactNode }) => (
-	<div style={MAIN_LAYOUT_STYLES}>
-		<SidebarBridge />
-		<div style={MAIN_LAYOUT_INNER_STYLES}>
-			<Header />
-			<main className='wrapper'>{children}</main>
+	<SocketProvider>
+		<div style={MAIN_LAYOUT_STYLES}>
+			<SidebarBridge />
+			<div style={MAIN_LAYOUT_INNER_STYLES}>
+				<Header />
+				<main className='wrapper'>{children}</main>
+			</div>
+			<ChatSidebar />
+			<div id='backdrop' />
 		</div>
-		<ChatSidebar />
-		<div id='backdrop' />
-	</div>
+	</SocketProvider>
 )
 
 export default MainLayout
