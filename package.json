@@ -9,7 +9,7 @@
 	"scripts": {
 		"lint": "eslint . --fix",
 		"format": "prettier --write \"**/*.{ts,tsx,json,css,scss}\"",
-		"lint:format": "npm run lint && format"
+		"lint-and-format": "npm run lint && format"
 	},
 	"keywords": [],
 	"author": "Rai",

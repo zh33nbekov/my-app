@@ -4,15 +4,21 @@ import { HEADER_LINKS } from '@/constants'
 import { Button } from '@packages/shared'
 import clsx from 'clsx'
 import { useLocale, useTranslations } from 'next-intl'
+import dynamic from 'next/dynamic'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { useCallback, useState } from 'react'
 import { BurgerMenu, Close } from '../../../public/icons'
-import { HeaderDrawer } from '../header-drawer/HeaderDrawer'
 import { HeaderMap } from '../header-map/HeaderMap'
 import { LanguageSwitcher } from '../language-switcher/LanguageSwitcher'
-import { Backdrop } from '../UI'
 import styles from './header.module.scss'
+
+const LazyBackdrop = dynamic(() => import('../UI').then((module) => module.Backdrop), {
+	ssr: false,
+})
+const LazyHeaderDrawer = dynamic(() => import('../index').then((module) => module.HeaderDrawer), {
+	ssr: false,
+})
 
 export const Header = () => {
 	const locale = useLocale()
@@ -78,8 +84,8 @@ export const Header = () => {
 			</div>
 			{isVisible && (
 				<>
-					<Backdrop onClose={handleClose} animationClass={animationClass} />
-					<HeaderDrawer
+					<LazyBackdrop onClose={handleClose} animationClass={animationClass} />
+					<LazyHeaderDrawer
 						animationClass={animationClass}
 						onHandleAnimationEnd={handleAnimationEnd}
 					>
@@ -100,7 +106,7 @@ export const Header = () => {
 							</ul>
 							<HeaderMap />
 						</nav>
-					</HeaderDrawer>
+					</LazyHeaderDrawer>
 				</>
 			)}
 		</header>
