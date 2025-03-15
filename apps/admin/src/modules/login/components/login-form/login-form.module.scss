@@ -4,10 +4,7 @@
 	width: 100%;
 	&__input {
 		font-size: 18px;
-		padding: clamp(0.438rem, 0.256rem + 0.91vw, 0.938rem);
-		&:first-of-type {
-			// margin-bottom: 15px;
-		}
+		padding: clamp(7px, 4px + 0.91vw, 15px);
 	}
 	&__button {
 		width: 90%;

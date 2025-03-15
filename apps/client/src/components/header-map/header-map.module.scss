@@ -6,8 +6,8 @@
 	&__loader {
 		width: clamp(33px, 28.2px + 1.5vw, 44px);
 		height: clamp(33px, 28.2px + 1.5vw, 44px);
-		border: clamp(0.188rem, 0.133rem + 0.27vw, 0.313rem) solid transparent;
-		border-top: clamp(0.188rem, 0.133rem + 0.27vw, 0.313rem) solid blue;
+		border: clamp(4px, 2.9px + 0.31vw, 6.3px) solid #cbcbcb;
+		border-top: clamp(4px, 2.9px + 0.31vw, 6.3px) solid blue;
 		border-radius: 50%;
 		position: absolute;
 		top: 50%;
@@ -16,7 +16,7 @@
 		animation: loader 1s linear infinite;
 		transition: opacity 1s ease-in-out;
 		&.disabled {
-			opacity: 0;
+			// opacity: 0;
 		}
 	}
 	iframe {

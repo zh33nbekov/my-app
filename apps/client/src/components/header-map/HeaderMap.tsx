@@ -15,10 +15,10 @@ export const HeaderMap = () => {
 	return (
 		<div className={styles.headerMap}>
 			<div
-				onTransitionEnd={handleTransitionEnd}
+				// onTransitionEnd={handleTransitionEnd}
 				className={clsx(styles.headerMap__loader, { [styles.disabled]: isLoaded })}
 			/>
-			<iframe
+			{/* <iframe
 				src='https://yandex.com/map-widget/v1/?ll=74.638673%2C42.849312&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgozMTQxNTk4NzEzEjzQmtGL0YDQs9GL0LfRgdGC0LDQvSwg0JHQuNGI0LrQtdC6LCDQotC-0qMg0LrTqdGH06nRgdKvLCAxMjQiCg0AR5VCFbJlK0I%2C&z=16.85'
 				allowFullScreen
 				style={{
@@ -27,7 +27,7 @@ export const HeaderMap = () => {
 					opacity: isLoaded ? '1' : '0',
 				}}
 				onLoad={handleLoad}
-			></iframe>
+			></iframe> */}
 		</div>
 	)
 }
