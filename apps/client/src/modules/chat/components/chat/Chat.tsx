@@ -2,6 +2,7 @@
 
 import { useChat } from '@/hooks/useChat'
 import { Button } from '@packages/shared'
+import clsx from 'clsx'
 import dynamic from 'next/dynamic'
 import { useEffect, useState } from 'react'
 import { createPortal } from 'react-dom'
@@ -54,7 +55,7 @@ export const Chat = () => {
 	if (!chatRoot) return null
 
 	return createPortal(
-		<div className={`${styles.chat} ${!isChatVisible && styles['disabled']}`}>
+		<div className={clsx(styles.chat, { [styles['disabled']]: !isChatVisible })}>
 			{!isChatVisible && (
 				<Button className={styles.chat__button} onClick={showChat} id='chat' aria-label='chat'>
 					<ChatIcon />

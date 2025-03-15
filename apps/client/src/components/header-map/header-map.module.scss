@@ -1,0 +1,32 @@
+.headerMap {
+	width: 100%;
+	height: 200px;
+	position: relative;
+	padding-bottom: 20px;
+	&__loader {
+		width: clamp(33px, 28.2px + 1.5vw, 44px);
+		height: clamp(33px, 28.2px + 1.5vw, 44px);
+		border: clamp(0.188rem, 0.133rem + 0.27vw, 0.313rem) solid transparent;
+		border-top: clamp(0.188rem, 0.133rem + 0.27vw, 0.313rem) solid blue;
+		border-radius: 50%;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		animation: loader 1s linear infinite;
+		transition: opacity 1s ease-in-out;
+		z-index: 111;
+	}
+	iframe {
+		width: 100%;
+		height: 100%;
+		transition: opacity 1s ease-in-out;
+		border-radius: clamp(15px, 10.6px + 1.36vw, 25px);
+	}
+}
+
+@keyframes loader {
+	to {
+		transform: translate(-50%, -50%) rotate(360deg);
+	}
+}

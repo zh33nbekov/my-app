@@ -6,24 +6,24 @@ import clsx from 'clsx'
 import { useLocale, useTranslations } from 'next-intl'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
-import { useCallback, useEffect, useRef, useState } from 'react'
+import { useCallback, useState } from 'react'
 import { BurgerMenu, Close } from '../../../public/icons'
-import { Backdrop } from '../UI'
 import { HeaderDrawer } from '../header-drawer/HeaderDrawer'
+import { HeaderMap } from '../header-map/HeaderMap'
+import { LanguageSwitcher } from '../language-switcher/LanguageSwitcher'
+import { Backdrop } from '../UI'
 import styles from './header.module.scss'
 
-const sections = HEADER_LINKS.map(({ path }) => path)
-
 export const Header = () => {
+	const locale = useLocale()
+	const router = useRouter()
 	const tHeader = useTranslations('Header')
 	const [isOpen, setIsOpen] = useState(false)
 	const [isVisible, setIsVisible] = useState(false)
-	const locale = useLocale()
-	const router = useRouter()
 	const [language, setLanguage] = useState(locale)
+
 	const changeLanguage = (e: React.ChangeEvent<HTMLSelectElement>) => {
 		const { value } = e.target
-		console.log(value)
 		setLanguage(value)
 		router.replace(value)
 	}
@@ -44,46 +44,7 @@ export const Header = () => {
 			setIsVisible(false)
 		}
 	}, [isOpen])
-
 	const animationClass = isOpen ? 'opened' : 'closed'
-	const [activeSection, setActiveSection] = useState<string | null>(null)
-	const observerRef = useRef<IntersectionObserver | null>(null)
-
-	useEffect(() => {
-		if (observerRef.current) {
-			observerRef.current.disconnect()
-		}
-
-		const observerOptions = {
-			root: null,
-			rootMargin: '-20% 0px -50% 0px',
-			threshold: 0.3,
-		}
-
-		const observer = new IntersectionObserver((entries) => {
-			let visibleSection = null
-
-			entries.forEach((entry) => {
-				if (entry.isIntersecting) {
-					visibleSection = entry.target.id
-				}
-			})
-
-			if (visibleSection) {
-				setActiveSection(visibleSection)
-			}
-		}, observerOptions)
-
-		// Запоминаем observer
-		observerRef.current = observer
-
-		sections.forEach((id) => {
-			const section = document.getElementById(id)
-			if (section) observer.observe(section)
-		})
-
-		return () => observer.disconnect() // Очистка при размонтировании
-	}, [])
 
 	return (
 		<header className={clsx(styles.header, { [styles.active]: isVisible })}>
@@ -94,7 +55,7 @@ export const Header = () => {
 							<Link
 								href={`#${path}`}
 								className={clsx(styles.header__link, {
-									[styles.active]: activeSection === path,
+									[styles.active]: 'about' === path,
 								})}
 							>
 								{tHeader(label)}
@@ -104,20 +65,7 @@ export const Header = () => {
 				</ul>
 			</nav>
 			<div className={styles.header__actions}>
-				<select
-					id='language'
-					name='language'
-					value={language}
-					onChange={changeLanguage}
-					className={styles.header__select}
-				>
-					<option className={styles.header__option} value='ru'>
-						RU
-					</option>
-					<option className={styles.header__option} value='en'>
-						EN
-					</option>
-				</select>
+				<LanguageSwitcher language={language} onChangeLanguage={changeLanguage} />
 				<Button
 					className={styles.header__burger}
 					active={isVisible}
@@ -139,13 +87,18 @@ export const Header = () => {
 							<ul className={styles.header__mobileList}>
 								{HEADER_LINKS.map(({ label, path }) => (
 									<li key={label} className={styles.header__mobileItem}>
-										<Link href={`#${path}`} className={styles.header__mobileLink}>
+										<Link
+											href={`#${path}`}
+											className={clsx(styles.header__mobileLink, {
+												[styles.active]: '',
+											})}
+										>
 											{tHeader(label)}
 										</Link>
 									</li>
 								))}
 							</ul>
-							{/* <MyAdress /> */}
+							<HeaderMap />
 						</nav>
 					</HeaderDrawer>
 				</>
@@ -153,22 +106,3 @@ export const Header = () => {
 		</header>
 	)
 }
-
-// const MyAdress = () => {
-// 	const [isLoaded, setIsLoaded] = useState(false)
-// 	const handleLoad = () => setIsLoaded(true)
-
-// 	return (
-// 		<>
-// 			<iframe
-// 				src='https://yandex.com/map-widget/v1/?ll=74.638673%2C42.849312&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgozMTQxNTk4NzEzEjzQmtGL0YDQs9GL0LfRgdGC0LDQvSwg0JHQuNGI0LrQtdC6LCDQotC-0qMg0LrTqdGH06nRgdKvLCAxMjQiCg0AR5VCFbJlK0I%2C&z=16.85'
-// 				width='560'
-// 				height='200'
-// 				frameBorder={1}
-// 				allowFullScreen
-// 				style={{ display: isLoaded ? 'block' : 'none', position: 'relative', border: 'none' }}
-// 				onLoad={handleLoad}
-// 			></iframe>
-// 		</>
-// 	)
-// }

@@ -14,8 +14,10 @@
 		align-items: center;
 		border-radius: 3px;
 		transition: background-color 111ms ease-in-out;
-		&:hover {
-			background-color: #dadadab1;
+		@media (hover: hover) {
+			&:hover {
+				background-color: #dadadab1;
+			}
 		}
 
 		svg {

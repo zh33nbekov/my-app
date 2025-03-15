@@ -1,5 +1,6 @@
 'use client'
 
+import clsx from 'clsx'
 import { useTranslations } from 'next-intl'
 import { memo } from 'react'
 import { ChatBody, ChatFooter, ChatHeader } from '../../index'
@@ -31,7 +32,7 @@ export const ChatWidget: React.FC<IChatWidget> = memo((props) => {
 	return (
 		<div
 			onClick={props.onCloseChat}
-			className={`${styles.viewport} ${styles[props.animationClass]}`}
+			className={clsx(styles.viewport, { [styles[props.animationClass]]: props.animationClass })}
 		>
 			<div
 				onClick={(e) => e.stopPropagation()}
