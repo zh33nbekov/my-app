@@ -1,0 +1,14 @@
+.loader {
+	width: 24px;
+	height: 24px;
+	border-radius: 50%;
+	border: clamp(2px, 1.5px + 0.14vw, 3px) solid aliceblue;
+	border-top: clamp(2px, 1.5px + 0.14vw, 3px) solid blue;
+	animation: loader 1s linear infinite;
+}
+
+@keyframes loader {
+	to {
+		transform: rotate(360deg);
+	}
+}
