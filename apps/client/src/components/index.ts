@@ -1,4 +1,3 @@
-export * from './drawer/Drawer'
 export * from './header-drawer/HeaderDrawer'
 export * from './header-map/HeaderMap'
 export * from './header/Header'
