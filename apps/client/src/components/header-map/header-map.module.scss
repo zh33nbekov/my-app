@@ -15,7 +15,9 @@
 		transform: translate(-50%, -50%);
 		animation: loader 1s linear infinite;
 		transition: opacity 1s ease-in-out;
-		z-index: 111;
+		&.disabled {
+			opacity: 0;
+		}
 	}
 	iframe {
 		width: 100%;
