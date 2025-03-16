@@ -11,6 +11,7 @@ export const metadata: Metadata = {
 }
 
 const supportedLocales = ['en', 'ru']
+
 const RootLayout = async ({
 	children,
 	params,
@@ -25,7 +26,7 @@ const RootLayout = async ({
 
 	return (
 		<html lang={locale}>
-			<body>
+			<body style={{ overflow: 'hidden' }}>
 				<NextIntlClientProvider locale={locale}>
 					<AppLayout>{children}</AppLayout>
 				</NextIntlClientProvider>

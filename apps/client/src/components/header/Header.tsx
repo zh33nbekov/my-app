@@ -13,10 +13,10 @@ import { HeaderMap } from '../header-map/HeaderMap'
 import { LanguageSwitcher } from '../language-switcher/LanguageSwitcher'
 import styles from './header.module.scss'
 
-const LazyBackdrop = dynamic(() => import('../UI').then((module) => module.Backdrop), {
+const Backdrop = dynamic(() => import('../UI').then((module) => module.Backdrop), {
 	ssr: false,
 })
-const LazyHeaderDrawer = dynamic(() => import('../index').then((module) => module.HeaderDrawer), {
+const HeaderDrawer = dynamic(() => import('../index').then((module) => module.HeaderDrawer), {
 	ssr: false,
 })
 
@@ -84,8 +84,8 @@ export const Header = () => {
 			</div>
 			{isVisible && (
 				<>
-					<LazyBackdrop onClose={handleClose} animationClass={animationClass} />
-					<LazyHeaderDrawer
+					<Backdrop onClose={handleClose} animationClass={animationClass} />
+					<HeaderDrawer
 						animationClass={animationClass}
 						onHandleAnimationEnd={handleAnimationEnd}
 					>
@@ -106,7 +106,7 @@ export const Header = () => {
 							</ul>
 							<HeaderMap />
 						</nav>
-					</LazyHeaderDrawer>
+					</HeaderDrawer>
 				</>
 			)}
 		</header>

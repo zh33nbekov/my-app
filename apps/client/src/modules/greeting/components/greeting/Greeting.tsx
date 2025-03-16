@@ -9,7 +9,14 @@ interface IGreeting {
 
 export const Greeting: React.FC<IGreeting> = async ({ locale }) => {
 	const greeting = await getGreeting(locale)
-	const [first, second] = greeting?.subtitle?.split(' ')
+	const subtitles: string[] = []
+	if (greeting.subtitle) {
+		const subtitle = greeting.subtitle.split(' ')
+		for (let i = 0; i < subtitle.length; i++) {
+			subtitles.push(subtitle[i])
+		}
+	}
+	const [left, right] = subtitles
 
 	return (
 		<>
@@ -27,7 +34,7 @@ export const Greeting: React.FC<IGreeting> = async ({ locale }) => {
 					<h2 className={styles.greeting__message}>{greeting?.message}</h2>
 					<h3 className={styles.greeting__title}>{greeting?.title}</h3>
 					<h4 className={styles.greeting__subtitle}>
-						{first} <span>{second}</span>
+						{left} <span>{right}</span>
 					</h4>
 					<p className={styles.greeting__description}>{greeting?.description}</p>
 					<div

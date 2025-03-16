@@ -1,8 +1,10 @@
 import { Header } from '@/components'
+import { Loading } from '@/components/UI/index'
 import { ToastifyProvider } from '@packages/shared'
 
 const AppLayout = ({ children }: { children: React.ReactNode }) => (
 	<>
+		<Loading />
 		<ToastifyProvider />
 		<Header />
 		<main className='wrapper'>{children}</main>

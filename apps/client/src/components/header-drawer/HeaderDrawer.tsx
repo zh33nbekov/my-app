@@ -1,6 +1,6 @@
 'use client'
 
-import { memo, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { createPortal } from 'react-dom'
 import styles from './header-drawer.module.scss'
 
@@ -10,7 +10,7 @@ interface IHeaderDrawer {
 	onHandleAnimationEnd: (e: React.AnimationEvent<HTMLDivElement>) => void
 }
 
-export const HeaderDrawer: React.FC<IHeaderDrawer> = memo((props) => {
+export const HeaderDrawer: React.FC<IHeaderDrawer> = (props) => {
 	const [rootHeaderDrawer, setRootHeaderDrawer] = useState<HTMLElement | null>(() =>
 		document.getElementById('header-drawer')
 	)
@@ -32,6 +32,4 @@ export const HeaderDrawer: React.FC<IHeaderDrawer> = memo((props) => {
 		</div>,
 		rootHeaderDrawer
 	)
-})
-
-HeaderDrawer.displayName = 'HeaderDrawer'
+}

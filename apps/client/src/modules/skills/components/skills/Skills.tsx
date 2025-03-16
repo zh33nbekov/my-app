@@ -1,4 +1,5 @@
 'use client'
+
 import { SectionTitle, Slider } from '@/components'
 import { HEADER_LINKS_OPTIONS } from '@/constants'
 import { useCallback, useState } from 'react'
@@ -26,8 +27,7 @@ export const Skills = () => {
 	const prevSkill = () => {
 		setSkill((prevIndex) => (prevIndex - 1 + filteredSkillsLength) % filteredSkillsLength)
 	}
-	const { icon, name } = filteringSkills(skillCategory)[skill] ?? {
-		name: '',
+	const { icon } = filteringSkills(skillCategory)[skill] ?? {
 		icon: () => null,
 	}
 
@@ -39,7 +39,7 @@ export const Skills = () => {
 				currentSkillCategory={skillCategory}
 			/>
 			<Slider nextSlide={nextSkill} prevSlide={prevSkill}>
-				<SkillItem skillIcon={icon} skillName={name} />
+				<SkillItem skillIcon={icon} />
 			</Slider>
 		</section>
 	)
