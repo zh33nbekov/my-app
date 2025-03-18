@@ -1,5 +1,3 @@
-'use client'
-
 import styles from './admin-profile.module.scss'
 
 interface IAdminProfile {
