@@ -30,7 +30,7 @@ export const Login = () => {
 		try {
 			const { info } = await loginHandler(data).unwrap()
 			showToast(info)
-			router.replace('/')
+			router.replace('/dashboard')
 		} catch (err) {
 			const error = err as ILoginApiError
 			showToast(null, error.data.message ?? 'Error')

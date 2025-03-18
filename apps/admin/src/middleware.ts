@@ -27,7 +27,6 @@ import { NextRequest, NextResponse } from 'next/server'
 export const middleware = async (req: NextRequest) => {
 	const cookie = await cookies()
 	const accessToken = cookie.get('accessToken')
-	console.log(cookie)
 
 	if (!accessToken) {
 		return NextResponse.redirect(new URL('/login', req.url))
