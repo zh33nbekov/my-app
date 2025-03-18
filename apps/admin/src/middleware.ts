@@ -21,12 +21,11 @@
 // 	matcher: ['/dashboard/:path*'],
 // }
 
-import { cookies } from 'next/headers'
 import { NextRequest, NextResponse } from 'next/server'
 
 export const middleware = async (req: NextRequest) => {
-	const cookie = await cookies()
-	const accessToken = cookie.get('accessToken')
+	// Получаем куку напрямую из запроса
+	const accessToken = req.cookies.get('accessToken')?.value
 
 	if (!accessToken) {
 		return NextResponse.redirect(new URL('/login', req.url))
