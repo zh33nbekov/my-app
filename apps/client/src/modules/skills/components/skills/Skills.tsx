@@ -1,46 +1,52 @@
 'use client'
 
-import { SectionTitle, Slider } from '@/components'
+import { SectionTitle } from '@/components'
 import { HEADER_LINKS_OPTIONS } from '@/constants'
-import { useCallback, useState } from 'react'
-import { SkillItem, SKILLS, SkillsCategory, SkillsCategoryTypes } from '../../index'
+import clsx from 'clsx'
+import { SKILLS } from '../../constants/skills'
 import styles from './skills.module.scss'
 
-const filteringSkills = (skillCategory: SkillsCategoryTypes) => {
-	if (skillCategory === 'all') {
-		return SKILLS
+const categorySet = new Set<string>()
+
+for (const skill of SKILLS) {
+	if (skill.category) {
+		categorySet.add(skill.category)
 	}
-	return SKILLS.filter((skill) => skill.category === skillCategory)
 }
 
-export const Skills = () => {
-	const [skill, setSkill] = useState(0)
-	const [skillCategory, setSkillCategory] = useState<SkillsCategoryTypes>('all')
-	const filteredSkillsLength = filteringSkills(skillCategory).length
-	const changeSkillCategory = useCallback((checkedSkillCategory: SkillsCategoryTypes) => {
-		setSkill(0)
-		setSkillCategory(checkedSkillCategory)
-	}, [])
-	const nextSkill = () => {
-		setSkill((prevIndex) => (prevIndex + 1) % filteredSkillsLength)
-	}
-	const prevSkill = () => {
-		setSkill((prevIndex) => (prevIndex - 1 + filteredSkillsLength) % filteredSkillsLength)
-	}
-	const { icon } = filteringSkills(skillCategory)[skill] ?? {
-		icon: () => null,
-	}
+const categories = Array.from(categorySet)
 
-	return (
-		<section id={HEADER_LINKS_OPTIONS.SKILLS.PATH} className={styles.skills}>
-			<SectionTitle title='Skills' width='100' positionRight={true} />
-			<SkillsCategory
-				onChangeSkillCategory={changeSkillCategory}
-				currentSkillCategory={skillCategory}
-			/>
-			<Slider nextSlide={nextSkill} prevSlide={prevSkill}>
-				<SkillItem skillIcon={icon} />
-			</Slider>
-		</section>
-	)
-}
+export const Skills = () => (
+	<section id={HEADER_LINKS_OPTIONS.SKILLS.PATH} className={styles.skills}>
+		<SectionTitle title='Skills' width='100' positionRight={true} />
+		<div className={styles.scrollContainer}>
+			{categories.map((category, index) => {
+				category = category.toLowerCase()
+				const filteredSkills = SKILLS.filter(
+					(skill) => skill.category.toLowerCase() === category
+				)
+				const isEven = index % 2 === 0
+
+				return (
+					<div
+						key={category}
+						className={clsx(
+							styles.iconWrapper,
+							{ [styles.toRight]: isEven },
+							{ [styles.toLeft]: !isEven }
+						)}
+					>
+						{filteredSkills.map((skill) => (
+							<div key={skill.name} className={styles.skill}>
+								<div className={styles.skill__icon}>
+									<skill.icon />
+								</div>
+								<h4 className={styles.skill__name}>{skill.name}</h4>
+							</div>
+						))}
+					</div>
+				)
+			})}
+		</div>
+	</section>
+)

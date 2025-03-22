@@ -30,40 +30,44 @@ import {
 	WebStorm,
 } from '../../../../../public/icons'
 
-interface Skill {
-	icon: React.ElementType
+export interface Skill {
+	name: string
 	category: string
+	icon: React.ElementType
 }
-export type SkillsCategoryTypes = 'all' | 'language' | 'styling' | 'tools'
 
 export const SKILLS: Skill[] = [
-	{ icon: HTML, category: 'language' },
-	{ icon: CSS, category: 'styling' },
-	{ icon: JavaScript, category: 'language' },
-	{ icon: TypeScript, category: 'language' },
-	{ icon: React, category: '' },
-	{ icon: NextJS, category: '' },
-	{ icon: Redux, category: '' },
-	{ icon: NodeJS, category: '' },
-	{ icon: NestJS, category: '' },
-	{ icon: AWS, category: '' },
-	{ icon: MongoDB, category: '' },
-	{ icon: Tailwind, category: 'styling' },
-	{ icon: Sass, category: 'styling' },
-	{ icon: Scss, category: 'styling' },
-	{ icon: GraphQL, category: '' },
-	{ icon: Prettier, category: 'tools' },
-	{ icon: ESLint, category: 'tools' },
-	{ icon: Webpack, category: '' },
-	{ icon: MUI, category: '' },
-	{ icon: Git, category: 'tools' },
-	{ icon: GitHub, category: 'tools' },
-	{ icon: Insomnia, category: 'tools' },
-	{ icon: Postman, category: 'tools' },
-	{ icon: WebStorm, category: 'tools' },
-	{ icon: VSCode, category: 'tools' },
-	{ icon: Figma, category: 'tools' },
-	{ icon: Styled, category: 'styling' },
-	{ icon: Socket, category: 'tools' },
-	{ icon: GithubActions, category: 'tools' },
+	{
+		icon: HTML,
+		category: 'basic',
+		name: 'HTML',
+	},
+	{ icon: CSS, category: 'ui', name: 'CSS' },
+	{ icon: JavaScript, category: 'basic', name: 'JavaScript' },
+	{ icon: TypeScript, category: 'basic', name: 'TypeScript' },
+	{ icon: React, category: 'basic', name: 'React.js' },
+	{ icon: NextJS, category: 'basic', name: 'Next.js' },
+	{ icon: Redux, category: 'basic', name: 'Redux' },
+	{ icon: NodeJS, category: 'backend', name: 'Node.js' },
+	{ icon: NestJS, category: 'backend', name: 'Nest.js' },
+	{ icon: AWS, category: 'backend', name: 'AWS' },
+	{ icon: MongoDB, category: 'backend', name: 'MongoDB' },
+	{ icon: Tailwind, category: 'ui', name: 'Tailwind CSS' },
+	{ icon: Sass, category: 'ui', name: 'Sass' },
+	{ icon: Scss, category: 'ui', name: 'Scss' },
+	{ icon: GraphQL, category: 'backend', name: 'GraphQL' },
+	{ icon: Prettier, category: 'tools', name: 'Prettier' },
+	{ icon: ESLint, category: 'tools', name: 'ESLint' },
+	{ icon: Webpack, category: 'basic', name: 'Webpack' },
+	{ icon: MUI, category: 'ui', name: 'MUI' },
+	{ icon: Git, category: 'tools', name: 'Git' },
+	{ icon: GitHub, category: 'tools', name: 'GitHub' },
+	{ icon: Insomnia, category: 'backend', name: 'Insomnia' },
+	{ icon: Postman, category: 'backend', name: 'Postman' },
+	{ icon: WebStorm, category: 'tools', name: 'WebStorm' },
+	{ icon: VSCode, category: 'tools', name: 'VSCode' },
+	{ icon: Figma, category: 'tools', name: 'Figma' },
+	{ icon: Styled, category: 'ui', name: 'Styled Components' },
+	{ icon: Socket, category: 'backend', name: 'Socket.io' },
+	{ icon: GithubActions, category: 'tools', name: 'Github Actions' },
 ]
