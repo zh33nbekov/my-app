@@ -1,3 +1,4 @@
+import { DecorativeElement } from '@/components/UI'
 import { Link } from '@packages/shared'
 import Image from 'next/image'
 import { getGreeting } from '../../index'
@@ -9,14 +10,8 @@ interface IGreeting {
 
 export const Greeting: React.FC<IGreeting> = async ({ locale }) => {
 	const greeting = await getGreeting(locale)
-	const subtitles: string[] = []
-	if (greeting.subtitle) {
-		const subtitle = greeting.subtitle.split(' ')
-		for (let i = 0; i < subtitle.length; i++) {
-			subtitles.push(subtitle[i])
-		}
-	}
-	const [left, right] = subtitles
+	const [left, right] = greeting.subtitle ? greeting.subtitle.split(' ') : ['Rai', 'Zhnb']
+	const isActiveBtns = greeting.buttons && greeting.buttons.isActive
 
 	return (
 		<>
@@ -37,16 +32,15 @@ export const Greeting: React.FC<IGreeting> = async ({ locale }) => {
 						{left} <span>{right}</span>
 					</h4>
 					<p className={styles.greeting__description}>{greeting?.description}</p>
-					<div
-						className={`${styles.greeting__buttons} ${(!greeting?.buttons.isActive || !greeting?.buttons) && styles.isDisabled}`}
-					>
-						<Link href={greeting?.buttons.left.link || ''}>
-							{greeting?.buttons.left.title}
-						</Link>
-						<Link href={greeting?.buttons.right.link || ''}>
-							{greeting?.buttons.right.title}
-						</Link>
-					</div>
+					{isActiveBtns && (
+						<div className={styles.greeting__buttons}>
+							<Link href={greeting?.buttons.left.link}>{greeting?.buttons.left.title}</Link>
+							<Link href={greeting?.buttons.right.link}>
+								{greeting?.buttons.right.title}
+							</Link>
+						</div>
+					)}
+					<DecorativeElement className={styles.decorativeElement} />
 				</section>
 			)}
 		</>

@@ -25,6 +25,7 @@ import {
 	Styled,
 	Tailwind,
 	TypeScript,
+	Vite,
 	VSCode,
 	Webpack,
 	WebStorm,
@@ -70,4 +71,5 @@ export const SKILLS: Skill[] = [
 	{ icon: Styled, category: 'ui', name: 'Styled Components' },
 	{ icon: Socket, category: 'backend', name: 'Socket.io' },
 	{ icon: GithubActions, category: 'tools', name: 'Github Actions' },
+	{ icon: Vite, category: 'basic', name: 'Vite' },
 ]

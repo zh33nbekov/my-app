@@ -1,6 +1,4 @@
-import { memo } from 'react'
-
-export const Close = memo(() => (
+export const Close = () => (
 	<svg
 		width='64px'
 		height='64px'
@@ -40,5 +38,4 @@ export const Close = memo(() => (
 			</g>
 		</g>
 	</svg>
-))
-Close.displayName = 'Close'
+)

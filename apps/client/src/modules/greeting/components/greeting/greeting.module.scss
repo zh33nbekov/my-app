@@ -1,4 +1,5 @@
 .greeting {
+	position: relative;
 	padding: clamp(140px, 122.5px + 5.45vw, 180px) 0 clamp(88px, 69.6px + 5.72vw, 130px) 0;
 	display: flex;
 	flex-direction: column;
@@ -54,23 +55,25 @@
 		display: flex;
 		gap: clamp(27px, 14.8px + 3.81vw, 55px);
 		padding-bottom: clamp(0px, -10.4px + 3.27vw, 24px);
-		&.isDisabled {
-			display: none;
-		}
 		a {
-			border-radius: 24px;
-			font-size: clamp(15px, 12px + 0.95vw, 22px);
+			border-radius: 25px;
+			font-size: clamp(15px, 13.2px + 0.54vw, 19px);
 			font-weight: 500;
 			line-height: 28px;
 			letter-spacing: 0.38px;
 			text-wrap: nowrap;
 			text-transform: capitalize;
-			&:nth-of-type(1) {
-				padding: clamp(10px, 6.5px + 1.09vw, 18px) clamp(10px, 9.1px + 0.27vw, 12px);
-			}
-			&:nth-of-type(2) {
-				padding: clamp(10px, 6.5px + 1.09vw, 18px) clamp(10px, 6.5px + 1.09vw, 18px);
-			}
+			padding: clamp(5px, 2.8px + 0.68vw, 10px);
+			width: clamp(100px, 86.9px + 4.09vw, 130px);
 		}
 	}
+}
+.decorativeElement {
+	background: deeppink;
+	width: 100px;
+	height: 100px;
+	filter: blur(160px);
+	bottom: 300px;
+	left: 50%;
+	transform: translate(-50%);
 }

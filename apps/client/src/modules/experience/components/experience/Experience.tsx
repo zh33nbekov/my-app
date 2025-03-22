@@ -1,19 +1,12 @@
 'use client'
 
 import { SectionTitle } from '@/components'
+import { DecorativeElement } from '@/components/UI'
 import { HEADER_LINKS_OPTIONS } from '@/constants'
 import { Button } from '@packages/shared'
 import { useTranslations } from 'next-intl'
+import { EXPERIENCE_BUTTONS } from '../../constants'
 import styles from './experience.module.scss'
-
-const EXPERIENCE_BUTTONS = [
-	{
-		LABEL: 'Experience',
-	},
-	{
-		LABEL: 'Education',
-	},
-]
 
 export const Experience = () => {
 	const t = useTranslations('Experience')
@@ -26,6 +19,7 @@ export const Experience = () => {
 					<Button key={LABEL}>{t(LABEL)}</Button>
 				))}
 			</div>
+			<DecorativeElement className={styles.decorativeElement} />
 		</section>
 	)
 }

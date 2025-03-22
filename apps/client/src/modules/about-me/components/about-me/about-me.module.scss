@@ -1,6 +1,7 @@
 .aboutMe {
 	padding-bottom: clamp(88px, 47.8px + 12.53vw, 180px);
 	width: 100%;
+	position: relative;
 	&__info {
 		padding-top: clamp(20px, -27.4px + 6.78vw, 44px);
 		width: 100%;

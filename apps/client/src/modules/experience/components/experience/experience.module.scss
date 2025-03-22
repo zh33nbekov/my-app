@@ -1,3 +1,17 @@
 .experience {
+	position: relative;
 	padding-bottom: clamp(88px, 67.9px + 6.27vw, 134px);
+}
+.decorativeElement {
+	background: #8000ff80;
+	width: clamp(55px, 35.3px + 6.13vw, 100px);
+	height: clamp(55px, 35.3px + 6.13vw, 100px);
+	filter: blur(100px);
+	top: 55px;
+	right: 0;
+	@media (max-width: 440px) {
+		& {
+			filter: blur(77px);
+		}
+	}
 }

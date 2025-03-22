@@ -1,6 +1,4 @@
-import { memo } from 'react'
-
-export const Chat = memo(() => (
+export const Chat = () => (
 	<svg
 		width='64px'
 		height='64px'
@@ -26,6 +24,4 @@ export const Chat = memo(() => (
 			></path>
 		</g>
 	</svg>
-))
-
-Chat.displayName = 'Chat'
+)
