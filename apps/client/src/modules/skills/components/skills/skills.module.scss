@@ -11,21 +11,24 @@
 
 .iconWrapper {
 	padding: 10px 0;
-	width: 100%;
 	display: flex;
-	gap: clamp(15px, 10.6px + 1.36vw, 25px);
 	margin: clamp(15px, 10.6px + 1.36vw, 25px) 0;
+	gap: clamp(15px, 10.6px + 1.36vw, 25px);
+	width: max-content;
+	white-space: nowrap;
 	&:first-of-type {
 		margin-top: 0;
 	}
 	&:last-of-type {
 		margin-bottom: 0;
 	}
+
 	&.toRight {
-		animation: scrollToRight 20s alternate infinite; /* Анимация прокрутки */
+		animation: infiniteScrollRight 20s alternate infinite;
 	}
+
 	&.toLeft {
-		animation: scrollToLeft 20s alternate infinite; /* Анимация прокрутки */
+		animation: infiniteScrollLeft 20s alternate infinite;
 	}
 }
 
@@ -48,24 +51,6 @@
 	}
 }
 
-@keyframes scrollToLeft {
-	0% {
-		transform: translateX(0);
-	}
-	100% {
-		transform: translateX(-50%);
-	}
-}
-
-@keyframes scrollToRight {
-	0% {
-		transform: translateX(-100%);
-	}
-	100% {
-		transform: translateX(0);
-	}
-}
-
 .decorativeElement {
 	background: #8000ff80;
 	filter: blur(55px);
@@ -77,5 +62,23 @@
 		& {
 			filter: blur(49px);
 		}
+	}
+}
+
+@keyframes infiniteScrollLeft {
+	0% {
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(-50%);
+	}
+}
+
+@keyframes infiniteScrollRight {
+	0% {
+		transform: translateX(-50%);
+	}
+	100% {
+		transform: translateX(0);
 	}
 }

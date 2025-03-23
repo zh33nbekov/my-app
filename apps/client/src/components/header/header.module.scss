@@ -10,9 +10,12 @@
 	&__list {
 		display: flex;
 		gap: clamp(10px, 5.2px + 0.93vw, 15px);
-		&:hover > li > a:not(:hover) {
+		&:hover a:not(:hover) {
 			transition: opacity 0.22s ease-in-out;
 			opacity: 0.7;
+		}
+		& a {
+			transition: opacity 0.22s ease-in-out;
 		}
 	}
 	&__item {
