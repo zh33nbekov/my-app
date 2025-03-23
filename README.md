@@ -11,4 +11,4 @@
 🛠️ Технологии
 
 Frontend - Next.js (App Router) / TypeScript (задеплоен на vercel.com)
-Backend - Node.js / Express.js / MongoDB (исходный код в репозитории portfolio-server) (задеплоен в AWS EC2 экземпляр)
+Backend - Node.js / Express.js / MongoDB [исходный код](https://github.com/zh33nbekov/portfolio-server) (задеплоен в AWS EC2 экземпляр)
