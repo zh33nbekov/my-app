@@ -5,7 +5,7 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	color: rgb(255, 255, 255);
+	color: var(--text-color);
 	&__image {
 		width: clamp(178px, 81.2px + 30.25vw, 400px);
 		height: clamp(178px, 81.2px + 30.25vw, 400px);
@@ -69,7 +69,7 @@
 	}
 }
 .decorativeElement {
-	background: #8000ff80;
+	background-color: var(--decor-elem-bg-color);
 	width: clamp(88px, 60.9px + 8.45vw, 150px);
 	height: clamp(88px, 60.9px + 8.45vw, 150px);
 	filter: blur(111px);

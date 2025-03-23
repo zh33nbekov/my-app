@@ -69,11 +69,30 @@
 	font-style: normal;
 }
 
+:root {
+	--bg-color: #232732;
+	--text-color: #ffffff;
+	--primary-color: #1e90ff;
+	--secondary-color: #a0a0a0;
+	--decor-elem-bg-color: #8000ff80;
+}
+
+[data-theme='light'] {
+	--bg-color: #d9d7e0;
+	--text-color: #000;
+	--primary-color: #007bff;
+	--secondary-color: #6c757d;
+	--decor-elem-bg-color: lime;
+}
+
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 	font-family: 'TildaSans', Arial, sans-serif;
+	transition:
+		color 0.25s ease,
+		background-color 0.25s ease;
 }
 
 input,
@@ -106,7 +125,7 @@ section {
 	scroll-margin-top: 75px;
 }
 body {
-	background-color: #232732;
+	background-color: var(--bg-color);
 	box-shadow:
 		inset 10px 10px 20px 0px rgba(0, 0, 0, 0.25),
 		inset -10px -10px 20px 0px rgba(0, 0, 0, 0.25);
@@ -116,25 +135,4 @@ body {
 	max-width: 1054px;
 	margin: 0 auto;
 	padding: 0 15px;
-}
-.decorativeElement {
-	width: 100px;
-	height: 100px;
-	border-radius: 50%;
-	filter: blur(55px);
-	animation: changeColor 5s infinite alternate ease-in-out;
-}
-@keyframes changeColor {
-	0% {
-		background: rgba(128, 0, 255, 0.5);
-	}
-	33% {
-		background: rgba(0, 128, 255, 0.5);
-	}
-	66% {
-		background: rgba(255, 0, 128, 0.5);
-	}
-	100% {
-		background: rgba(128, 0, 255, 0.5);
-	}
 }

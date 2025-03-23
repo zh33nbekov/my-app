@@ -27,7 +27,7 @@
 	}
 	&__description {
 		max-width: 455px;
-		color: #fff;
+		color: var(--text-color);
 		font-size: clamp(17.5px, 15.9px + 0.48vw, 21px);
 		font-weight: 300;
 		line-height: 28px;
@@ -49,7 +49,7 @@
 	}
 }
 .decorativeElement {
-	background-color: #8000ff80;
+	background-color: var(--decor-elem-bg-color);
 	width: clamp(111px, 62.6px + 15.12vw, 222px);
 	height: clamp(111px, 62.6px + 15.12vw, 222px);
 	top: 180px;

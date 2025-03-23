@@ -41,7 +41,7 @@
 	}
 }
 .decorativeElement {
-	background: #8000ff80;
+	background-color: var(--decor-elem-bg-color);
 	filter: blur(55px);
 	width: clamp(77px, 66.9px + 3.13vw, 100px);
 	height: clamp(77px, 66.9px + 3.13vw, 100px);
