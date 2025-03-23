@@ -26,6 +26,12 @@ const RootLayout = async ({
 
 	return (
 		<html lang={locale}>
+			<head>
+				<meta
+					name='google-site-verification'
+					content='-XSHcvYW9aSRgltL_Wdm_qJbpv2x17coxuQ-22fp5jc'
+				/>
+			</head>
 			<body style={{ overflow: 'hidden' }}>
 				<NextIntlClientProvider locale={locale}>
 					<AppLayout>{children}</AppLayout>

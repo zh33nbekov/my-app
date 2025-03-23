@@ -40,7 +40,6 @@ export const About = () => {
 	)
 
 	const enableEditing = useCallback((field: EditAboutFields) => {
-		console.log(field)
 		setEdit((prev) => ({ ...prev, [field]: true }))
 	}, [])
 
