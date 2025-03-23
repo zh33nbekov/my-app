@@ -1,4 +1,5 @@
 import { SectionTitle } from '@/components'
+import { DecorativeElement } from '@/components/UI'
 import { HEADER_LINKS_OPTIONS } from '@/constants'
 import Image from 'next/image'
 import { FeedbackForm, getContact } from '../../index'
@@ -16,6 +17,7 @@ export const ContactMe = async () => {
 				</div>
 				<FeedbackForm />
 			</div>
+			<DecorativeElement className={styles.decorativeElement} />
 		</section>
 	)
 }

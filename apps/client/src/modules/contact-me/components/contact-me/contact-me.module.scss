@@ -1,4 +1,5 @@
 .contactMe {
+	position: relative;
 	padding-bottom: clamp(88px, 53.5px + 10.76vw, 167px);
 	&__content {
 		padding-top: clamp(44px, 14.7px + 9.13vw, 111px);
@@ -36,6 +37,19 @@
 			img {
 				width: 100%;
 			}
+		}
+	}
+}
+.decorativeElement {
+	background: #8000ff80;
+	filter: blur(55px);
+	width: clamp(77px, 66.9px + 3.13vw, 100px);
+	height: clamp(77px, 66.9px + 3.13vw, 100px);
+	top: 0;
+	left: 0;
+	@media (max-width: 440px) {
+		& {
+			filter: blur(49px);
 		}
 	}
 }

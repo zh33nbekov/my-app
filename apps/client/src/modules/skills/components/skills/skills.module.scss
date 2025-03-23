@@ -1,4 +1,5 @@
 .skills {
+	position: relative;
 	padding-bottom: clamp(88px, 72.3px + 4.9vw, 124px);
 }
 .scrollContainer {
@@ -62,5 +63,19 @@
 	}
 	100% {
 		transform: translateX(0);
+	}
+}
+
+.decorativeElement {
+	background: #8000ff80;
+	filter: blur(55px);
+	width: clamp(77px, 66.9px + 3.13vw, 100px);
+	height: clamp(77px, 66.9px + 3.13vw, 100px);
+	top: 0;
+	right: 0;
+	@media (max-width: 440px) {
+		& {
+			filter: blur(49px);
+		}
 	}
 }

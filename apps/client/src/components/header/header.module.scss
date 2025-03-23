@@ -38,6 +38,9 @@
 			color: #cc6ce7;
 			font-size: 16px;
 		}
+		label {
+			color: #fff;
+		}
 	}
 	&__burger {
 		width: clamp(35px, 32.8px + 0.68vw, 40px);

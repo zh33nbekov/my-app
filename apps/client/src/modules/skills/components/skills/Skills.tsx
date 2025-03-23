@@ -1,6 +1,7 @@
 'use client'
 
 import { SectionTitle } from '@/components'
+import { DecorativeElement } from '@/components/UI'
 import { HEADER_LINKS_OPTIONS } from '@/constants'
 import clsx from 'clsx'
 import { SKILLS } from '../../constants/skills'
@@ -32,8 +33,8 @@ export const Skills = () => (
 						key={category}
 						className={clsx(
 							styles.iconWrapper,
-							{ [styles.toRight]: isEven },
-							{ [styles.toLeft]: !isEven }
+							{ [styles.toLeft]: isEven },
+							{ [styles.toRight]: !isEven }
 						)}
 					>
 						{filteredSkills.map((skill) => (
@@ -48,5 +49,6 @@ export const Skills = () => (
 				)
 			})}
 		</div>
+		<DecorativeElement className={styles.decorativeElement} />
 	</section>
 )

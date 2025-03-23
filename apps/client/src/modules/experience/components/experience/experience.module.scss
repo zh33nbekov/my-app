@@ -4,14 +4,14 @@
 }
 .decorativeElement {
 	background: #8000ff80;
-	width: clamp(55px, 35.3px + 6.13vw, 100px);
-	height: clamp(55px, 35.3px + 6.13vw, 100px);
-	filter: blur(100px);
+	filter: blur(55px);
+	width: clamp(77px, 66.9px + 3.13vw, 100px);
+	height: clamp(77px, 66.9px + 3.13vw, 100px);
 	top: 55px;
 	right: 0;
 	@media (max-width: 440px) {
 		& {
-			filter: blur(77px);
+			filter: blur(49px);
 		}
 	}
 }

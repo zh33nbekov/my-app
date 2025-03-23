@@ -21,16 +21,7 @@ export const AboutMe: React.FC<IAboutMe> = async ({ locale }) => {
 				</div>
 				<p className={styles.aboutMe__description}>{about?.description}</p>
 			</div>
-			<DecorativeElement
-				style={{
-					background: '#ce6ce7',
-					width: '150px',
-					height: '150px',
-					filter: 'blur(140px)',
-					top: '200px',
-					right: '130px',
-				}}
-			/>
+			<DecorativeElement className={styles.decorativeElement} />
 		</section>
 	)
 }

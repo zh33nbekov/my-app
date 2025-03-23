@@ -4,27 +4,14 @@
 }
 .decorativeElement {
 	background: #8000ff80;
-	width: clamp(55px, 35.3px + 6.13vw, 100px);
-	height: clamp(55px, 35.3px + 6.13vw, 100px);
-	filter: blur(100px);
+	filter: blur(55px);
+	width: clamp(77px, 66.9px + 3.13vw, 100px);
+	height: clamp(77px, 66.9px + 3.13vw, 100px);
 	top: 0;
 	left: 0;
 	@media (max-width: 440px) {
 		& {
-			filter: blur(55px);
+			filter: blur(49px);
 		}
-	}
-}
-.decorative {
-	width: clamp(63px, 42px + 6.54vw, 111px);
-	height: clamp(63px, 42px + 6.54vw, 111px);
-	border-radius: 50%;
-	filter: blur(55px);
-	background: #8000ff80;
-	transition:
-		top 1.5s ease-in-out,
-		left 1.5s ease-in-out;
-	@media (max-width: 440px) {
-		filter: blur(44px);
 	}
 }

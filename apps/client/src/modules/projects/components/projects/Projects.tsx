@@ -9,7 +9,7 @@ import styles from './projects.module.scss'
 export const Projects = () => (
 	<>
 		<section id={HEADER_LINKS_OPTIONS.PROJECTS.PATH} className={styles.projects}>
-			<DecorativeElement className={styles.decorativeElement} style={{ top: '' }} />
+			<DecorativeElement className={styles.decorativeElement} />
 			<SectionTitle title='Projects' width='0' />
 			<ProjectsButtons />
 		</section>

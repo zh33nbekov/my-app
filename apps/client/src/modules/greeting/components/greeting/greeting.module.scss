@@ -69,11 +69,28 @@
 	}
 }
 .decorativeElement {
-	background: deeppink;
-	width: 100px;
-	height: 100px;
-	filter: blur(160px);
-	bottom: 300px;
-	left: 50%;
-	transform: translate(-50%);
+	background: #8000ff80;
+	width: clamp(88px, 60.9px + 8.45vw, 150px);
+	height: clamp(88px, 60.9px + 8.45vw, 150px);
+	filter: blur(111px);
+	&.first {
+		bottom: 440px;
+		right: 244px;
+	}
+	&.second {
+		bottom: 222px;
+		left: 111px;
+	}
+	@media (max-width: 580px) {
+		filter: blur(77px);
+		&.first {
+			right: 66px;
+		}
+		&.second {
+			left: 0;
+		}
+	}
+	@media (max-width: 440px) {
+		filter: blur(77px);
+	}
 }

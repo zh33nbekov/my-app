@@ -36,8 +36,6 @@ const eslintConfig = [
 			'./apps/client/dist/',
 			'./apps/admin/build/',
 			'./apps/admin/dist/',
-			'./packages/shared/build/',
-			'./packages/shared/dist/',
 		],
 	}),
 ]

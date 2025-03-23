@@ -40,7 +40,8 @@ export const Greeting: React.FC<IGreeting> = async ({ locale }) => {
 							</Link>
 						</div>
 					)}
-					<DecorativeElement className={styles.decorativeElement} />
+					<DecorativeElement className={`${styles.decorativeElement} ${styles.first}`} />
+					<DecorativeElement className={`${styles.decorativeElement} ${styles.second}`} />
 				</section>
 			)}
 		</>
