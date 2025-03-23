@@ -12,7 +12,6 @@ import { BurgerMenu, Close } from '../../../public/icons'
 import { HeaderMap } from '../header-map/HeaderMap'
 import { LanguageSwitcher } from '../language-switcher/LanguageSwitcher'
 import styles from './header.module.scss'
-import ThemeSwitcher from '../theme-switcher/ThemeSwitcher'
 
 const Backdrop = dynamic(() => import('../UI').then((module) => module.Backdrop), {
 	ssr: false,
