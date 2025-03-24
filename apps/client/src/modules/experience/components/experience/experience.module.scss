@@ -1,6 +1,11 @@
 .experience {
 	position: relative;
 	padding-bottom: clamp(88px, 67.9px + 6.27vw, 134px);
+	&__tab {
+		height: 200px;
+		background-color: rgba(0, 0, 0, 0.3);
+		border-radius: 20px;
+	}
 }
 .decorativeElement {
 	background-color: var(--decor-elem-bg-color);

@@ -14,6 +14,7 @@ export const AboutMe: React.FC<IAboutMe> = async ({ locale }) => {
 
 	return (
 		<section id={HEADER_LINKS_OPTIONS.ABOUT.PATH} className={styles.aboutMe}>
+			<DecorativeElement className={`${styles.decorativeElement} ${styles.first}`} />
 			<SectionTitle title='AboutMe' width='100' positionRight />
 			<div className={styles.aboutMe__info}>
 				<div className={styles.aboutMe__image}>
@@ -21,7 +22,7 @@ export const AboutMe: React.FC<IAboutMe> = async ({ locale }) => {
 				</div>
 				<p className={styles.aboutMe__description}>{about?.description}</p>
 			</div>
-			<DecorativeElement className={styles.decorativeElement} />
+			<DecorativeElement className={`${styles.decorativeElement} ${styles.second}`} />
 		</section>
 	)
 }

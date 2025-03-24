@@ -14,5 +14,8 @@
 	"keywords": [],
 	"author": "Rai",
 	"license": "ISC",
-	"description": ""
+	"description": "",
+	"dependencies": {
+		"clsx": "^2.1.1"
+	}
 }

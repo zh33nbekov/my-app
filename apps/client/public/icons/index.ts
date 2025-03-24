@@ -1,6 +1,7 @@
 export { Chat } from './common/Chat'
 export { Close } from './common/Close'
 export { BurgerMenu } from './header/BurgerMenu'
+export { Resume } from './header/Resume'
 export { AWS } from './skills/AWS'
 export { CSS } from './skills/CSS'
 export { ESLint } from './skills/ESLint'

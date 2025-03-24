@@ -1,14 +1,14 @@
 'use client'
 
 import { HEADER_LINKS } from '@/constants'
-import { Button } from '@packages/shared'
+import { Button, Link } from '@packages/shared'
 import clsx from 'clsx'
 import { useLocale, useTranslations } from 'next-intl'
 import dynamic from 'next/dynamic'
-import Link from 'next/link'
+import { default as NextLink } from 'next/link'
 import { useRouter } from 'next/navigation'
 import { useCallback, useState } from 'react'
-import { BurgerMenu, Close } from '../../../public/icons'
+import { BurgerMenu, Close, Resume } from '../../../public/icons'
 import { HeaderMap } from '../header-map/HeaderMap'
 import { LanguageSwitcher } from '../language-switcher/LanguageSwitcher'
 import styles from './header.module.scss'
@@ -58,20 +58,23 @@ export const Header = () => {
 				<ul className={styles.header__list}>
 					{HEADER_LINKS.map(({ label, path }) => (
 						<li key={label} className={styles.header__item}>
-							<Link
+							<NextLink
 								href={`#${path}`}
 								className={clsx(styles.header__link, {
 									[styles.active]: 'about' === path,
 								})}
 							>
 								{tHeader(label)}
-							</Link>
+							</NextLink>
 						</li>
 					))}
 				</ul>
 			</nav>
 			<div className={styles.header__actions}>
 				<LanguageSwitcher language={language} onChangeLanguage={changeLanguage} />
+				<Link href='' className={styles.header__resume}>
+					<Resume />
+				</Link>
 				<Button
 					className={styles.header__burger}
 					active={isVisible}
@@ -93,14 +96,14 @@ export const Header = () => {
 							<ul className={styles.header__mobileList}>
 								{HEADER_LINKS.map(({ label, path }) => (
 									<li key={label} className={styles.header__mobileItem}>
-										<Link
+										<NextLink
 											href={`#${path}`}
 											className={clsx(styles.header__mobileLink, {
 												[styles.active]: '',
 											})}
 										>
 											{tHeader(label)}
-										</Link>
+										</NextLink>
 									</li>
 								))}
 							</ul>

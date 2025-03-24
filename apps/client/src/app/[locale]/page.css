@@ -90,9 +90,6 @@
 	padding: 0;
 	box-sizing: border-box;
 	font-family: 'TildaSans', Arial, sans-serif;
-	transition:
-		color 0.25s ease,
-		background-color 0.25s ease;
 }
 
 input,

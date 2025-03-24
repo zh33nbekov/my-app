@@ -5,8 +5,7 @@ import { Button, Input, showSuccessToast, Textarea } from '@packages/shared'
 import { useTranslations } from 'next-intl'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
-import { FEEDBACK_FORM_INPUTS } from '../../constants'
-import { feedbackSchema, FeedbackShema, sendFeedback } from '../../index'
+import { FEEDBACK_FORM_INPUTS, feedbackSchema, FeedbackShema, sendFeedback } from '../../index'
 import styles from './feedback-form.module.scss'
 
 export const FeedbackForm: React.FC = () => {

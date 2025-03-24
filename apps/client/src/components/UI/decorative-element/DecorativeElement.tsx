@@ -1,5 +1,3 @@
-'use client'
-
 import styles from './decorative-element.module.scss'
 
 type Position = Pick<React.CSSProperties, 'position'>['position']
