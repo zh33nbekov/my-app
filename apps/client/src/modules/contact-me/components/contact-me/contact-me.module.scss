@@ -15,7 +15,8 @@
 		box-shadow:
 			25px 25px 60px 0px rgba(0, 0, 0, 0.25),
 			-25px -25px 60px 0px rgba(255, 255, 255, 0.25);
-		background: linear-gradient(-40.06deg, rgb(35, 39, 50) 14.728%, rgb(35, 39, 50) 95.822%);
+		// background: linear-gradient(-40.06deg, rgb(35, 39, 50) 14.728%, rgb(35, 39, 50) 95.822%);
+		background-color: rgba(50, 50, 80, 0.5);
 		display: flex;
 		justify-content: center;
 		overflow: hidden;
@@ -41,7 +42,7 @@
 	}
 }
 .decorativeElement {
-	background-color: var(--decor-elem-bg-color);
+	background-color: var(--decor_elem-bg_color);
 	filter: blur(55px);
 	width: clamp(77px, 66.9px + 3.13vw, 100px);
 	height: clamp(77px, 66.9px + 3.13vw, 100px);

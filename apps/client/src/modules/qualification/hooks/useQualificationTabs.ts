@@ -1,9 +1,9 @@
 'use client'
 
 import { useState } from 'react'
-import { EXPERIENCE_TABS } from '../index'
+import { QUALIFICATION_TABS } from '../constants'
 
-export const useExperienceTabs = () => {
+export const useQualificationTabs = () => {
 	const [isActiveTab, setActiveTab] = useState(0)
 
 	const changeActiveTabHandler = (index: number) => {
@@ -13,6 +13,6 @@ export const useExperienceTabs = () => {
 	return {
 		active: isActiveTab,
 		changeActiveTabHandler,
-		ActiveTab: EXPERIENCE_TABS[isActiveTab].сomponent,
+		ActiveTab: QUALIFICATION_TABS[isActiveTab].component,
 	}
 }

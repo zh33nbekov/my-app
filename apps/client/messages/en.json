@@ -1,21 +1,17 @@
 {
-	"Translations": {
-		"english": "English",
-		"russian": "Russian"
-	},
 	"Header": {
 		"Contact": "Contact",
 		"About": "About",
 		"Projects": "Projects",
 		"Skills": "Skills",
-		"Experience": "Experience"
+		"Qualification": "Qualification"
 	},
 	"SectionTitles": {
 		"AboutMe": "About me",
 		"Skills": "Skills",
 		"Projects": "Projects",
 		"ContactMe": "Contact me",
-		"Experience": "Experience",
+		"Qualification": "Qualification",
 		"Certifications": "Certifications"
 	},
 	"FeedbackForm": {
@@ -37,7 +33,7 @@
 		"textAreaPlaceholder": "Enter a message...",
 		"inputPlaceholder": "Enter your name..."
 	},
-	"Experience": {
+	"Qualification": {
 		"Experience": "Experience",
 		"Education": "Education"
 	}

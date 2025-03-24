@@ -1,6 +1,6 @@
 interface HeaderLinks {
-	label: 'Contact' | 'About' | 'Projects' | 'Skills' | 'Experience'
-	path: 'contact' | 'about' | 'projects' | 'skills' | 'experience'
+	label: 'Contact' | 'About' | 'Projects' | 'Skills' | 'Qualification'
+	path: 'contact' | 'about' | 'projects' | 'skills' | 'qualification'
 }
 
 export const HEADER_LINKS_OPTIONS = {
@@ -16,9 +16,9 @@ export const HEADER_LINKS_OPTIONS = {
 		LABEL: 'Skills',
 		PATH: 'skills',
 	},
-	EXPERIENCE: {
-		LABEL: 'Experience',
-		PATH: 'experience',
+	QUALIFICATION: {
+		LABEL: 'Qualification',
+		PATH: 'qualification',
 	},
 	CONTACT: {
 		LABEL: 'Contact',
@@ -40,8 +40,8 @@ export const HEADER_LINKS: HeaderLinks[] = [
 		path: HEADER_LINKS_OPTIONS.SKILLS.PATH,
 	},
 	{
-		label: HEADER_LINKS_OPTIONS.EXPERIENCE.LABEL,
-		path: HEADER_LINKS_OPTIONS.EXPERIENCE.PATH,
+		label: HEADER_LINKS_OPTIONS.QUALIFICATION.LABEL,
+		path: HEADER_LINKS_OPTIONS.QUALIFICATION.PATH,
 	},
 	{
 		label: HEADER_LINKS_OPTIONS.CONTACT.LABEL,

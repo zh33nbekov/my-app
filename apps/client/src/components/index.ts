@@ -1,3 +1,5 @@
+export * from './canvas/network-canvas/NetworkCanvas'
+export * from './canvas/organic-flow-canvas/OrganicFlowCanvas'
 export * from './header-drawer/HeaderDrawer'
 export * from './header-map/HeaderMap'
 export * from './header/Header'

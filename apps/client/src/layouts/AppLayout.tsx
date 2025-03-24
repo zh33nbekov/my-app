@@ -1,8 +1,12 @@
-import { Header } from '@/components'
+import { Header, NetworkCanvas } from '@/components'
 import { Loading } from '@/components/UI/index'
 import { ToastifyProvider } from '@packages/shared'
 
-const AppLayout = ({ children }: { children: React.ReactNode }) => (
+interface IAppLayout {
+	children: React.ReactNode
+}
+
+const AppLayout = ({ children }: IAppLayout) => (
 	<>
 		<Loading />
 		<ToastifyProvider />
@@ -11,6 +15,7 @@ const AppLayout = ({ children }: { children: React.ReactNode }) => (
 		<div id='chat' />
 		<div id='backdrop' />
 		<div id='header-drawer' />
+		<NetworkCanvas />
 	</>
 )
 

@@ -1,6 +1,0 @@
-export * from './components/education-tab/EducationTab'
-export * from './components/experience-tab/ExperienceTab'
-export * from './components/experience/Experience'
-export * from './constants'
-export * from './hooks/useExperienceTabs'
-export type * from './types'

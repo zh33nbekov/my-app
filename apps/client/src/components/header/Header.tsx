@@ -1,7 +1,7 @@
 'use client'
 
 import { HEADER_LINKS } from '@/constants'
-import { Button, Link } from '@packages/shared'
+import { Button } from '@packages/shared'
 import clsx from 'clsx'
 import { useLocale, useTranslations } from 'next-intl'
 import dynamic from 'next/dynamic'
@@ -72,9 +72,15 @@ export const Header = () => {
 			</nav>
 			<div className={styles.header__actions}>
 				<LanguageSwitcher language={language} onChangeLanguage={changeLanguage} />
-				<Link href='' className={styles.header__resume}>
+				<a
+					download={true}
+					href='/rai-zheenbekov.pdf'
+					aria-label='Download my resume'
+					className={styles.header__resume}
+				>
+					<span className={styles.srOnly}>Download my resume</span>
 					<Resume />
-				</Link>
+				</a>
 				<Button
 					className={styles.header__burger}
 					active={isVisible}

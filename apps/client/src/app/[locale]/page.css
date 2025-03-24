@@ -74,15 +74,7 @@
 	--text-color: #ffffff;
 	--primary-color: #1e90ff;
 	--secondary-color: #a0a0a0;
-	--decor-elem-bg-color: #8000ff80;
-}
-
-[data-theme='light'] {
-	--bg-color: #d9d7e0;
-	--text-color: #000;
-	--primary-color: #007bff;
-	--secondary-color: #6c757d;
-	--decor-elem-bg-color: lime;
+	--decor_elem-bg_color: #8000ff80;
 }
 
 * {
@@ -123,6 +115,7 @@ section {
 }
 body {
 	background-color: var(--bg-color);
+	background-color: #000;
 	box-shadow:
 		inset 10px 10px 20px 0px rgba(0, 0, 0, 0.25),
 		inset -10px -10px 20px 0px rgba(0, 0, 0, 0.25);

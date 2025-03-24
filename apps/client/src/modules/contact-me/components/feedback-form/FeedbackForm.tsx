@@ -1,5 +1,6 @@
 'use client'
 
+import { DecorativeElement } from '@/components/UI'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Button, Input, showSuccessToast, Textarea } from '@packages/shared'
 import { useTranslations } from 'next-intl'
@@ -56,6 +57,7 @@ export const FeedbackForm: React.FC = () => {
 			<Button className={styles.feedbackForm__submit} type='submit' isLoading={isLoading}>
 				{t('send')}
 			</Button>
+			<DecorativeElement className={styles.decorativeElement} />
 		</form>
 	)
 }

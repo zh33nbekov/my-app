@@ -7,6 +7,7 @@ interface ILanguageSwitcher {
 
 export const LanguageSwitcher: React.FC<ILanguageSwitcher> = (props) => (
 	<select
+		aria-label='Language'
 		id='language'
 		name='language'
 		value={props.language}

@@ -1,23 +1,57 @@
+// .inputBox {
+// 	width: 100%;
+// 	height: clamp(68.5px, 56.9px + 3.61vw, 95px);
+// 	&__input {
+// 		width: 100%;
+// 		border-radius: 12px;
+// 		box-shadow:
+// 			inset 4px 4px 10px 0px rgba(26, 28, 37, 0.9),
+// 			inset -4px -4px 8px 0px rgba(44, 50, 64, 0.9),
+// 			inset 4px -4px 8px 0px rgba(26, 28, 37, 0.2),
+// 			inset -4px 4px 8px 0px rgba(26, 28, 37, 0.2),
+// 			-1px -1px 2px 0px rgba(26, 28, 37, 0.5),
+// 			1px 1px 2px 0px rgba(44, 50, 64, 0.3);
+// 		background: rgb(35, 39, 50);
+// 		color: rgba(255, 255, 255, 0.5);
+// 		font-size: clamp(16px, 13.3px + 0.82vw, 22px);
+// 		font-weight: 500;
+// 		line-height: 24px;
+// 		letter-spacing: 0.38px;
+// 		padding: 10px;
+// 	}
+// 	&__error {
+// 		padding-top: clamp(2px, 0.6px + 0.41vw, 5px);
+// 		font-size: clamp(15px, 14.5px + 0.14vw, 16px);
+// 		color: red;
+// 		display: block;
+// 		font-weight: 400;
+// 	}
+// }
+
 .inputBox {
 	width: 100%;
 	height: clamp(68.5px, 56.9px + 3.61vw, 95px);
 	&__input {
 		width: 100%;
 		border-radius: 12px;
-		box-shadow:
-			inset 4px 4px 10px 0px rgba(26, 28, 37, 0.9),
-			inset -4px -4px 8px 0px rgba(44, 50, 64, 0.9),
-			inset 4px -4px 8px 0px rgba(26, 28, 37, 0.2),
-			inset -4px 4px 8px 0px rgba(26, 28, 37, 0.2),
-			-1px -1px 2px 0px rgba(26, 28, 37, 0.5),
-			1px 1px 2px 0px rgba(44, 50, 64, 0.3);
-		background: rgb(35, 39, 50);
-		color: rgba(255, 255, 255, 0.5);
+		color: #fff;
 		font-size: clamp(16px, 13.3px + 0.82vw, 22px);
 		font-weight: 500;
 		line-height: 24px;
 		letter-spacing: 0.38px;
 		padding: 10px;
+		background-color: rgba(50, 50, 80, 0.5);
+		border: 1px solid rgba(100, 100, 150, 0.3);
+		transition: all 0.3s ease;
+		&:focus {
+			outline: none;
+			border-color: rgba(100, 150, 255, 0.7);
+			box-shadow: 0 0 10px rgba(100, 150, 255, 0.3);
+		}
+
+		&::placeholder {
+			color: rgba(255, 255, 255, 0.6);
+		}
 	}
 	&__error {
 		padding-top: clamp(2px, 0.6px + 0.41vw, 5px);

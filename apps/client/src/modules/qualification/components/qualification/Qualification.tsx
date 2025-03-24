@@ -5,18 +5,18 @@ import { DecorativeElement } from '@/components/UI'
 import { HEADER_LINKS_OPTIONS } from '@/constants'
 import { Button } from '@packages/shared'
 import { useTranslations } from 'next-intl'
-import { EXPERIENCE_TABS, useExperienceTabs } from '../../index'
-import styles from './experience.module.scss'
+import { QUALIFICATION_TABS, useQualificationTabs } from '../../index'
+import styles from './qualification.module.scss'
 
-export const Experience = () => {
-	const t = useTranslations('Experience')
-	const { active, changeActiveTabHandler, ActiveTab } = useExperienceTabs()
+export const Qualification = () => {
+	const t = useTranslations('Qualification')
+	const { active, changeActiveTabHandler, ActiveTab } = useQualificationTabs()
 
 	return (
-		<section id={HEADER_LINKS_OPTIONS.EXPERIENCE.PATH} className={styles.experience}>
-			<SectionTitle title='Experience' width='100' positionRight />
+		<section id={HEADER_LINKS_OPTIONS.QUALIFICATION.PATH} className={styles.qualification}>
+			<SectionTitle title='Qualification' width='100' positionRight />
 			<div style={{ display: 'flex', gap: '44px', paddingTop: '44px' }}>
-				{EXPERIENCE_TABS.map(({ label }, index) => (
+				{QUALIFICATION_TABS.map(({ label }, index) => (
 					<Button
 						key={label}
 						active={active === index}
@@ -26,7 +26,7 @@ export const Experience = () => {
 					</Button>
 				))}
 			</div>
-			<div className={styles.experience__tab}>
+			<div className={styles.qualification__tab}>
 				<ActiveTab />
 			</div>
 			<DecorativeElement className={styles.decorativeElement} />

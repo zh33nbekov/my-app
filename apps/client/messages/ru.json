@@ -1,21 +1,17 @@
 {
-	"Translations": {
-		"english": "Английский",
-		"russian": "Русский"
-	},
 	"Header": {
 		"Contact": "Связаться",
 		"About": "Обо мне",
 		"Projects": "Проекты",
 		"Skills": "Навыки",
-		"Experience": "Опыт"
+		"Qualification": "Квалификация"
 	},
 	"SectionTitles": {
 		"AboutMe": "Обо мне",
 		"Skills": "Навыки",
 		"Projects": "Проекты",
 		"ContactMe": "Связаться",
-		"Experience": "Опыт",
+		"Qualification": "Квалификация",
 		"Certifications": "Сертификаты"
 	},
 	"FeedbackForm": {
@@ -37,7 +33,7 @@
 		"textAreaPlaceholder": "Введите сообщение...",
 		"inputPlaceholder": "Введите свое имя..."
 	},
-	"Experience": {
+	"Qualification": {
 		"Experience": "Опыт",
 		"Education": "Образование"
 	}
