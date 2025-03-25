@@ -23,9 +23,7 @@ export const Chat = () => {
 		setMounted(true)
 		setChatRoot(document.getElementById('chat'))
 
-		return () => {
-			setMounted(false)
-		}
+		return () => setMounted(false)
 	}, [])
 
 	const handleMessageChange = () => {
@@ -50,9 +48,7 @@ export const Chat = () => {
 	// 	[username, sendMessage, sendUsername, message]
 	// )
 
-	if (!isMounted) return null
-
-	if (!chatRoot) return null
+	if (!isMounted || !chatRoot) return null
 
 	return createPortal(
 		<div className={clsx(styles.chat, { [styles['disabled']]: !isChatVisible })}>

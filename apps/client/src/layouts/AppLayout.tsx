@@ -1,4 +1,4 @@
-import { Header, NetworkCanvas } from '@/components'
+import { Header, NetworkCanvas, SocialLinks } from '@/components'
 import { Loading } from '@/components/UI/index'
 import { ToastifyProvider } from '@packages/shared'
 
@@ -8,14 +8,16 @@ interface IAppLayout {
 
 const AppLayout = ({ children }: IAppLayout) => (
 	<>
-		<Loading />
-		<ToastifyProvider />
 		<Header />
 		<main className='wrapper'>{children}</main>
+		<Loading />
+		<ToastifyProvider />
+		<SocialLinks />
+		<NetworkCanvas />
 		<div id='chat' />
 		<div id='backdrop' />
 		<div id='header-drawer' />
-		<NetworkCanvas />
+		<div id='social-links' />
 	</>
 )
 

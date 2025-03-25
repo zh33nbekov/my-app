@@ -1,5 +1,5 @@
 import AppLayout from '@/layouts/AppLayout'
-import NextIntlClientProvider from '@/providers/NextIntlClientProvider'
+import NextIntlClientProvider from '@/providers/NextIntlProvider'
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import './page.css'

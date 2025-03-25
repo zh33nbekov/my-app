@@ -1,12 +1,12 @@
 import { NextIntlClientProvider as IntlClientProvider } from 'next-intl'
 import { ReactNode } from 'react'
 
-interface INextIntlClientProvider {
+interface INextIntlProvider {
 	locale: string
 	children: ReactNode
 }
 
-const NextIntlClientProvider = async ({ children, locale }: INextIntlClientProvider) => {
+const NextIntlProvider = async ({ children, locale }: INextIntlProvider) => {
 	let messages
 	try {
 		messages = (await import(`../../messages/${locale}.json`)).default
@@ -21,4 +21,4 @@ const NextIntlClientProvider = async ({ children, locale }: INextIntlClientProvi
 	)
 }
 
-export default NextIntlClientProvider
+export default NextIntlProvider

@@ -4,13 +4,15 @@
 	width: 100%;
 	top: 0;
 	padding-top: clamp(63px, 42px + 6.54vw, 111px);
-	padding-top: 70px;
 	background-color: #fff;
 	&.opened {
 		animation: slideIn 0.22s ease-in-out;
 	}
 	&.closed {
 		animation: slideOut 0.22s ease-in-out forwards;
+	}
+	@media (max-width: 440px) {
+		inset: 0;
 	}
 }
 

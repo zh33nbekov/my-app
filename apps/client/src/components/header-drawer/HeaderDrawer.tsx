@@ -11,9 +11,7 @@ interface IHeaderDrawer {
 }
 
 export const HeaderDrawer: React.FC<IHeaderDrawer> = (props) => {
-	const [rootHeaderDrawer, setRootHeaderDrawer] = useState<HTMLElement | null>(() =>
-		document.getElementById('header-drawer')
-	)
+	const [rootHeaderDrawer, setRootHeaderDrawer] = useState<HTMLElement | null>(null)
 
 	useEffect(() => {
 		if (!rootHeaderDrawer) {

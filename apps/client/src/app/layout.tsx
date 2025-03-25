@@ -1,4 +1,4 @@
-import NextIntlClientProvider from '@/providers/NextIntlClientProvider'
+import NextIntlClientProvider from '@/providers/NextIntlProvider'
 import { getLocale } from 'next-intl/server'
 
 const RootLayout = async ({ children }: { children: React.ReactNode }) => {

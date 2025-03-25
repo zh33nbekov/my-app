@@ -11,9 +11,6 @@
 		display: flex;
 		gap: clamp(10px, 5.2px + 0.93vw, 15px);
 	}
-	&__item {
-		list-style: none;
-	}
 	&__link {
 		color: #cc6ce7;
 		text-decoration: none;
@@ -123,6 +120,7 @@
 	}
 	&:not(.active) {
 		backdrop-filter: blur(3px);
+		-webkit-backdrop-filter: blur(3px);
 		background-color: rgba(0, 0, 0, 0.7);
 		transition:
 			background-color 0.22s ease-in-out,
@@ -144,7 +142,6 @@
 		}
 	}
 	&__mobileList {
-		list-style: none;
 		display: none;
 	}
 	&__mobileItem {

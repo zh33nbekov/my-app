@@ -1,0 +1,38 @@
+.socialLinks {
+	position: fixed;
+	left: 34px;
+	bottom: 44px;
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+	width: clamp(40px, 35.6px + 1.36vw, 50px);
+	z-index: 100;
+	padding: clamp(10px, 7.8px + 0.68vw, 15px);
+	backdrop-filter: blur(5px);
+	-webkit-backdrop-filter: blur(5px);
+	border-radius: clamp(8px, 4.9px + 0.95vw, 15px);
+	&__link {
+		color: #fff;
+		transition:
+			color 0.22s ease-in-out,
+			transform 0.22s ease-in-out;
+		display: block;
+		svg {
+			opacity: 0.8;
+			color: currentColor;
+		}
+		@media (hover: hover) {
+			&:hover {
+				color: #6496ff;
+				opacity: 1;
+				transform: translateY(-5px);
+			}
+		}
+	}
+	@media (max-width: 400px) {
+		& {
+			left: 20px;
+			bottom: 20px;
+		}
+	}
+}
