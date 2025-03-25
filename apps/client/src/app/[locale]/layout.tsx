@@ -1,3 +1,4 @@
+import { Loading } from '@/components/UI'
 import AppLayout from '@/layouts/AppLayout'
 import NextIntlClientProvider from '@/providers/NextIntlProvider'
 import { Metadata } from 'next'
@@ -34,6 +35,7 @@ const RootLayout = async ({
 			</head>
 			<body style={{ overflow: 'hidden' }}>
 				<NextIntlClientProvider locale={locale}>
+					<Loading />
 					<AppLayout>{children}</AppLayout>
 				</NextIntlClientProvider>
 			</body>
