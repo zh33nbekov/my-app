@@ -6,7 +6,7 @@ import styles from './backdrop.module.scss'
 
 interface IBackdrop {
 	onClose: () => void
-	animationClass: 'opened' | 'closed' | ''
+	animationClass: 'opened' | 'closed'
 }
 
 export const Backdrop: React.FC<IBackdrop> = ({ onClose, animationClass }) => {

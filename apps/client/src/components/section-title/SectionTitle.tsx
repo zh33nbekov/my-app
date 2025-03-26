@@ -7,14 +7,14 @@ import styles from './section-title.module.scss'
 interface ISectionTitle {
 	title: string
 	width: string
-	positionRight?: true | undefined
+	positionRight?: boolean | undefined
 }
 
 export const SectionTitle: React.FC<ISectionTitle> = memo(({ title, width, positionRight }) => {
 	const t = useTranslations('SectionTitles')
 	return (
 		<div className={styles.sectionTitle}>
-			<h3 className={styles.title} style={positionRight && { marginLeft: 'auto' }}>
+			<h3 className={styles.title} style={positionRight ? { marginLeft: 'auto' } : {}}>
 				{t(title)}
 			</h3>
 			<div className={styles.progress}>

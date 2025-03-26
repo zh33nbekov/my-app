@@ -3,7 +3,7 @@
 	z-index: 997;
 	width: 100%;
 	top: 0;
-	padding-top: clamp(63px, 42px + 6.54vw, 111px);
+	padding-top: clamp(63px, 59.9px + 0.95vw, 70px);
 	background-color: #fff;
 	&.opened {
 		animation: slideIn 0.22s ease-in-out;

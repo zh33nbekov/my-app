@@ -2,11 +2,11 @@
 
 import { DecorativeElement } from '@/components/UI'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { Button, Input, showSuccessToast, Textarea } from '@packages/shared'
+import { Button, Input, Textarea } from '@packages/shared'
 import { useTranslations } from 'next-intl'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
-import { FEEDBACK_FORM_INPUTS, feedbackSchema, FeedbackShema, sendFeedback } from '../../index'
+import { FEEDBACK_FORM_INPUTS, feedbackSchema, FeedbackShema } from '../../index'
 import styles from './feedback-form.module.scss'
 
 export const FeedbackForm: React.FC = () => {
@@ -25,8 +25,10 @@ export const FeedbackForm: React.FC = () => {
 	const submitHandler = async (data: FeedbackShema) => {
 		try {
 			setIsLoading(true)
+			const { sendFeedback } = await import('../../index')
 			const { info } = (await sendFeedback(data)) ?? { info: 'Something went wrong' }
 			setIsLoading(false)
+			const { showSuccessToast } = await import('@packages/shared')
 			showSuccessToast(info)
 			reset()
 		} catch (error) {

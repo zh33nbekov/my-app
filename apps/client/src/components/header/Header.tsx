@@ -1,21 +1,21 @@
 'use client'
 
 import { HEADER_LINKS } from '@/constants'
+// import { useHeaderDrawer } from '@/hooks'
+import { useHeaderDrawer } from '@/hooks'
 import { Button } from '@packages/shared'
 import clsx from 'clsx'
 import { useLocale, useTranslations } from 'next-intl'
 import dynamic from 'next/dynamic'
 import { default as NextLink } from 'next/link'
 import { useRouter } from 'next/navigation'
-import { useCallback, useState } from 'react'
+import { useState } from 'react'
 import { BurgerMenu, Close, Resume } from '../../../public/icons'
 import { HeaderMap } from '../header-map/HeaderMap'
 import { LanguageSwitcher } from '../language-switcher/LanguageSwitcher'
 import styles from './header.module.scss'
 
-const Backdrop = dynamic(() => import('../UI').then((module) => module.Backdrop), {
-	ssr: false,
-})
+const Backdrop = dynamic(() => import('../UI').then((module) => module.Backdrop), { ssr: false })
 const HeaderDrawer = dynamic(() => import('../index').then((module) => module.HeaderDrawer), {
 	ssr: false,
 })
@@ -24,9 +24,9 @@ export const Header = () => {
 	const locale = useLocale()
 	const router = useRouter()
 	const tHeader = useTranslations('Header')
-	const [isOpen, setIsOpen] = useState(false)
-	const [isVisible, setIsVisible] = useState(false)
 	const [language, setLanguage] = useState(locale)
+	const { isVisible, animationClass, handleClose, handleToggle, handleAnimationEnd } =
+		useHeaderDrawer()
 
 	const changeLanguage = (e: React.ChangeEvent<HTMLSelectElement>) => {
 		const { value } = e.target
@@ -34,36 +34,13 @@ export const Header = () => {
 		router.replace(value)
 	}
 
-	const handleToggle = () => {
-		if (!isOpen) {
-			setIsVisible(true)
-		}
-		setIsOpen(!isOpen)
-	}
-
-	const handleClose = () => {
-		setIsOpen(false)
-	}
-
-	const handleAnimationEnd = useCallback(() => {
-		if (!isOpen) {
-			setIsVisible(false)
-		}
-	}, [isOpen])
-	const animationClass = isOpen ? 'opened' : 'closed'
-
 	return (
 		<header className={clsx(styles.header, { [styles.active]: isVisible })}>
 			<nav className={styles.header__nav}>
 				<ul className={styles.header__list}>
 					{HEADER_LINKS.map(({ label, path }) => (
 						<li key={label} className={styles.header__item}>
-							<NextLink
-								href={`#${path}`}
-								className={clsx(styles.header__link, {
-									[styles.active]: 'about' === path,
-								})}
-							>
+							<NextLink href={`#${path}`} className={styles.header__link}>
 								{tHeader(label)}
 							</NextLink>
 						</li>
@@ -102,12 +79,7 @@ export const Header = () => {
 							<ul className={styles.header__mobileList}>
 								{HEADER_LINKS.map(({ label, path }) => (
 									<li key={label} className={styles.header__mobileItem}>
-										<NextLink
-											href={`#${path}`}
-											className={clsx(styles.header__mobileLink, {
-												[styles.active]: '',
-											})}
-										>
+										<NextLink href={`#${path}`} className={styles.header__mobileLink}>
 											{tHeader(label)}
 										</NextLink>
 									</li>

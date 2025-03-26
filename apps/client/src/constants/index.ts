@@ -1,2 +1,3 @@
 export * from './common'
-export * from './header/header'
+export * from './header'
+export * from './social-links'

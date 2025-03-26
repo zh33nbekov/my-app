@@ -15,7 +15,6 @@ const ChatWidget = dynamic(() => import('../../index').then((module) => module.C
 
 export const Chat = () => {
 	const [isMounted, setMounted] = useState(false)
-	// const [message, setMessage] = useState('')
 	const [chatRoot, setChatRoot] = useState<HTMLElement | null>(null)
 	const { isChatVisible, animationClass, showChat, hideChat } = useChat()
 
@@ -25,28 +24,6 @@ export const Chat = () => {
 
 		return () => setMounted(false)
 	}, [])
-
-	const handleMessageChange = () => {
-		// setMessage(e.target.value)
-	}
-
-	// const handleSubmit = useCallback(
-	// 	(e: React.FormEvent<HTMLFormElement>) => {
-	// 		e.preventDefault()
-
-	// 		if (username) {
-	// 			sendMessage(message)
-	// 			return
-	// 		}
-
-	// 		const clientNameInput = e.currentTarget['clientName'] as HTMLInputElement
-	// 		const newClientName = clientNameInput.value
-	// 		if (newClientName.trim().length >= 3 && newClientName.trim().length <= 15) {
-	// 			sendUsername(newClientName)
-	// 		}
-	// 	},
-	// 	[username, sendMessage, sendUsername, message]
-	// )
 
 	if (!isMounted || !chatRoot) return null
 
@@ -67,7 +44,7 @@ export const Chat = () => {
 					onSubmit={() => {}}
 					onSendMessage={() => {}}
 					onSendName={() => {}}
-					onChangeMessage={handleMessageChange}
+					onChangeMessage={() => {}}
 					animationClass={animationClass}
 				/>
 			)}
