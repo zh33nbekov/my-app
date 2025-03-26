@@ -1,6 +1,7 @@
 export * from './breadcrumbs/Breadcrumbs'
 export * from './editable-image/EditableImage'
 export * from './editable-text/EditableText'
+export * from './file-upload/FileUpload'
 export * from './header/Header'
 export * from './language-switcher/LanguageSwitcher'
 export * from './navigation/Navigation'

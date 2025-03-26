@@ -6,23 +6,24 @@ import { Button, Input, Textarea } from '@packages/shared'
 import { useTranslations } from 'next-intl'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
-import { FEEDBACK_FORM_INPUTS, feedbackSchema, FeedbackShema } from '../../index'
+import { FEEDBACK_FORM_INPUTS, feedbackSchema, FeedbackSchema } from '../../index'
 import styles from './feedback-form.module.scss'
 
 export const FeedbackForm: React.FC = () => {
 	const [isLoading, setIsLoading] = useState(false)
-	const t = useTranslations('FeedbackForm')
+	const tFeedback = useTranslations('FeedbackForm')
+	const tValidation = useTranslations('ValidationErrors')
 	const {
 		register,
 		handleSubmit,
 		reset,
 		formState: { errors },
-	} = useForm<FeedbackShema>({
+	} = useForm<FeedbackSchema>({
 		mode: 'onSubmit',
-		resolver: zodResolver(feedbackSchema),
+		resolver: zodResolver(feedbackSchema(tValidation)),
 	})
 
-	const submitHandler = async (data: FeedbackShema) => {
+	const submitHandler = async (data: FeedbackSchema) => {
 		try {
 			setIsLoading(true)
 			const { sendFeedback } = await import('../../index')
@@ -44,7 +45,7 @@ export const FeedbackForm: React.FC = () => {
 					type={type}
 					autoComplete='on'
 					{...register(name)}
-					placeholder={t(placeholder)}
+					placeholder={tFeedback(placeholder)}
 					error={errors[name]?.message}
 					className={styles.feedbackForm__input}
 				/>
@@ -52,12 +53,12 @@ export const FeedbackForm: React.FC = () => {
 			<Textarea
 				id='message'
 				{...register('message')}
-				placeholder={t('message')}
+				placeholder={tFeedback('message')}
 				error={errors['message']?.message}
 				className={styles.feedbackForm__textarea}
 			/>
 			<Button className={styles.feedbackForm__submit} type='submit' isLoading={isLoading}>
-				{t('send')}
+				{tFeedback('send')}
 			</Button>
 			<DecorativeElement className={styles.decorativeElement} />
 		</form>

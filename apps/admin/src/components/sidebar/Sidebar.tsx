@@ -1,6 +1,5 @@
 'use client'
 
-import { Sidebar as SharedSidebar } from '@packages/shared'
 import { Navigation } from '../navigation/Navigation'
 import styles from './sidebar.module.scss'
 
@@ -16,4 +15,13 @@ export const Sidebar = ({ children }: { children: React.ReactNode }) => (
 			</div>
 		</SharedSidebar>
 	</>
+)
+
+interface ISidebar {
+	children: React.ReactNode | null
+	animationClass?: 'opened' | 'closed'
+}
+
+export const SharedSidebar: React.FC<ISidebar> = ({ children }) => (
+	<aside className={styles.sharedSidebar}>{children}</aside>
 )

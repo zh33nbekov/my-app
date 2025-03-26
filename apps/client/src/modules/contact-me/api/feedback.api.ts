@@ -1,6 +1,6 @@
 import { BASE_URL } from '@/constants'
-import { fetchApi } from '@packages/shared'
 import { IFeedbackRequest, IFeedbackResponse } from '../index'
+import { fetchApi } from '@/lib'
 
 export const sendFeedback = async (data: IFeedbackRequest) => {
 	const response = await fetchApi<IFeedbackResponse>(`${BASE_URL}/feedback`, {

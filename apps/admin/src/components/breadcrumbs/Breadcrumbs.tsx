@@ -1,6 +1,6 @@
 'use client'
 
-import { useBreadcrumbs } from '@packages/shared'
+import { useBreadcrumbs } from '@/hooks'
 import Link from 'next/link'
 import styles from './breadcrumbs.module.scss'
 

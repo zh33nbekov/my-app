@@ -1,6 +1,6 @@
-import { FileUpload } from '@packages/shared'
 import Image from 'next/image'
 import { memo } from 'react'
+import { FileUpload } from '../index'
 import styles from './editable-image.module.scss'
 
 interface IEditableImage {

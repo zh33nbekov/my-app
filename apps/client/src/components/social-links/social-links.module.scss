@@ -15,10 +15,11 @@
 		color: #fff;
 		transition:
 			color 0.22s ease-in-out,
-			transform 0.22s ease-in-out;
+			transform 0.22s ease-in-out,
+			opacity 0.22s ease-in-out;
 		display: block;
+		opacity: 0.7;
 		svg {
-			opacity: 0.8;
 			color: currentColor;
 		}
 		@media (hover: hover) {

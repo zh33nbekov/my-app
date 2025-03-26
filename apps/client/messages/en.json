@@ -36,5 +36,11 @@
 	"Qualification": {
 		"Experience": "Experience",
 		"Education": "Education"
+	},
+	"ValidationErrors": {
+		"min": "The minimum number of characters is",
+		"max": "The maximum number of characters is",
+		"email": "Invalid email address",
+		"nonempty": "Required for filling in"
 	}
 }
