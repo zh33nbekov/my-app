@@ -18,6 +18,7 @@ const AppLayout = ({ children }: IAppLayout) => (
 		<div id='backdrop' />
 		<div id='header-drawer' />
 		<div id='social-links' />
+		<div id='tooltip' />
 	</>
 )
 

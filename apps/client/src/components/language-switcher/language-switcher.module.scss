@@ -1,3 +1,14 @@
 .languageSwitcher {
 	cursor: pointer;
+	border: none;
+	outline: none;
+	background: none;
+	color: #cc6ce7;
+	font-size: 16px;
+	&__option {
+		background-color: purple;
+	}
+	@media (max-width: 440px) {
+		font-size: 14px;
+	}
 }

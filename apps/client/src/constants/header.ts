@@ -1,7 +1,4 @@
-interface HeaderLinks {
-	label: 'Contact' | 'About' | 'Projects' | 'Skills' | 'Qualification'
-	path: 'contact' | 'about' | 'projects' | 'skills' | 'qualification'
-}
+import { HeaderLinks } from '@/types'
 
 export const HEADER_LINKS_OPTIONS = {
 	ABOUT: {

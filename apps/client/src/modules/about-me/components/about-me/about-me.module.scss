@@ -58,9 +58,7 @@
 		top: 0;
 		right: 0;
 		@media (max-width: 440px) {
-			& {
-				filter: blur(49px);
-			}
+			filter: blur(49px);
 		}
 	}
 	&.second {

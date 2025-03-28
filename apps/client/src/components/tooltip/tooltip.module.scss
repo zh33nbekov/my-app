@@ -1,0 +1,24 @@
+.tooltip {
+	position: relative;
+	display: inline-block;
+	&__content {
+		position: absolute;
+		bottom: -100%;
+		left: 50%;
+		transform: translateX(-50%);
+		background-color: rgba(0, 0, 0, 0.8);
+		color: #fff;
+		padding: 6px 10px;
+		border-radius: 4px;
+		white-space: nowrap;
+		font-size: clamp(13px, 12.1px + 0.27vw, 16px);
+		opacity: 0;
+		visibility: hidden;
+	}
+	@media (hover: hover) {
+		&:hover &__content {
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+}

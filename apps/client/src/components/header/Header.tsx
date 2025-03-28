@@ -1,17 +1,14 @@
 'use client'
 
 import { HEADER_LINKS } from '@/constants'
-// import { useHeaderDrawer } from '@/hooks'
 import { useHeaderDrawer } from '@/hooks'
 import { Button } from '@packages/shared'
 import clsx from 'clsx'
-import { useLocale, useTranslations } from 'next-intl'
+import { useTranslations } from 'next-intl'
 import dynamic from 'next/dynamic'
 import { default as NextLink } from 'next/link'
-import { useRouter } from 'next/navigation'
-import { useState } from 'react'
 import { BurgerMenu, Close, Resume } from '../../../public/icons'
-import { HeaderMap } from '../header-map/HeaderMap'
+import { Tooltip } from '../index'
 import { LanguageSwitcher } from '../language-switcher/LanguageSwitcher'
 import styles from './header.module.scss'
 
@@ -20,19 +17,10 @@ const HeaderDrawer = dynamic(() => import('../index').then((module) => module.He
 	ssr: false,
 })
 
-export const Header = () => {
-	const locale = useLocale()
-	const router = useRouter()
+export const Header: React.FC = () => {
 	const tHeader = useTranslations('Header')
-	const [language, setLanguage] = useState(locale)
 	const { isVisible, animationClass, handleClose, handleToggle, handleAnimationEnd } =
 		useHeaderDrawer()
-
-	const changeLanguage = (e: React.ChangeEvent<HTMLSelectElement>) => {
-		const { value } = e.target
-		setLanguage(value)
-		router.replace(value)
-	}
 
 	return (
 		<header className={clsx(styles.header, { [styles.active]: isVisible })}>
@@ -48,16 +36,18 @@ export const Header = () => {
 				</ul>
 			</nav>
 			<div className={styles.header__actions}>
-				<LanguageSwitcher language={language} onChangeLanguage={changeLanguage} />
-				<a
-					download={true}
-					href='/rai-zheenbekov.pdf'
-					aria-label='Download my resume'
-					className={styles.header__resume}
-				>
-					<span className={styles.srOnly}>Download my resume</span>
-					<Resume />
-				</a>
+				<LanguageSwitcher />
+				<Tooltip text='Resume'>
+					<a
+						download={true}
+						href='/rai-zheenbekov.pdf'
+						aria-label='Download my resume'
+						className={styles.header__resume}
+					>
+						<span className={styles.srOnly}>Download my resume</span>
+						<Resume />
+					</a>
+				</Tooltip>
 				<Button
 					className={styles.header__burger}
 					active={isVisible}
@@ -85,7 +75,6 @@ export const Header = () => {
 									</li>
 								))}
 							</ul>
-							<HeaderMap />
 						</nav>
 					</HeaderDrawer>
 				</>

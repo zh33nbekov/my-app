@@ -6,7 +6,7 @@
 	position: fixed;
 	top: 0;
 	z-index: 998;
-	padding: 15px clamp(20px, -14.8px + 10.9vw, 100px) 15px clamp(20px, -14.8px + 10.9vw, 100px);
+	padding: 15px clamp(20px, 0.4px + 6.13vw, 88px);
 	&__list {
 		display: flex;
 		gap: clamp(10px, 5.2px + 0.93vw, 15px);
@@ -38,16 +38,6 @@
 		display: flex;
 		align-items: center;
 		gap: clamp(10px, 5.6px + 1.36vw, 20px);
-		select {
-			border: none;
-			outline: none;
-			background: none;
-			color: #cc6ce7;
-			font-size: 16px;
-		}
-		label {
-			color: #fff;
-		}
 	}
 	&__burger {
 		width: clamp(35px, 32.8px + 0.68vw, 40px);
@@ -61,6 +51,9 @@
 			width: 65%;
 			height: 65%;
 			animation: fadeIn 0.22s ease-in-out;
+		}
+		@media (min-width: 650px) {
+			display: none;
 		}
 	}
 	&__resume {
@@ -162,7 +155,7 @@
 			background-color: rgb(124, 124, 124);
 		}
 	}
-	@media (max-width: 515px) {
+	@media (max-width: 650px) {
 		&__nav {
 			display: none;
 		}

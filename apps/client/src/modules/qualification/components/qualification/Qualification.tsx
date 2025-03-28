@@ -15,7 +15,7 @@ export const Qualification = () => {
 	return (
 		<section id={HEADER_LINKS_OPTIONS.QUALIFICATION.PATH} className={styles.qualification}>
 			<SectionTitle title='Qualification' width='100' positionRight />
-			<div style={{ display: 'flex', gap: '44px', paddingTop: '44px' }}>
+			<div style={{ display: 'flex', gap: '44px', padding: '44px 0 15px' }}>
 				{QUALIFICATION_TABS.map(({ label }, index) => (
 					<Button
 						key={label}

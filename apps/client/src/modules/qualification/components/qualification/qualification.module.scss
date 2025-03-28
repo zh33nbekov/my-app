@@ -2,10 +2,10 @@
 	position: relative;
 	padding-bottom: clamp(88px, 67.9px + 6.27vw, 134px);
 	&__tab {
-		height: 200px;
-		background-color: rgba(0, 0, 0, 0.3);
-		border-radius: 20px;
 		color: #fff;
+		padding: clamp(10px, 12.8px + 0.68vw, 20px);
+		background-color: rgba(0, 0, 0, 0.3);
+		border-radius: clamp(10px, 5.6px + 1.36vw, 20px);
 	}
 }
 .decorativeElement {
@@ -16,8 +16,6 @@
 	top: 55px;
 	right: 0;
 	@media (max-width: 440px) {
-		& {
-			filter: blur(49px);
-		}
+		filter: blur(49px);
 	}
 }

@@ -1,7 +1,7 @@
 .socialLinks {
 	position: fixed;
-	left: 34px;
 	bottom: 44px;
+	left: 34px;
 	display: flex;
 	flex-direction: column;
 	gap: 15px;
@@ -42,9 +42,7 @@
 		border: 0;
 	}
 	@media (max-width: 400px) {
-		& {
-			left: 20px;
-			bottom: 20px;
-		}
+		left: 20px;
+		bottom: 20px;
 	}
 }

@@ -42,5 +42,9 @@
 		"max": "The maximum number of characters is",
 		"email": "Invalid email address",
 		"nonempty": "Required for filling in"
+	},
+	"Tooltips": {
+		"Resume": "Download my resume",
+		"Chat": "Let's talk? - I'm online"
 	}
 }

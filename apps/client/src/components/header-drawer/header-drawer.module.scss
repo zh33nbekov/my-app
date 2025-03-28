@@ -6,7 +6,7 @@
 	padding-top: clamp(63px, 59.9px + 0.95vw, 70px);
 	background-color: #fff;
 	&.opened {
-		animation: slideIn 0.22s ease-in-out;
+		animation: slideIn 0.22s ease-in-out forwards;
 	}
 	&.closed {
 		animation: slideOut 0.22s ease-in-out forwards;

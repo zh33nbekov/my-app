@@ -18,7 +18,7 @@ export const Sidebar = ({ children }: { children: React.ReactNode }) => (
 )
 
 interface ISidebar {
-	children: React.ReactNode | null
+	children: React.ReactNode
 	animationClass?: 'opened' | 'closed'
 }
 
