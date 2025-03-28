@@ -12,7 +12,6 @@ interface ITooltip {
 export const Tooltip: React.FC<ITooltip> = memo(({ text, children }) => {
 	const [visible, setVisible] = useState(false)
 	const tTooltip = useTranslations('Tooltips')
-	console.log('rendered')
 
 	return (
 		<div
