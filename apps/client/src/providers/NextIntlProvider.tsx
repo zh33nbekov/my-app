@@ -11,7 +11,6 @@ const NextIntlProvider = async ({ children, locale }: INextIntlProvider) => {
 	try {
 		messages = (await import(`../../messages/${locale}.json`)).default
 	} catch (error) {
-		// throw new Error('Messages for locale not found')
 		console.log(error)
 	}
 	return (
