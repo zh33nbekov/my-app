@@ -7,6 +7,7 @@ import {
 	GitHub,
 	GithubActions,
 	GraphQL,
+	HookForm,
 	HTML,
 	Insomnia,
 	JavaScript,
@@ -72,4 +73,5 @@ export const SKILLS: Skill[] = [
 	{ icon: Socket, category: 'backend', name: 'Socket.io' },
 	{ icon: GithubActions, category: 'tools', name: 'Github Actions' },
 	{ icon: Vite, category: 'basic', name: 'Vite' },
+	{ icon: HookForm, category: 'ui', name: 'React Hook Form' },
 ]
