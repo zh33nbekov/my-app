@@ -7,15 +7,30 @@
 		"packages/*"
 	],
 	"scripts": {
+		"dev": "npm run dev --workspace=apps/admin & npm run dev --workspace=apps/client",
+		"build": "npm run build --workspace=apps/admin && npm run build --workspace=apps/client",
+		"start": "npm run start --workspace=apps/admin & npm run start --workspace=apps/client",
 		"lint": "eslint . --fix",
 		"format": "prettier --write \"**/*.{ts,tsx,json,css,scss}\"",
 		"lint-and-format": "npm run lint && npm run format"
 	},
-	"keywords": [],
-	"author": "Rai",
-	"license": "ISC",
-	"description": "",
 	"dependencies": {
-		"clsx": "^2.1.1"
+		"clsx": "^2.1.1",
+		"next": "^15.2.4",
+		"react": "^19.0.0",
+		"react-dom": "^19.0.0"
+	},
+	"devDependencies": {
+		"@eslint/eslintrc": "^3",
+		"@types/node": "^20",
+		"@types/react": "^19",
+		"@types/react-dom": "^19",
+		"eslint": "^9",
+		"eslint-config-next": "^15.1.6",
+		"eslint-config-prettier": "^10.0.1",
+		"eslint-plugin-prettier": "^5.2.3",
+		"prettier": "^3.4.2",
+		"sass": "^1.83.4",
+		"typescript": "^5"
 	}
 }

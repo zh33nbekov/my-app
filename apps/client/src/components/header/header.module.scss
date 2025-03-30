@@ -39,7 +39,7 @@
 		align-items: center;
 		gap: clamp(10px, 5.6px + 1.36vw, 20px);
 	}
-	&__burger {
+	& &__burger {
 		width: clamp(35px, 32.8px + 0.68vw, 40px);
 		height: clamp(35px, 32.8px + 0.68vw, 40px);
 		padding: 0;

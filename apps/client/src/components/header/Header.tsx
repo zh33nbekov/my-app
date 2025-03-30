@@ -49,11 +49,11 @@ export const Header: React.FC = () => {
 					</a>
 				</Tooltip>
 				<Button
-					className={styles.header__burger}
+					id='burger-menu'
 					active={isVisible}
 					onClick={handleToggle}
-					id='burger-menu'
 					aria-label='burger-menu'
+					className={styles.header__burger}
 				>
 					{isVisible ? <Close /> : <BurgerMenu />}
 				</Button>

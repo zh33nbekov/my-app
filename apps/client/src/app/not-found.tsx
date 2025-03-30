@@ -7,12 +7,10 @@ export const metadata: Metadata = {
 }
 
 const NotFound = () => (
-	<html>
-		<body>
-			<h1 className='notFound-title'>404 - Страница не найдена</h1>
-			<p className='notFound-description'>Страница, которую вы ищете, не существует.</p>
-		</body>
-	</html>
+	<div className='notFound'>
+		<h1 className='notFound-title'>404 - Страница не найдена</h1>
+		<p className='notFound-description'>Страница, которую вы ищете, не существует.</p>
+	</div>
 )
 
 export default NotFound
