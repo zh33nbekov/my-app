@@ -4,28 +4,24 @@
 	box-sizing: border-box;
 	font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
 }
-
 html {
 	height: 100%;
 }
-
 body {
-	background-color: #232732;
 	color: #fff;
 	height: 100%;
+	background-color: #232732;
 }
 .notFound {
 	height: 100%;
+	text-align: center;
 	align-content: center;
-	display: flex;
 	flex-direction: column;
-	justify-content: center;
-	align-items: center;
 }
 .notFound-title {
-	font-size: 24px;
+	font-size: clamp(18px, 16.2px + 0.54vw, 24px);
 	padding-bottom: 15px;
 }
 .notFound-description {
-	font-size: 18px;
+	font-size: clamp(14px, 12.8px + 0.36vw, 18px);
 }
