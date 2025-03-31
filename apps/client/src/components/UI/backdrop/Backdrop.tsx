@@ -10,17 +10,13 @@ interface IBackdrop {
 }
 
 export const Backdrop: React.FC<IBackdrop> = ({ onClose, animationClass }) => {
-	const [isMounted, setIsMounted] = useState(false)
 	const [rootBackdrop, setRootBackdrop] = useState<HTMLElement | null>(null)
 
 	useEffect(() => {
-		setIsMounted(true)
 		setRootBackdrop(document.getElementById('backdrop'))
-
-		return () => setIsMounted(false)
 	}, [])
 
-	if (!isMounted || !rootBackdrop) return null
+	if (!rootBackdrop) return null
 
 	return createPortal(
 		<div className={`${styles.backdrop} ${styles[animationClass]}`} onClick={onClose} />,

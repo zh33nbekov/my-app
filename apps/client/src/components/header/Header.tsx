@@ -7,6 +7,7 @@ import clsx from 'clsx'
 import { useTranslations } from 'next-intl'
 import dynamic from 'next/dynamic'
 import { default as NextLink } from 'next/link'
+import { useEffect, useState } from 'react'
 import { BurgerMenu, Close, Resume } from '../../../public/icons'
 import { Tooltip } from '../index'
 import { LanguageSwitcher } from '../language-switcher/LanguageSwitcher'
@@ -21,6 +22,10 @@ export const Header: React.FC = () => {
 	const tHeader = useTranslations('Header')
 	const { isVisible, animationClass, handleClose, handleToggle, handleAnimationEnd } =
 		useHeaderDrawer()
+	const [windowWidth, setWindowWidth] = useState(0)
+	useEffect(() => {
+		setWindowWidth(window.innerWidth)
+	}, [])
 
 	return (
 		<header className={clsx(styles.header, { [styles.active]: isVisible })}>
@@ -60,7 +65,9 @@ export const Header: React.FC = () => {
 			</div>
 			{isVisible && (
 				<>
-					<Backdrop onClose={handleClose} animationClass={animationClass} />
+					{windowWidth >= 440 && (
+						<Backdrop onClose={handleClose} animationClass={animationClass} />
+					)}
 					<HeaderDrawer
 						animationClass={animationClass}
 						onHandleAnimationEnd={handleAnimationEnd}
