@@ -49,7 +49,7 @@ export const SKILLS: Skill[] = [
 	{ icon: TypeScript, category: 'basic', name: 'TypeScript' },
 	{ icon: React, category: 'basic', name: 'React.js' },
 	{ icon: NextJS, category: 'basic', name: 'Next.js' },
-	{ icon: Redux, category: 'basic', name: 'Redux' },
+	{ icon: Redux, category: 'basic', name: 'Redux Toolkit' },
 	{ icon: NodeJS, category: 'backend', name: 'Node.js' },
 	{ icon: NestJS, category: 'backend', name: 'Nest.js' },
 	{ icon: AWS, category: 'backend', name: 'AWS' },
