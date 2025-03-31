@@ -45,7 +45,7 @@ export const Header: React.FC = () => {
 				<Tooltip text='Resume'>
 					<a
 						download={true}
-						href='/rai-zheenbekov.pdf'
+						href='/Rai Zheenbekov_CV.pdf'
 						aria-label='Download my resume'
 						className={styles.header__resume}
 					>
