@@ -26,6 +26,7 @@ export const Header: React.FC = () => {
 	useEffect(() => {
 		setWindowWidth(window.innerWidth)
 	}, [])
+	console.log(windowWidth)
 
 	return (
 		<header className={clsx(styles.header, { [styles.active]: isVisible })}>
