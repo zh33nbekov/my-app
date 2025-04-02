@@ -9,7 +9,7 @@ export const Greeting: React.FC = async () => {
 	const greeting = await getGreeting()
 	const [left, right] = greeting.subtitle ? greeting.subtitle.split(' ') : ['Rai', 'Zhnb']
 	const isActiveBtns = greeting.buttons && greeting.buttons.isActive
-
+	console.log('hello, world!')
 	return (
 		<>
 			{greeting && (
