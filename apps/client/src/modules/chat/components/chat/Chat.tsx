@@ -22,7 +22,7 @@ export const Chat = () => {
 	}, [])
 
 	if (!chatRoot) return null
-	console.log(animationClass)
+
 	return createPortal(
 		<>
 			{!isChatVisible && (
