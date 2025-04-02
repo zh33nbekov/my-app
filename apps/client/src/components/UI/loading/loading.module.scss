@@ -9,9 +9,6 @@
 	height: 100%;
 	background-color: #232732;
 	transition: opacity 0.3s ease-in-out;
-	&.disabled {
-		opacity: 0;
-	}
 }
 .loaderContent {
 	display: flex;
@@ -27,6 +24,7 @@
 	animation: rotate 1s linear infinite;
 }
 .loader__text {
+	color: #fff;
 	font-size: 18px;
 	font-weight: 500;
 	padding-top: 10px;

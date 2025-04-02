@@ -5,9 +5,8 @@
 	z-index: 996;
 	width: 100vw;
 	height: 100vh;
-	&.opened {
-		animation: fadeIn 222ms ease-in-out forwards;
-	}
+	min-height: 100vh;
+	animation: fadeIn 222ms ease-in-out forwards;
 	&.closed {
 		animation: fadeOut 222ms ease-in-out forwards;
 	}

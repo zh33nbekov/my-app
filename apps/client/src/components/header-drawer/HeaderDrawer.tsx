@@ -23,6 +23,7 @@ export const HeaderDrawer: React.FC<IHeaderDrawer> = (props) => {
 
 	return createPortal(
 		<div
+			role='menu'
 			onAnimationEnd={props.onHandleAnimationEnd}
 			className={`${styles.headerDrawer} ${styles[props.animationClass]}`}
 		>

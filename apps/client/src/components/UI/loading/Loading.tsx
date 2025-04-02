@@ -1,23 +1,17 @@
 'use client'
 
-import clsx from 'clsx'
+import { useTranslations } from 'next-intl'
 import { useEffect, useState } from 'react'
 import styles from './loading.module.scss'
 
 export const Loading = () => {
 	const [isLoading, setIsLoading] = useState(true)
-	const [isVisible, setIsVisible] = useState(true)
-
-	const handleTransitionEnd = () => {
-		setIsVisible(false)
-	}
+	const t = useTranslations()
 
 	useEffect(() => {
 		const handlePageLoad = () => {
 			setIsLoading(false)
-			document.body.style = ''
 		}
-
 		if (document.readyState === 'complete') {
 			handlePageLoad()
 		} else {
@@ -26,19 +20,18 @@ export const Loading = () => {
 		}
 	}, [])
 
-	if (!isVisible) return null
+	if (!isLoading) return null
 
 	return (
 		<>
-			<div
-				onTransitionEnd={handleTransitionEnd}
-				className={clsx(styles.loaderContainer, { [styles.disabled]: !isLoading })}
-			>
-				<div className={styles.loaderContent}>
-					<div className={styles.loader} />
-					{/* <p className={styles.loader__text}>Загрузка...</p> */}
+			{isLoading && (
+				<div className={styles.loaderContainer}>
+					<div className={styles.loaderContent}>
+						<div className={styles.loader} />
+						<p className={styles.loader__text}>{t('Loading')}</p>
+					</div>
 				</div>
-			</div>
+			)}
 		</>
 	)
 }
