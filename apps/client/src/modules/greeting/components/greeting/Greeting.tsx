@@ -39,9 +39,9 @@ export const Greeting: React.FC = async () => {
 					)}
 					<DecorativeElement className={`${styles.decorativeElement} ${styles.first}`} />
 					<DecorativeElement className={`${styles.decorativeElement} ${styles.second}`} />
+					<Details />
 				</section>
 			)}
-			<Details />
 		</>
 	)
 }
