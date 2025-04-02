@@ -1,5 +1,6 @@
 export { NetworkCanvas } from './canvas/network-canvas/NetworkCanvas'
 export { OrganicFlowCanvas } from './canvas/organic-flow-canvas/OrganicFlowCanvas'
+export { Details } from './details/Details'
 export { HeaderDrawer } from './header-drawer/HeaderDrawer'
 export { Header } from './header/Header'
 export { LanguageSwitcher } from './language-switcher/LanguageSwitcher'

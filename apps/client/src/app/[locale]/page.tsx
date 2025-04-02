@@ -7,21 +7,17 @@ import { Projects } from '@/modules/projects'
 import { Qualification } from '@/modules/qualification'
 import { Skills } from '@/modules/skills'
 
-const Home = async ({ params }: { params: Promise<{ locale: string }> }) => {
-	const { locale } = await params
-
-	return (
-		<>
-			<Greeting locale={locale} />
-			<AboutMe locale={locale} />
-			<Projects />
-			<Skills />
-			<Certifications />
-			<Qualification />
-			<ContactMe />
-			<Chat />
-		</>
-	)
-}
+const Home = () => (
+	<>
+		<Greeting />
+		<AboutMe />
+		<Projects />
+		<Skills />
+		<Certifications />
+		<Qualification />
+		<ContactMe />
+		<Chat />
+	</>
+)
 
 export default Home

@@ -5,12 +5,8 @@ import Image from 'next/image'
 import { getAbout } from '../../index'
 import styles from './about-me.module.scss'
 
-interface IAboutMe {
-	locale: string
-}
-
-export const AboutMe: React.FC<IAboutMe> = async ({ locale }) => {
-	const about = await getAbout(locale)
+export const AboutMe: React.FC = async () => {
+	const about = await getAbout()
 
 	return (
 		<section id={HEADER_LINKS_OPTIONS.ABOUT.PATH} className={styles.aboutMe}>

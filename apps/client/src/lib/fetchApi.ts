@@ -1,9 +1,13 @@
+import { getLocale } from 'next-intl/server'
+
 export const fetchApi = async <T>(url: string, options?: RequestInit): Promise<T> => {
+	const locale = await getLocale()
 	try {
 		const response = await fetch(url, {
 			...options,
 			headers: {
 				...options?.headers,
+				'Accept-Language': locale,
 			},
 		})
 

@@ -1,15 +1,12 @@
+import { Details } from '@/components'
 import { DecorativeElement } from '@/components/UI'
 import { Link } from '@packages/shared'
 import Image from 'next/image'
 import { getGreeting } from '../../index'
 import styles from './greeting.module.scss'
 
-interface IGreeting {
-	locale: string
-}
-
-export const Greeting: React.FC<IGreeting> = async ({ locale }) => {
-	const greeting = await getGreeting(locale)
+export const Greeting: React.FC = async () => {
+	const greeting = await getGreeting()
 	const [left, right] = greeting.subtitle ? greeting.subtitle.split(' ') : ['Rai', 'Zhnb']
 	const isActiveBtns = greeting.buttons && greeting.buttons.isActive
 
@@ -26,11 +23,11 @@ export const Greeting: React.FC<IGreeting> = async ({ locale }) => {
 							priority
 						/>
 					</div>
-					<h2 className={styles.greeting__message}>{greeting?.message}</h2>
-					<h3 className={styles.greeting__title}>{greeting?.title}</h3>
-					<h4 className={styles.greeting__subtitle}>
+					<h4 className={styles.greeting__message}>{greeting?.message}</h4>
+					<h5 className={styles.greeting__title}>{greeting?.title}</h5>
+					<h6 className={styles.greeting__subtitle}>
 						{left} <span>{right}</span>
-					</h4>
+					</h6>
 					<p className={styles.greeting__description}>{greeting?.description}</p>
 					{isActiveBtns && (
 						<div className={styles.greeting__buttons}>
@@ -44,6 +41,7 @@ export const Greeting: React.FC<IGreeting> = async ({ locale }) => {
 					<DecorativeElement className={`${styles.decorativeElement} ${styles.second}`} />
 				</section>
 			)}
+			<Details />
 		</>
 	)
 }

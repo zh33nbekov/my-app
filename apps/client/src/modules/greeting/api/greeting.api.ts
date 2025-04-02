@@ -1,9 +1,9 @@
 import { BASE_URL } from '@/constants'
-import { IGreeting } from '../types/greeting.type'
 import { fetchApi } from '@/lib'
+import { IGreeting } from '../types/greeting.type'
 
-export const getGreeting = async (locale: string) => {
-	const response = await fetchApi<IGreeting>(`${BASE_URL}/greeting?lang=${locale}`, {
+export const getGreeting = async () => {
+	const response = await fetchApi<IGreeting>(`${BASE_URL}/greeting`, {
 		cache: 'force-cache',
 	})
 

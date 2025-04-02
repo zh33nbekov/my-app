@@ -5,12 +5,16 @@ import { notFound } from 'next/navigation'
 import './page.css'
 
 export const metadata: Metadata = {
-	title: 'Rai Zheenbekov',
-	description:
-		'Frontend developer with a strong focus on creating scalable, user-friendly, and innovative web applications using modern technologies and best practices.',
+	title: 'Rai Zheenbekov | Frontend разработчик',
+	description: `Я frontend-разработчик с уверенными знаниями и практическим
+		опытом работы с современными веб-технологиями. Умею
+		разрабатывать удобные, интуитивно понятные интерфейсы, а также
+		работать с серверной частью (Node.js). Следую лучшим
+		практикам и принципам чистого кода (SOLID, DRY, KISS), уделяю
+		внимание производительности и удобству поддержки проекта.`,
 }
 
-const supportedLocales = ['en', 'ru']
+const supportedLocales = ['ru', 'en']
 
 const RootLayout = async ({
 	children,
