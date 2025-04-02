@@ -2,7 +2,7 @@
 
 import { DecorativeElement } from '@/components/UI'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { Button, Input, Textarea } from '@packages/shared'
+import { Button, Input, showFailedToast, Textarea } from '@packages/shared'
 import { useTranslations } from 'next-intl'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
@@ -27,13 +27,14 @@ export const FeedbackForm: React.FC = () => {
 		try {
 			setIsLoading(true)
 			const { sendFeedback } = await import('../../index')
-			const { info } = (await sendFeedback(data)) ?? { info: 'Something went wrong' }
-			setIsLoading(false)
+			const { info } = await sendFeedback(data)
 			const { showSuccessToast } = await import('@packages/shared')
 			showSuccessToast(info)
 			reset()
-		} catch (error) {
-			console.log(error)
+		} catch {
+			showFailedToast('Что-то пошло не так')
+		} finally {
+			setIsLoading(false)
 		}
 	}
 
@@ -47,7 +48,6 @@ export const FeedbackForm: React.FC = () => {
 					{...register(name)}
 					placeholder={tFeedback(placeholder)}
 					error={errors[name]?.message}
-					className={styles.feedbackForm__input}
 				/>
 			))}
 			<Textarea

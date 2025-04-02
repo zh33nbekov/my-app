@@ -30,7 +30,7 @@ export const Chat = () => {
 	return createPortal(
 		<div className={clsx(styles.chat, { [styles['disabled']]: !isChatVisible })}>
 			{!isChatVisible && (
-				<Button className={styles.chat__button} onClick={showChat} id='chat' aria-label='chat'>
+				<Button onClick={showChat} id='chat' aria-label='chat'>
 					<ChatIcon />
 				</Button>
 			)}

@@ -8,8 +8,8 @@
 	&__inputs {
 		width: 100%;
 	}
-	&__input,
-	&__textarea {
+	input,
+	textarea {
 		width: 100%;
 		padding: clamp(12px, 7.2px + 1.5vw, 23px) clamp(11px, 7px + 1.23vw, 20px);
 	}
@@ -17,7 +17,7 @@
 		height: clamp(95px, 61.8px + 10.35vw, 171px);
 		resize: none;
 	}
-	&__submit {
+	button {
 		padding: clamp(8px, 4.5px + 1.09vw, 16px) clamp(0px, -8.7px + 2.72vw, 20px);
 		width: clamp(120px, 105.6px + 4.5vw, 153px);
 		font-size: clamp(16px, 14.2px + 0.54vw, 20px);
