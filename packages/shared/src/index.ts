@@ -1,4 +1,5 @@
 export * from '../public/icons/Send'
+export * from './components/UI/backdrop/Backdrop'
 export * from './components/UI/button/Button'
 export * from './components/UI/input/Input'
 export * from './components/UI/link/Link'

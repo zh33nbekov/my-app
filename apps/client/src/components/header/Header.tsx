@@ -13,7 +13,9 @@ import { Tooltip } from '../index'
 import { LanguageSwitcher } from '../language-switcher/LanguageSwitcher'
 import styles from './header.module.scss'
 
-const Backdrop = dynamic(() => import('../UI').then((module) => module.Backdrop), { ssr: false })
+const Backdrop = dynamic(() => import('@packages/shared').then((module) => module.Backdrop), {
+	ssr: false,
+})
 const HeaderDrawer = dynamic(() => import('../index').then((module) => module.HeaderDrawer), {
 	ssr: false,
 })
