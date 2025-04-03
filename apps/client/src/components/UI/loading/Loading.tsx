@@ -27,11 +27,10 @@ export const Loading = () => {
 		<div className={styles.loaderWrapper}>
 			<div className={styles.loader} />
 			<p className={styles.loader__text}>
-				{loaderText.map((letter, index) => (
-					<span key={index} style={{ '--i': index + 1 } as React.CSSProperties}>
-						{letter}
-					</span>
-				))}
+				{t('Loading')}
+				<span style={{ '--i': 1 } as React.CSSProperties}>.</span>
+				<span style={{ '--i': 2 } as React.CSSProperties}>.</span>
+				<span style={{ '--i': 3 } as React.CSSProperties}>.</span>
 			</p>
 		</div>
 	)
