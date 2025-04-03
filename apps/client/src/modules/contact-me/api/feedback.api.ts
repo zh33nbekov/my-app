@@ -1,13 +1,17 @@
 import { BASE_URL } from '@/constants'
 import { IFeedbackRequest, IFeedbackResponse } from '../index'
 
-export const sendFeedback = async (data: IFeedbackRequest): Promise<IFeedbackResponse> => {
+export const sendFeedback = async (
+	data: IFeedbackRequest,
+	locale: string
+): Promise<IFeedbackResponse> => {
 	try {
 		const response = await fetch(`${BASE_URL}/feedback`, {
 			method: 'POST',
 			body: JSON.stringify(data),
 			headers: {
-				'content-type': 'application/json',
+				'Content-Type': 'application/json',
+				'Accept-Language': locale,
 			},
 		})
 		if (!response.ok) {

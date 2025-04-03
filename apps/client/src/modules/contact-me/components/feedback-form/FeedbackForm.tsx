@@ -3,7 +3,7 @@
 import { DecorativeElement } from '@/components/UI'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Button, Input, showFailedToast, Textarea } from '@packages/shared'
-import { useTranslations } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { FEEDBACK_FORM_INPUTS, feedbackSchema, FeedbackSchema } from '../../index'
@@ -13,6 +13,7 @@ export const FeedbackForm: React.FC = () => {
 	const [isLoading, setIsLoading] = useState(false)
 	const tFeedback = useTranslations('FeedbackForm')
 	const tValidation = useTranslations('ValidationErrors')
+	const locale = useLocale()
 	const {
 		register,
 		handleSubmit,
@@ -27,7 +28,7 @@ export const FeedbackForm: React.FC = () => {
 		try {
 			setIsLoading(true)
 			const { sendFeedback } = await import('../../index')
-			const { info } = await sendFeedback(data)
+			const { info } = await sendFeedback(data, locale)
 			const { showSuccessToast } = await import('@packages/shared')
 			showSuccessToast(info)
 			reset()
