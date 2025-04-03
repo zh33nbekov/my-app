@@ -7,7 +7,6 @@ import styles from './loading.module.scss'
 export const Loading = () => {
 	const [isLoading, setIsLoading] = useState(true)
 	const t = useTranslations()
-	const loaderText = t('Loading').split('')
 
 	useEffect(() => {
 		const handlePageLoad = () => {
