@@ -13,7 +13,7 @@ interface IChatWidget {
 	onCloseChat: () => void
 	onSendName: (name: string) => void
 	onSendMessage: (message: string) => void
-	onSubmit: (e: React.FormEvent<HTMLFormElement>) => void
+	onSubmit: (e: React.FormEvent) => void
 	onChangeMessage: (e: React.ChangeEvent<HTMLTextAreaElement>) => void
 	messages: {
 		sender: string

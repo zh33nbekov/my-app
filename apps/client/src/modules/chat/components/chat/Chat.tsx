@@ -3,6 +3,7 @@
 import { Backdrop } from '@/components/UI'
 import { useChat } from '@/hooks/useChat'
 import { Button } from '@packages/shared'
+import { useTranslations } from 'next-intl'
 import dynamic from 'next/dynamic'
 import { useEffect, useState } from 'react'
 import { createPortal } from 'react-dom'
@@ -14,8 +15,19 @@ const ChatWidget = dynamic(() => import('../../index').then((module) => module.C
 })
 
 export const Chat = () => {
+	const [message, setMessage] = useState('')
 	const [chatRoot, setChatRoot] = useState<HTMLElement | null>(null)
 	const { isChatVisible, animationClass, showChat, hideChat } = useChat()
+	const t = useTranslations('Info')
+
+	const handleChangeMessage = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+		setMessage(e.target.value)
+	}
+	const handleSubmit = async (e: React.FormEvent) => {
+		e.preventDefault()
+		const { showInfoToast } = await import('@packages/shared')
+		showInfoToast(t('Chat'))
+	}
 
 	useEffect(() => {
 		setChatRoot(document.getElementById('chat'))
@@ -37,12 +49,12 @@ export const Chat = () => {
 					<ChatWidget
 						messages={[]}
 						username={'Username'}
-						message={'Message'}
+						message={message}
 						onCloseChat={hideChat}
-						onSubmit={() => {}}
+						onSubmit={handleSubmit}
 						onSendMessage={() => {}}
 						onSendName={() => {}}
-						onChangeMessage={() => {}}
+						onChangeMessage={handleChangeMessage}
 						animationClass={animationClass}
 					/>
 				</>

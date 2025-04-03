@@ -14,7 +14,7 @@ interface IChatFooter {
 }
 
 export const ChatFooter: React.FC<IChatFooter> = memo((props) => (
-	<form name='sendMessage' className={styles.chatFooter} onSubmit={props.onSubmit}>
+	<form name='chat' className={styles.chatFooter} onSubmit={props.onSubmit}>
 		{props.username ? (
 			<textarea
 				name='message'
