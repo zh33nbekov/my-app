@@ -26,7 +26,7 @@ export const Chat = () => {
 	return createPortal(
 		<>
 			{!isChatVisible && (
-				<Button className={styles.chat__btn} onClick={showChat} id='chat' aria-label='chat'>
+				<Button aria-label='chat' onClick={showChat} id={styles.chatBtn}>
 					<ChatIcon />
 				</Button>
 			)}

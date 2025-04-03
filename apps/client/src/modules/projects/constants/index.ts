@@ -3,12 +3,12 @@ interface ProjectsButtons {
 }
 export const PROJECTS_BUTTONS: ProjectsButtons[] = [
 	{
-		label: 'Python',
+		label: '#1',
 	},
 	{
-		label: 'Machine Learning',
+		label: '#2',
 	},
 	{
-		label: 'NLP',
+		label: '#3',
 	},
 ]
