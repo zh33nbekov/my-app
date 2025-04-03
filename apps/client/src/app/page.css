@@ -25,3 +25,42 @@ body {
 .notFound-description {
 	font-size: clamp(14px, 12.8px + 0.36vw, 18px);
 }
+/*  */
+.loading {
+	width: 44px;
+	height: 44px;
+	position: relative;
+}
+
+.loading::before,
+.loading::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	border: 4px solid white;
+}
+
+.loading::before {
+	opacity: 0.2;
+}
+
+.loading::after {
+	border-color: white transparent transparent transparent;
+	animation: spin 3s cubic-bezier(0.25, 0.8, 0.25, 1) infinite;
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	50% {
+		transform: rotate(360deg);
+	}
+	100% {
+		transform: rotate(-360deg);
+	}
+}
