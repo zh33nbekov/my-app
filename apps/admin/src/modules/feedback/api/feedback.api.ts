@@ -6,20 +6,20 @@ const feedbackApi = baseApi.injectEndpoints({
 		getFeedback: builder.query<IFeedback[], void>({
 			query: () => 'feedback',
 		}),
+		clearFeedback: builder.mutation<void, void>({
+			query: () => ({
+				method: 'DELETE',
+				url: 'feedback',
+			}),
+		}),
+		removeFeedback: builder.mutation<void, string>({
+			query: (id) => ({
+				method: 'DELETE',
+				url: `feedback/${id}`,
+			}),
+		}),
 	}),
 })
 
-// const feedbackApi = baseApi.injectEndpoints({
-// 	endpoints: (builder) => ({
-// 		login: builder.mutation<IFeedbackRequest, IFeedbackResponse>({
-// 			query: (data) => ({
-// 				body: data,
-// 				url: 'feedback',
-// 				method: 'POST',
-// 				credentials: 'include',
-// 			}),
-// 		}),
-// 	}),
-// })
-
-export const { useGetFeedbackQuery } = feedbackApi
+export const { useGetFeedbackQuery, useClearFeedbackMutation, useRemoveFeedbackMutation } =
+	feedbackApi

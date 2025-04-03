@@ -1,4 +1,5 @@
 export * from './common/CaretBottom'
 export * from './common/CaretRight'
 export * from './common/Close'
+export * from './common/Delete'
 export * from './common/Open'

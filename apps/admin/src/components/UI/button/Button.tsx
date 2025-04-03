@@ -9,7 +9,7 @@ interface IButton extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 
 export const Button: React.FC<IButton> = memo(({ children, isLoading, isDisabled, className }) => (
 	<button disabled={isDisabled} className={`${styles.button} ${className}`}>
-		{isLoading ? <Loader /> : children}
+		{isLoading ? <Loader className={styles.button__loader} /> : children}
 	</button>
 ))
 

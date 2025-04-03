@@ -5,6 +5,10 @@
 	border-radius: 10px;
 	width: 100%;
 	transition: background-color 222ms ease-in-out;
+	&__loader {
+		width: 16px;
+		height: 16px;
+	}
 	@media (hover: hover) {
 		&:hover {
 			background-color: #2185ff;

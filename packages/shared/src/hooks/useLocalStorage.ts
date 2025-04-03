@@ -3,7 +3,6 @@
 import { useCallback, useEffect, useState } from 'react'
 
 export const useLocalStorage = <T>(key: string, initialValue: T) => {
-	// Получаем текущее значение из localStorage или устанавливаем начальное
 	const [storedValue, setStoredValue] = useState<T>(() => {
 		try {
 			const item = window.localStorage.getItem(key)
