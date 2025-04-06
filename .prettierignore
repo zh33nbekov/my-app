@@ -9,5 +9,3 @@ node_modules/
 /apps/client/dist/
 /apps/admin/coverage/
 .vscode/
-package-lock.json
-package.json
