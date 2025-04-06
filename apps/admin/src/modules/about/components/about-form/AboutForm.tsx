@@ -7,6 +7,7 @@ import styles from './about-form.module.scss'
 interface IAboutForm {
 	isChanged: boolean
 	isLoading: boolean
+	isSuccess: boolean
 	description: string
 	image: string | File
 	selectedImage: string
@@ -26,33 +27,37 @@ interface IAboutForm {
 }
 
 export const AboutForm: React.FC<IAboutForm> = (props) => (
-	<form className={styles.aboutForm} onSubmit={props.onSubmit}>
-		<AboutImage
-			image={props.image}
-			selectedImage={props.selectedImage}
-			onChangeImage={props.onChangeImage}
-		/>
-		<div className={styles.aboutForm__separator} />
-		<div className={styles.aboutForm__content}>
-			<LanguageSwitcher
-				language={props.selectedLanguage}
-				onChangeLanguage={props.onChangeLanguage}
-			/>
-			<AboutDescription
-				description={props.description}
-				onFocus={props.handleTextareaFocus}
-				onInputChange={props.onInputChange}
-				isEditing={props.isEdit.description}
-				onEnableEditing={props.onEnableEditing}
-				onDisableEditing={props.onDisableEditing}
-			/>
-			<Button
-				isLoading={props.isLoading}
-				disabled={!props.isChanged}
-				className={styles.aboutForm__submit}
-			>
-				Сохранить
-			</Button>
-		</div>
-	</form>
+	<>
+		{props.isSuccess && (
+			<form className={styles.aboutForm} onSubmit={props.onSubmit}>
+				<AboutImage
+					image={props.image}
+					selectedImage={props.selectedImage}
+					onChangeImage={props.onChangeImage}
+				/>
+				<div className={styles.aboutForm__separator} />
+				<div className={styles.aboutForm__content}>
+					<LanguageSwitcher
+						language={props.selectedLanguage}
+						onChangeLanguage={props.onChangeLanguage}
+					/>
+					<AboutDescription
+						description={props.description}
+						onFocus={props.handleTextareaFocus}
+						onInputChange={props.onInputChange}
+						isEditing={props.isEdit.description}
+						onEnableEditing={props.onEnableEditing}
+						onDisableEditing={props.onDisableEditing}
+					/>
+					<Button
+						isLoading={props.isLoading}
+						disabled={!props.isChanged}
+						className={styles.aboutForm__submit}
+					>
+						Сохранить
+					</Button>
+				</div>
+			</form>
+		)}
+	</>
 )

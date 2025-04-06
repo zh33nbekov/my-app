@@ -11,7 +11,12 @@ export const About = () => {
 	const [isEdit, setEdit] = useState<{ [key: string]: boolean }>({})
 	const [selectedLanguage, setSelectedLanguage] = useLocalStorage('locale', 'ru')
 	const [handleUpdate] = useUpdateAboutMutation()
-	const { data: about, isLoading: isFetchLoad, refetch } = useGetAboutQuery(selectedLanguage)
+	const {
+		data: about,
+		isLoading: isFetching,
+		refetch,
+		isSuccess,
+	} = useGetAboutQuery(selectedLanguage)
 	const [editedAbout, setEditedAbout] = useState<IAbout>({
 		image: '',
 		description: '',
@@ -105,8 +110,9 @@ export const About = () => {
 	return (
 		<AboutForm
 			isEdit={isEdit}
+			isSuccess={isSuccess}
 			isChanged={isChanged}
-			isLoading={isFetchLoad}
+			isLoading={isFetching}
 			onSubmit={submitHandler}
 			image={editedAbout.image}
 			selectedImage={selectedImage}

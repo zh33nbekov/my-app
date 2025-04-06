@@ -1,6 +1,6 @@
 const DashboardPage = () => (
 	<div>
-		<h1>DasboardPage</h1>
+		<h1>DashboardPage</h1>
 	</div>
 )
 

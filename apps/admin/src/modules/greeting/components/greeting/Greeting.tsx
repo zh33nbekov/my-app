@@ -23,7 +23,12 @@ export const Greeting = () => {
 	const [isEdit, setEdit] = useState<{ [key: string]: boolean }>({})
 	const [selectedLanguage, setSelectedLanguage] = useLocalStorage('locale', 'ru')
 	const [handleUpdate, { isLoading: isUpdateLoad }] = useUpdateGreetingMutation()
-	const { data: greeting, refetch, isLoading: isFetchLoad } = useGetGreetingQuery(selectedLanguage)
+	const {
+		data: greeting,
+		refetch,
+		isLoading: isFetching,
+		isSuccess,
+	} = useGetGreetingQuery(selectedLanguage)
 	const [editedGreeting, setEditedGreeting] = useState<IGreeting>({
 		title: '',
 		image: '',
@@ -37,8 +42,6 @@ export const Greeting = () => {
 		},
 		id: '',
 	})
-	const isChanged = greeting ? !isEqual(greeting, editedGreeting) : false
-
 	const buttonsHandleChange = useCallback((name: string, value: string, checked: boolean) => {
 		const buttonField = buttonFieldsMap[name]
 		setEditedGreeting((prev) => ({
@@ -148,6 +151,7 @@ export const Greeting = () => {
 		},
 		[editedGreeting, refetch, handleUpdate, selectedLanguage]
 	)
+	const isChanged = greeting ? !isEqual(greeting, editedGreeting) : false
 
 	useEffect(() => {
 		if (greeting) {
@@ -164,9 +168,11 @@ export const Greeting = () => {
 			}))
 		}
 	}, [greeting])
+
 	return (
 		<GreetingForm
 			isEdit={isEdit}
+			isSuccess={isSuccess}
 			isChanged={isChanged}
 			onSubmit={handleSubmit}
 			selectedImage={selectedImage}
@@ -177,7 +183,7 @@ export const Greeting = () => {
 			onDisableEditing={disableEditing}
 			selectedLanguage={selectedLanguage}
 			onTextAreaFocus={handleTextareaFocus}
-			isLoading={isFetchLoad || isUpdateLoad}
+			isLoading={isFetching || isUpdateLoad}
 			onChangeLanguage={languageHandleChange}
 			isActive={editedGreeting.buttons.isActive}
 		/>

@@ -12,7 +12,7 @@ export const Contact = () => {
 		id: '',
 	})
 
-	const { data: contact, isLoading: isFetchLoad, refetch } = useGetContactQuery()
+	const { data: contact, isLoading: isFetching, refetch, isSuccess } = useGetContactQuery()
 	const [handleUpdate, { isLoading: isUpdateLoad }] = useUpdateContactMutation()
 	const isChanged = contact ? !isEqual(contact, editedContact) : false
 
@@ -54,12 +54,13 @@ export const Contact = () => {
 
 	return (
 		<ContactForm
+			isSuccess={isSuccess}
 			isChanged={isChanged}
 			onSubmit={handleSubmit}
 			selectedImage={selectedImage}
 			editedContact={editedContact}
 			onChangeImage={imageHandleChange}
-			isLoading={isFetchLoad || isUpdateLoad}
+			isLoading={isFetching || isUpdateLoad}
 		/>
 	)
 }
