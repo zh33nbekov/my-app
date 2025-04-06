@@ -10,10 +10,6 @@
 	"dependencies": {
 		"@next/bundle-analyzer": "^15.2.1",
 		"@packages/shared": "*",
-		"next-intl": "^3.26.3",
-		"react-hook-form": "^7.54.2"
-	},
-	"devDependencies": {
-		"@svgr/webpack": "^8.1.0"
+		"next-intl": "^3.26.3"
 	}
 }
