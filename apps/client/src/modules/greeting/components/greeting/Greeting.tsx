@@ -1,4 +1,3 @@
-import { Details } from '@/components'
 import { DecorativeElement } from '@/components/UI'
 import { Link } from '@packages/shared'
 import Image from 'next/image'
@@ -38,7 +37,6 @@ export const Greeting: React.FC = async () => {
 					)}
 					<DecorativeElement className={`${styles.decorativeElement} ${styles.first}`} />
 					<DecorativeElement className={`${styles.decorativeElement} ${styles.second}`} />
-					<Details />
 				</section>
 			)}
 		</>
