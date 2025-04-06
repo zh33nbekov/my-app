@@ -36,20 +36,6 @@
 	border-color: white transparent transparent transparent;
 	animation: spin 3s cubic-bezier(0.25, 0.8, 0.25, 1) infinite;
 }
-.loader__text {
-	color: #fff;
-	padding-top: 25px;
-	font-size: clamp(20px, 18.5px + 0.45vw, 25px);
-	letter-spacing: 1px;
-	font-style: italic;
-	span {
-		padding-left: 3px;
-		display: inline-block;
-		margin: 0 1.2px;
-		animation: wave 1.3s infinite ease-in-out;
-		animation-delay: calc(0.1s * var(--i));
-	}
-}
 @keyframes spin {
 	0% {
 		transform: rotate(0deg);
@@ -59,15 +45,5 @@
 	}
 	100% {
 		transform: rotate(-360deg);
-	}
-}
-@keyframes wave {
-	0%,
-	40%,
-	100% {
-		transform: translateY(0);
-	}
-	20% {
-		transform: translateY(-5px);
 	}
 }
