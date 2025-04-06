@@ -2,11 +2,12 @@ node_modules/
 .next/
 *.min.js
 *.bundle.js
-
 /apps/admin/build/
 /apps/client/build/
 /apps/client/coverage/
-
 /apps/admin/dist/
 /apps/client/dist/
 /apps/admin/coverage/
+.vscode/
+package-lock.json
+package.json

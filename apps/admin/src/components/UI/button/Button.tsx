@@ -7,8 +7,8 @@ interface IButton extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 	isDisabled?: boolean
 }
 
-export const Button: React.FC<IButton> = memo(({ children, isLoading, isDisabled, className }) => (
-	<button disabled={isDisabled} className={`${styles.button} ${className}`}>
+export const Button: React.FC<IButton> = memo(({ children, isLoading, className, ...props }) => (
+	<button className={`${styles.button} ${className}`} {...props}>
 		{isLoading ? <Loader className={styles.button__loader} /> : children}
 	</button>
 ))

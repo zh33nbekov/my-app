@@ -2,10 +2,10 @@
 	background-color: #0275ff;
 	color: #fff;
 	padding: 10px;
-	border-radius: 10px;
+	border-radius: 5px;
 	width: 100%;
 	transition: background-color 222ms ease-in-out;
-	&__loader {
+	.button__loader {
 		width: 16px;
 		height: 16px;
 	}

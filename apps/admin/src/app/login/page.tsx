@@ -1,8 +1,8 @@
 import { Login } from '@/modules/login'
-import styles from './page.module.scss'
+import './page.css'
 
 const LoginPage = () => (
-	<div className={styles.loginPage}>
+	<div className='loginPage'>
 		<Login />
 	</div>
 )

@@ -1,9 +1,11 @@
 'use client'
 
+import { zodResolver } from '@hookform/resolvers/zod'
 import { useRouter } from 'next/navigation'
+import { useForm } from 'react-hook-form'
 import { useLoginMutation } from '../../api/login.api'
-import { ILoginApiError } from '../../types/login.type'
-import { LoginForm } from '../login-form/LoginForm'
+import { ILoginApiError, LoginForm, loginSchema } from '../../index'
+import { LoginSchema } from '../../types/validation.type'
 
 const showToast = async (success?: string | null, error?: string) => {
 	const { showFailedToast, showSuccessToast } = await import('@packages/shared')
@@ -17,16 +19,17 @@ const showToast = async (success?: string | null, error?: string) => {
 
 export const Login = () => {
 	const router = useRouter()
-	const [loginHandler] = useLoginMutation({})
-	const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-		event.preventDefault()
-		const formData = new FormData(event.currentTarget)
-		const email = formData.get('email')
-		const password = formData.get('password')
-		const data = {
-			email,
-			password,
-		}
+	const [loginHandler] = useLoginMutation()
+	const {
+		register,
+		handleSubmit,
+		// reset,
+		formState: { errors },
+	} = useForm({
+		mode: 'onSubmit',
+		resolver: zodResolver(loginSchema),
+	})
+	const submitHandler = async (data: LoginSchema) => {
 		try {
 			const { info } = await loginHandler(data).unwrap()
 			showToast(info)
@@ -37,9 +40,13 @@ export const Login = () => {
 			console.log(err)
 		}
 	}
+
 	return (
-		<>
-			<LoginForm onSubmit={handleSubmit} />
-		</>
+		<LoginForm
+			errors={errors}
+			register={register}
+			onSubmit={submitHandler}
+			handleSubmit={handleSubmit}
+		/>
 	)
 }

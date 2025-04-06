@@ -97,7 +97,6 @@ button,
 a {
 	user-select: none;
 }
-/*  */
 :root {
 	--sidebar-x-padding: 0 20px;
 	--sidebar-y-padding: 0;
@@ -105,16 +104,14 @@ a {
 	--section-form-padding: 25px 15px;
 	--border-color: #888888;
 }
-
 body,
 html {
 	height: 100%;
+	min-height: 100%;
 }
-
 body {
 	background-color: #232732;
 }
-
 .wrapper {
 	max-width: 906px;
 	width: 100%;

@@ -1,10 +1,10 @@
 import { baseApi } from '@/store/api'
-import { IFeedback } from '../types/feedback.type'
+import { IGetFeedbackRes } from '../types/feedback.type'
 
 const feedbackApi = baseApi.injectEndpoints({
 	endpoints: (builder) => ({
-		getFeedback: builder.query<IFeedback[], void>({
-			query: () => 'feedback',
+		getFeedback: builder.query<IGetFeedbackRes, number>({
+			query: (page) => `feedback?page=${page}&limit=10`,
 		}),
 		clearFeedback: builder.mutation<void, void>({
 			query: () => ({
@@ -12,7 +12,7 @@ const feedbackApi = baseApi.injectEndpoints({
 				url: 'feedback',
 			}),
 		}),
-		removeFeedback: builder.mutation<void, string>({
+		removeFeedback: builder.mutation<{ info: string }, string>({
 			query: (id) => ({
 				method: 'DELETE',
 				url: `feedback/${id}`,

@@ -69,7 +69,7 @@ export const GreetingForm: React.FC<IGreetingForm> = memo((props) => (
 			<div className={styles.greetingForm__separator} />
 			<div className={styles.greetingForm__rightContent}>
 				<LanguageSwitcher
-					selectedLanguage={props.selectedLanguage}
+					language={props.selectedLanguage}
 					onChangeLanguage={props.onChangeLanguage}
 				/>
 				<GreetingDescription
@@ -93,8 +93,8 @@ export const GreetingForm: React.FC<IGreetingForm> = memo((props) => (
 				/>
 				<Button
 					isLoading={props.isLoading}
-					isDisabled={props.isLoading || !props.isChanged}
 					className={styles.greetingForm__submit}
+					disabled={props.isLoading || !props.isChanged}
 				>
 					Сохранить
 				</Button>

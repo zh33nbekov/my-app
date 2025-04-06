@@ -1,5 +1,5 @@
 interface LoginInput {
-	name: string
+	name: 'email' | 'password'
 	type: 'email' | 'password'
 	placeholder: string
 }

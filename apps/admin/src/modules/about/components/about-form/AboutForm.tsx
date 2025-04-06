@@ -35,7 +35,7 @@ export const AboutForm: React.FC<IAboutForm> = (props) => (
 		<div className={styles.aboutForm__separator} />
 		<div className={styles.aboutForm__content}>
 			<LanguageSwitcher
-				selectedLanguage={props.selectedLanguage}
+				language={props.selectedLanguage}
 				onChangeLanguage={props.onChangeLanguage}
 			/>
 			<AboutDescription
@@ -48,7 +48,7 @@ export const AboutForm: React.FC<IAboutForm> = (props) => (
 			/>
 			<Button
 				isLoading={props.isLoading}
-				isDisabled={!props.isChanged}
+				disabled={!props.isChanged}
 				className={styles.aboutForm__submit}
 			>
 				Сохранить

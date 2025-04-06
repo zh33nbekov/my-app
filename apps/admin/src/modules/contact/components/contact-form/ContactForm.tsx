@@ -21,7 +21,11 @@ export const ContactForm: React.FC<IContactForm> = (props) => (
 		/>
 		<div className={styles.contactForm__separator} />
 		<div className={styles.contactForm__content}>
-			<Button isDisabled={!props.isChanged} className={styles.contactForm__submit}>
+			<Button
+				disabled={props.isLoading || !props.isChanged}
+				isLoading={props.isLoading}
+				className={styles.contactForm__submit}
+			>
 				Сохранить
 			</Button>
 		</div>

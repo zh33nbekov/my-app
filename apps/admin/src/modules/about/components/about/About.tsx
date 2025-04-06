@@ -103,23 +103,21 @@ export const About = () => {
 	}, [about])
 
 	return (
-		<>
-			<AboutForm
-				isEdit={isEdit}
-				isChanged={isChanged}
-				isLoading={isFetchLoad}
-				onSubmit={submitHandler}
-				image={editedAbout.image}
-				selectedImage={selectedImage}
-				onEnableEditing={enableEditing}
-				onInputChange={inputHandleChange}
-				onDisableEditing={disableEditing}
-				onChangeImage={imageHandleChange}
-				selectedLanguage={selectedLanguage}
-				description={editedAbout.description}
-				onChangeLanguage={languageHandleChange}
-				handleTextareaFocus={handleTextareaFocus}
-			/>
-		</>
+		<AboutForm
+			isEdit={isEdit}
+			isChanged={isChanged}
+			isLoading={isFetchLoad}
+			onSubmit={submitHandler}
+			image={editedAbout.image}
+			selectedImage={selectedImage}
+			onEnableEditing={enableEditing}
+			onInputChange={inputHandleChange}
+			onDisableEditing={disableEditing}
+			onChangeImage={imageHandleChange}
+			selectedLanguage={selectedLanguage}
+			description={editedAbout.description}
+			onChangeLanguage={languageHandleChange}
+			handleTextareaFocus={handleTextareaFocus}
+		/>
 	)
 }

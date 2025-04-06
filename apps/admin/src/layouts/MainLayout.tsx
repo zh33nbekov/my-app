@@ -1,6 +1,5 @@
 import { Header } from '@/components'
 import SidebarBridge from '@/components/sidebar/SidebarBridge'
-import { ChatSidebar } from '@/modules/chat'
 
 const MAIN_LAYOUT_STYLES = {
 	width: '100%',
@@ -22,7 +21,6 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => (
 				<Header />
 				<main className='wrapper'>{children}</main>
 			</div>
-			<ChatSidebar />
 			<div id='backdrop' />
 		</div>
 	</>

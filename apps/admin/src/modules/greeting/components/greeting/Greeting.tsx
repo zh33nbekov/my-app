@@ -164,25 +164,22 @@ export const Greeting = () => {
 			}))
 		}
 	}, [greeting])
-
 	return (
-		<>
-			<GreetingForm
-				isEdit={isEdit}
-				isChanged={isChanged}
-				onSubmit={handleSubmit}
-				selectedImage={selectedImage}
-				onEnableEditing={enableEditing}
-				editedGreeting={editedGreeting}
-				onChangeImage={imageHandleChange}
-				onInputChange={inputHandleChange}
-				onDisableEditing={disableEditing}
-				selectedLanguage={selectedLanguage}
-				onTextAreaFocus={handleTextareaFocus}
-				isLoading={isFetchLoad || isUpdateLoad}
-				onChangeLanguage={languageHandleChange}
-				isActive={editedGreeting.buttons.isActive}
-			/>
-		</>
+		<GreetingForm
+			isEdit={isEdit}
+			isChanged={isChanged}
+			onSubmit={handleSubmit}
+			selectedImage={selectedImage}
+			onEnableEditing={enableEditing}
+			editedGreeting={editedGreeting}
+			onChangeImage={imageHandleChange}
+			onInputChange={inputHandleChange}
+			onDisableEditing={disableEditing}
+			selectedLanguage={selectedLanguage}
+			onTextAreaFocus={handleTextareaFocus}
+			isLoading={isFetchLoad || isUpdateLoad}
+			onChangeLanguage={languageHandleChange}
+			isActive={editedGreeting.buttons.isActive}
+		/>
 	)
 }

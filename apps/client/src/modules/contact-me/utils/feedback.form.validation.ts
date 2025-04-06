@@ -14,5 +14,3 @@ export const feedbackSchema = (t: (key: string) => string) =>
 			.min(5, `${t('min')} 5`)
 			.max(55, `${t('max')} 55`),
 	})
-
-export type FeedbackSchema = z.infer<ReturnType<typeof feedbackSchema>>
