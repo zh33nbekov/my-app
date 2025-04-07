@@ -27,7 +27,7 @@ export const metadata: Metadata = {
 		follow: true,
 	},
 	alternates: {
-		canonical: 'https://rai-zheenbekov.vercel.app',
+		canonical: 'https://rai-zheenbekov.vercel.app/',
 		languages: {
 			ru: 'RU',
 			en: 'EN',
