@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Host: rai-zheenbekov.vercel.app
+Sitemap: https://rai-zheenbekov.vercel.app/sitemap.xml
