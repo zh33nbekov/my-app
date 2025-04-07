@@ -2,4 +2,3 @@ node_modules/
 .next/
 *.min.js
 *.bundle.js
-.vscode/
