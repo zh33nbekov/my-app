@@ -17,7 +17,7 @@ export const FeedbackForm: React.FC = () => {
 	const {
 		register,
 		handleSubmit,
-		// reset,
+		reset,
 		formState: { errors },
 	} = useForm<FeedbackSchema>({
 		mode: 'onSubmit',
@@ -31,7 +31,7 @@ export const FeedbackForm: React.FC = () => {
 			const { info } = await sendFeedback(data, locale)
 			const { showSuccessToast } = await import('@packages/shared')
 			showSuccessToast(info)
-			// reset()
+			reset()
 		} catch {
 			showFailedToast('Что-то пошло не так')
 		} finally {

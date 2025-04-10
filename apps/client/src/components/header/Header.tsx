@@ -2,23 +2,23 @@
 
 import { HEADER_LINKS } from '@/constants'
 import { useHeaderDrawer } from '@/hooks'
-import { Button } from '@packages/shared'
+import { Backdrop, Button } from '@packages/shared'
 import clsx from 'clsx'
 import { useTranslations } from 'next-intl'
-import dynamic from 'next/dynamic'
+// import dynamic from 'next/dynamic'
 import { default as NextLink } from 'next/link'
 import { useEffect, useState } from 'react'
 import { BurgerMenu, Close, Resume } from '../../../public/icons'
-import { Tooltip } from '../index'
+import { HeaderDrawer, Tooltip } from '../index'
 import { LanguageSwitcher } from '../language-switcher/LanguageSwitcher'
 import styles from './header.module.scss'
 
-const Backdrop = dynamic(() => import('@packages/shared').then((module) => module.Backdrop), {
-	ssr: false,
-})
-const HeaderDrawer = dynamic(() => import('../index').then((module) => module.HeaderDrawer), {
-	ssr: false,
-})
+// const Backdrop = dynamic(() => import('@packages/shared').then((module) => module.Backdrop), {
+// 	ssr: false,
+// })
+// const HeaderDrawer = dynamic(() => import('../index').then((module) => module.HeaderDrawer), {
+// 	ssr: false,
+// })
 
 export const Header: React.FC = () => {
 	const tHeader = useTranslations('Header')

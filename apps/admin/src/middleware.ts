@@ -27,7 +27,7 @@ export const middleware = async (req: NextRequest) => {
 	// Получаем куку напрямую из запроса
 	const accessToken = req.cookies.get('accessToken')?.value
 
-	if (!accessToken) {
+	if (accessToken) {
 		return NextResponse.redirect(new URL('/login', req.url))
 	}
 	return NextResponse.next()

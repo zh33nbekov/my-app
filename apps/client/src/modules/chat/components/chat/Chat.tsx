@@ -1,20 +1,21 @@
 'use client'
 
 import { useChat } from '@/hooks/useChat'
-import { Button } from '@packages/shared'
+import { Backdrop, Button } from '@packages/shared'
 import { useTranslations } from 'next-intl'
-import dynamic from 'next/dynamic'
+// import dynamic from 'next/dynamic'
 import { useEffect, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { Chat as ChatIcon } from '../../../../../public/icons/common/Chat'
 import styles from './chat.module.scss'
+import { ChatWidget } from '../../index'
 
-const Backdrop = dynamic(() => import('@packages/shared').then((module) => module.Backdrop), {
-	ssr: false,
-})
-const ChatWidget = dynamic(() => import('../../index').then((module) => module.ChatWidget), {
-	ssr: false,
-})
+// const Backdrop = dynamic(() => import('@packages/shared').then((module) => module.Backdrop), {
+// 	ssr: false,
+// })
+// const ChatWidget = dynamic(() => import('../../index').then((module) => module.ChatWidget), {
+// 	ssr: false,
+// })
 
 export const Chat = () => {
 	const [message, setMessage] = useState('')
